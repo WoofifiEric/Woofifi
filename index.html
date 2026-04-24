@@ -1,0 +1,1721 @@
+<!--
+  ═══════════════════════════════════════════════════════════════
+  WOOFIFI — Official Website
+  ═══════════════════════════════════════════════════════════════
+  Designed & developed for Eric Peh / Woofifi Pte Ltd
+  Brand: Premium natural pet snacks + pet mobility services (SG)
+
+  HOW TO REPLACE PLACEHOLDER IMAGES:
+  All dog photos currently use Unsplash URLs. To use your own
+  photos (Whiskey the Cavapoo, Woofifi IG shots), simply:
+    1. Save your photos into the /assets/ folder
+    2. Find each <img src="https://images.unsplash.com/..."> below
+    3. Replace the URL with "assets/your-photo-name.jpg"
+  Look for the [IMG-SWAP] comment tags — easy to find with Ctrl+F.
+
+  COLOR PALETTE:
+    --navy: #262354  (primary — headings, buttons, logo)
+    --yellow: #FCC156  (accent — CTAs, highlights)
+    --cream: #FFF9F0  (background — warm, cozy)
+  ═══════════════════════════════════════════════════════════════
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Woofifi — Premium Natural Pet Snacks & Pet Services in Singapore</title>
+<meta name="description" content="Woofifi crafts 100% natural, freeze-dried dog treats and connects Singapore pet owners with trusted at-home groomers. Because your pet is family." />
+<meta name="keywords" content="Woofifi, pet snacks Singapore, natural dog treats, dog grooming Singapore, freeze-dried dog food, pet services app" />
+<meta name="author" content="Woofifi" />
+
+<!-- Open Graph / Social -->
+<meta property="og:title" content="Woofifi — Premium Natural Pet Snacks" />
+<meta property="og:description" content="100% natural, freeze-dried treats your pup will love. Coming soon to Singapore." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.woofifi.com" />
+<meta property="og:image" content="https://www.woofifi.com/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Favicon (inline SVG) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 85 C20 65, 10 40, 25 25 C37 15, 50 25, 50 35 C50 25, 63 15, 75 25 C90 40, 80 65, 50 85 Z' fill='none' stroke='%23262354' stroke-width='6'/%3E%3C/svg%3E" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════
+   1. RESET & ROOT TOKENS
+   ═══════════════════════════════════════════════════ */
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #262354;
+  --navy-light: #3a3670;
+  --yellow: #FCC156;
+  --yellow-soft: #FFE1A8;
+  --yellow-bg: #FFF4DC;
+  --cream: #FFF9F0;
+  --cream-warm: #FDF2DF;
+  --white: #ffffff;
+  --gray-900: #1a1830;
+  --gray-700: #4a4767;
+  --gray-500: #8a87a3;
+  --gray-300: #d8d4e8;
+  --gray-100: #f0edf7;
+  --shadow-sm: 0 2px 8px rgba(38, 35, 84, 0.06);
+  --shadow-md: 0 8px 24px rgba(38, 35, 84, 0.08);
+  --shadow-lg: 0 20px 48px rgba(38, 35, 84, 0.12);
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+  --max-width: 1240px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cream);
+  color: var(--gray-900);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══════════════════════════════════════════════════
+   2. BUTTONS & BADGES
+   ═══════════════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 32px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 15px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--navy);
+  color: var(--cream);
+}
+.btn-primary:hover {
+  background: var(--navy-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn-yellow {
+  background: var(--yellow);
+  color: var(--navy);
+}
+.btn-yellow:hover {
+  background: #ffcd73;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(252, 193, 86, 0.4);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+}
+.btn-outline:hover {
+  background: var(--navy);
+  color: var(--cream);
+}
+.btn-sm { padding: 10px 20px; font-size: 14px; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--yellow-bg);
+  color: var(--navy);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════
+   3. NAVIGATION
+   ═══════════════════════════════════════════════════ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 249, 240, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(38, 35, 84, 0.08);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark { width: 48px; height: 48px; }
+.logo-text {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--yellow);
+  letter-spacing: -0.01em;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-link {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy);
+  transition: var(--transition);
+  position: relative;
+}
+.nav-link:hover { color: var(--yellow); }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--yellow);
+  transition: var(--transition);
+}
+.nav-link:hover::after { width: 100%; }
+.nav-cta { margin-left: 8px; }
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+}
+
+/* ═══════════════════════════════════════════════════
+   4. HERO
+   ═══════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  padding: 80px 0 120px;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--yellow-soft) 0%, transparent 70%);
+  opacity: 0.6;
+  z-index: 0;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(38, 35, 84, 0.08) 0%, transparent 70%);
+  z-index: 0;
+}
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  margin-bottom: 24px;
+}
+.hero h1 .accent {
+  color: var(--yellow);
+  font-style: italic;
+  font-weight: 500;
+}
+.hero-tagline {
+  font-size: 19px;
+  color: var(--gray-700);
+  margin-bottom: 36px;
+  max-width: 520px;
+  line-height: 1.7;
+}
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.hero-trust {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.trust-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--yellow-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.trust-text strong { display: block; color: var(--navy); font-size: 15px; }
+.trust-text span { font-size: 13px; color: var(--gray-500); }
+
+.hero-visual {
+  position: relative;
+}
+.hero-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+.hero-card {
+  position: absolute;
+  background: var(--white);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-card-1 {
+  top: 30px;
+  left: -30px;
+  animation: float 6s ease-in-out infinite;
+}
+.hero-card-2 {
+  bottom: 40px;
+  right: -20px;
+  animation: float 6s ease-in-out infinite 3s;
+}
+.hero-card-emoji {
+  width: 48px;
+  height: 48px;
+  background: var(--yellow-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.hero-card strong { display: block; color: var(--navy); font-size: 14px; }
+.hero-card span { font-size: 12px; color: var(--gray-500); }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ═══════════════════════════════════════════════════
+   5. SECTION BASE
+   ═══════════════════════════════════════════════════ */
+section { padding: 100px 0; position: relative; }
+.section-head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 64px;
+}
+.section-head h2 {
+  font-size: clamp(32px, 4vw, 52px);
+  margin: 16px 0 20px;
+}
+.section-head p {
+  font-size: 18px;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════
+   6. ABOUT / STORY
+   ═══════════════════════════════════════════════════ */
+.about { background: var(--cream-warm); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-image {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 1;
+  box-shadow: var(--shadow-lg);
+}
+.about-image img { width: 100%; height: 100%; object-fit: cover; }
+.about-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 60%, rgba(252, 193, 86, 0.2));
+  z-index: 1;
+}
+.about-content h2 { margin-bottom: 24px; font-size: clamp(32px, 4vw, 48px); }
+.about-content p { font-size: 17px; color: var(--gray-700); margin-bottom: 20px; line-height: 1.8; }
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 32px;
+}
+.value-card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.value-card .icon { font-size: 28px; margin-bottom: 8px; }
+.value-card strong { display: block; color: var(--navy); font-size: 15px; margin-bottom: 4px; }
+.value-card span { font-size: 13px; color: var(--gray-500); }
+
+/* ═══════════════════════════════════════════════════
+   7. PRODUCTS
+   ═══════════════════════════════════════════════════ */
+.products { background: var(--cream); }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.product-img-wrap {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--yellow-bg);
+  position: relative;
+}
+.product-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.product-card:hover .product-img-wrap img { transform: scale(1.08); }
+.product-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--navy);
+  color: var(--yellow);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.product-tag.seasonal { background: var(--yellow); color: var(--navy); }
+.product-body { padding: 28px; }
+.product-body h3 { font-size: 22px; margin-bottom: 8px; }
+.product-body p { color: var(--gray-700); font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+.product-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-100);
+}
+.product-price { font-weight: 700; color: var(--navy); font-size: 17px; }
+.product-price .soon { color: var(--gray-500); font-weight: 600; font-size: 13px; }
+
+/* ═══════════════════════════════════════════════════
+   8. SERVICES (Phase 2 App)
+   ═══════════════════════════════════════════════════ */
+.services {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-warm) 100%);
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.services-phone {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.phone-frame {
+  width: 280px;
+  height: 580px;
+  background: var(--navy);
+  border-radius: 40px;
+  padding: 12px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: var(--cream);
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.phone-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 24px;
+  background: var(--navy);
+  border-radius: 0 0 16px 16px;
+  z-index: 2;
+}
+.phone-header {
+  padding: 40px 20px 16px;
+  background: var(--yellow-bg);
+}
+.phone-greeting { font-size: 11px; color: var(--gray-500); font-weight: 600; }
+.phone-title { font-family: 'Fraunces', serif; font-size: 18px; color: var(--navy); font-weight: 700; margin-top: 2px; }
+.phone-content { flex: 1; padding: 16px; overflow: hidden; }
+.phone-card {
+  background: var(--white);
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.phone-card-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--yellow-bg);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.phone-card-text { flex: 1; min-width: 0; }
+.phone-card-text strong { display: block; font-size: 12px; color: var(--navy); }
+.phone-card-text span { font-size: 10px; color: var(--gray-500); }
+.phone-card-badge {
+  background: var(--yellow);
+  color: var(--navy);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.services-content h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px; }
+.services-content > p { font-size: 17px; color: var(--gray-700); margin-bottom: 32px; line-height: 1.8; }
+.services-features { display: grid; gap: 20px; margin-bottom: 32px; }
+.feature-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--yellow);
+  color: var(--navy);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.feature-text strong { display: block; color: var(--navy); font-size: 17px; margin-bottom: 4px; }
+.feature-text p { color: var(--gray-700); font-size: 14px; line-height: 1.6; margin: 0; }
+
+/* ═══════════════════════════════════════════════════
+   9. HOW IT WORKS
+   ═══════════════════════════════════════════════════ */
+.how { background: var(--navy); color: var(--cream); }
+.how h2 { color: var(--cream); }
+.how .section-head p { color: rgba(255, 249, 240, 0.7); }
+.how .badge { background: rgba(252, 193, 86, 0.2); color: var(--yellow); }
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+}
+.step {
+  text-align: center;
+  padding: 40px 24px;
+  background: rgba(255, 249, 240, 0.04);
+  border: 1px solid rgba(255, 249, 240, 0.08);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+.step:hover {
+  background: rgba(255, 249, 240, 0.08);
+  transform: translateY(-6px);
+}
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: var(--yellow);
+  color: var(--navy);
+  border-radius: 50%;
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.step h3 { color: var(--cream); font-size: 22px; margin-bottom: 12px; }
+.step p { color: rgba(255, 249, 240, 0.7); font-size: 15px; line-height: 1.6; }
+
+/* ═══════════════════════════════════════════════════
+   10. TESTIMONIALS
+   ═══════════════════════════════════════════════════ */
+.testimonials { background: var(--cream); }
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.testi-card {
+  background: var(--white);
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: var(--transition);
+}
+.testi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.testi-card::before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  font-family: 'Fraunces', serif;
+  font-size: 80px;
+  color: var(--yellow);
+  line-height: 1;
+  font-weight: 700;
+}
+.testi-stars { color: var(--yellow); font-size: 16px; margin-bottom: 16px; }
+.testi-text {
+  font-size: 16px;
+  color: var(--gray-700);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+.testi-author {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-100);
+}
+.testi-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.testi-info strong { display: block; color: var(--navy); font-size: 15px; }
+.testi-info span { font-size: 13px; color: var(--gray-500); }
+
+/* ═══════════════════════════════════════════════════
+   11. FAQ
+   ═══════════════════════════════════════════════════ */
+.faq { background: var(--cream-warm); }
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+}
+.faq-item {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.faq-item[open] { box-shadow: var(--shadow-md); }
+.faq-q {
+  padding: 24px 28px;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  user-select: none;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::after {
+  content: '+';
+  font-family: 'Fraunces', serif;
+  font-size: 28px;
+  color: var(--yellow);
+  transition: var(--transition);
+  font-weight: 400;
+}
+.faq-item[open] .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  padding: 0 28px 24px;
+  color: var(--gray-700);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════════
+   12. INSTAGRAM / GALLERY
+   ═══════════════════════════════════════════════════ */
+.gallery { background: var(--cream); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+.gallery-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  position: relative;
+  cursor: pointer;
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--navy);
+  opacity: 0;
+  transition: var(--transition);
+}
+.gallery-item:hover::after { opacity: 0.3; }
+
+/* ═══════════════════════════════════════════════════
+   13. CONTACT
+   ═══════════════════════════════════════════════════ */
+.contact { background: var(--cream-warm); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: start;
+}
+.contact-info h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 24px; }
+.contact-info > p { color: var(--gray-700); font-size: 17px; margin-bottom: 40px; line-height: 1.7; }
+.contact-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(38, 35, 84, 0.08);
+}
+.contact-item:last-child { border: none; }
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--yellow-bg);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.contact-meta strong { display: block; color: var(--navy); font-size: 14px; margin-bottom: 4px; }
+.contact-meta a, .contact-meta p { color: var(--gray-700); font-size: 16px; transition: var(--transition); }
+.contact-meta a:hover { color: var(--yellow); }
+
+.contact-form {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid var(--gray-100);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--navy);
+  transition: var(--transition);
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--yellow);
+  background: var(--white);
+}
+.form-textarea { min-height: 120px; resize: vertical; }
+.form-submit {
+  width: 100%;
+  padding: 18px;
+  background: var(--navy);
+  color: var(--yellow);
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 15px;
+  transition: var(--transition);
+  margin-top: 8px;
+}
+.form-submit:hover {
+  background: var(--navy-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ═══════════════════════════════════════════════════
+   14. NEWSLETTER / CTA BAND
+   ═══════════════════════════════════════════════════ */
+.cta-band {
+  background: var(--yellow);
+  padding: 80px 0;
+}
+.cta-inner {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.cta-inner h2 { font-size: clamp(28px, 3.5vw, 44px); margin-bottom: 16px; }
+.cta-inner p { font-size: 17px; color: var(--navy); margin-bottom: 32px; }
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 8px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+}
+.newsletter-form input {
+  flex: 1;
+  border: none;
+  padding: 14px 20px;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--navy);
+  outline: none;
+}
+.newsletter-form button {
+  padding: 14px 28px;
+  background: var(--navy);
+  color: var(--yellow);
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 14px;
+  transition: var(--transition);
+}
+.newsletter-form button:hover { background: var(--navy-light); }
+
+/* ═══════════════════════════════════════════════════
+   15. FOOTER
+   ═══════════════════════════════════════════════════ */
+.footer {
+  background: var(--navy);
+  color: var(--cream);
+  padding: 80px 0 32px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+.footer-brand .logo-text { color: var(--yellow); }
+.footer-brand p {
+  color: rgba(255, 249, 240, 0.7);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 20px 0;
+  max-width: 320px;
+}
+.footer-socials { display: flex; gap: 12px; }
+.social-btn {
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 249, 240, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  transition: var(--transition);
+}
+.social-btn:hover { background: var(--yellow); color: var(--navy); transform: translateY(-3px); }
+.footer-col h4 { color: var(--cream); font-size: 15px; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 12px; }
+.footer-col a {
+  color: rgba(255, 249, 240, 0.7);
+  font-size: 14px;
+  transition: var(--transition);
+}
+.footer-col a:hover { color: var(--yellow); }
+.footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 249, 240, 0.1);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: rgba(255, 249, 240, 0.5);
+  font-size: 13px;
+}
+.footer-bottom a { color: rgba(255, 249, 240, 0.7); }
+.footer-bottom a:hover { color: var(--yellow); }
+
+/* ═══════════════════════════════════════════════════
+   16. ANIMATIONS
+   ═══════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════════════════
+   17. MOBILE RESPONSIVE
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  section { padding: 72px 0; }
+  .hero { padding: 56px 0 80px; }
+  .hero-grid, .about-grid, .services-grid, .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .product-grid, .testi-grid, .how-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 640px) {
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid var(--gray-100); }
+  .nav-links.open { display: flex; }
+  .menu-toggle { display: flex; }
+  .nav-cta { display: none; }
+  .product-grid, .testi-grid, .how-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-card-1 { left: 8px; }
+  .hero-card-2 { right: 8px; }
+  .contact-form { padding: 28px 20px; }
+  .about-values { grid-template-columns: 1fr; }
+  .newsletter-form { flex-direction: column; background: transparent; box-shadow: none; padding: 0; }
+  .newsletter-form input { background: var(--white); border-radius: var(--radius-pill); }
+  .hero-trust { flex-direction: column; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo" aria-label="Woofifi home">
+      <!-- Inline SVG logo (transparent, scalable) -->
+      <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Heart outline -->
+        <path d="M100 175 C40 130, 15 80, 35 45 C55 25, 85 28, 100 50 C115 28, 145 25, 165 45 C185 80, 160 130, 100 175 Z" fill="none" stroke="#262354" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Ear (yellow) -->
+        <path d="M125 70 Q138 60, 142 78 Q138 95, 128 90 Z" fill="#FCC156"/>
+        <!-- Inner ear / tongue (yellow) -->
+        <path d="M95 110 Q100 118, 108 112 Q100 122, 92 118 Z" fill="#FCC156"/>
+        <!-- Dog head silhouette -->
+        <path d="M60 85 Q65 75, 80 78 L95 80 Q110 82, 120 90 Q128 95, 128 105 Q128 115, 120 120 L105 125 Q95 128, 88 125 L75 120 Q65 115, 62 108 Q58 95, 60 85 Z" fill="none" stroke="#262354" stroke-width="6" stroke-linejoin="round"/>
+        <!-- Eye -->
+        <circle cx="88" cy="95" r="3" fill="#262354"/>
+        <!-- Nose -->
+        <ellipse cx="65" cy="92" rx="4" ry="3" fill="#262354"/>
+      </svg>
+      <span class="logo-text">Woofifi</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#products">Snacks</a>
+      <a class="nav-link" href="#services">App</a>
+      <a class="nav-link" href="#testimonials">Reviews</a>
+      <a class="nav-link" href="blog.html">Blog</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="btn btn-yellow btn-sm nav-cta" href="#newsletter">Get Early Access</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════ -->
+<header class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <span class="badge">Made in Singapore &nbsp;·&nbsp; 100% Natural</span>
+        <h1 style="margin-top:20px;">Because your pup is <span class="accent">family.</span></h1>
+        <p class="hero-tagline">
+          Woofifi crafts 100% natural, freeze-dried treats from clean, wholesome ingredients &mdash; and connects you with trusted at-home groomers through one delightful app. All under one cozy roof.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#products">Explore Our Snacks <span style="font-size:18px;">&rarr;</span></a>
+          <a class="btn btn-outline" href="#services">Meet The App</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <div class="trust-icon">🌿</div>
+            <div class="trust-text">
+              <strong>No nasties</strong>
+              <span>No fillers, ever</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🏡</div>
+            <div class="trust-text">
+              <strong>At-home grooming</strong>
+              <span>Coming soon</span>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🇸🇬</div>
+            <div class="trust-text">
+              <strong>Proudly SG</strong>
+              <span>Local brand, global quality</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- [IMG-SWAP] Hero photo — replace with Whiskey the Cavapoo or a Woofifi IG hero shot -->
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?w=800&q=80" alt="Happy Cavapoo dog smiling" />
+        <div class="hero-card hero-card-1">
+          <div class="hero-card-emoji">🦘</div>
+          <div>
+            <strong>Kangaroo Jerky</strong>
+            <span>Freeze-dried & hearty</span>
+          </div>
+        </div>
+        <div class="hero-card hero-card-2">
+          <div class="hero-card-emoji">⭐</div>
+          <div>
+            <strong>Loved by Whiskey</strong>
+            <span>Our Cavapoo taste-tester</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════
+     ABOUT / OUR STORY
+     ═══════════════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <!-- [IMG-SWAP] About photo — replace with brand lifestyle shot -->
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=900&q=80" alt="Happy dog with owner" />
+      </div>
+      <div class="about-content reveal">
+        <span class="badge">Our Story</span>
+        <h2>Pet care, reimagined for the way we live today.</h2>
+        <p>
+          Woofifi was born from a simple truth: our pets are no longer just pets &mdash; they are family. And family deserves real food, real care, and real convenience.
+        </p>
+        <p>
+          We started with clean, nutrient-packed snacks dehydrated the old-fashioned way. Now, we are building an entire ecosystem &mdash; so Singapore pet parents never have to juggle pet taxis, scattered groomer WhatsApps, or mystery ingredients again.
+        </p>
+        <div class="about-values">
+          <div class="value-card">
+            <div class="icon">🌱</div>
+            <strong>100% Natural</strong>
+            <span>Zero fillers, zero preservatives</span>
+          </div>
+          <div class="value-card">
+            <div class="icon">🔍</div>
+            <strong>Radically Transparent</strong>
+            <span>Every ingredient, every source</span>
+          </div>
+          <div class="value-card">
+            <div class="icon">🛵</div>
+            <strong>Built for Singapore</strong>
+            <span>Local delivery, local care</span>
+          </div>
+          <div class="value-card">
+            <div class="icon">💛</div>
+            <strong>Pet-First, Always</strong>
+            <span>If we wouldn&rsquo;t feed our own, we don&rsquo;t sell it</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     PRODUCTS / SNACKS
+     ═══════════════════════════════════════════════════ -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge">Phase 1 · Launching Soon</span>
+      <h2>Snacks that tails approve of.</h2>
+      <p>Hand-selected specialty proteins, slow-dehydrated to lock in flavour and nutrition. From everyday favourites to limited-edition festive treats &mdash; every bite is a love letter to your pup.</p>
+    </div>
+    <div class="product-grid">
+      <article class="product-card reveal">
+        <div class="product-img-wrap">
+          <span class="product-tag">Core Range</span>
+          <!-- [IMG-SWAP] -->
+          <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=700&q=80" alt="Kangaroo jerky for dogs" />
+        </div>
+        <div class="product-body">
+          <h3>Kangaroo Jerky</h3>
+          <p>Lean, iron-rich and hypoallergenic &mdash; the ultimate training reward for sensitive pups.</p>
+          <div class="product-foot">
+            <span class="product-price">$24.90 <span class="soon">· Launching Q3 2026</span></span>
+            <a href="#newsletter" class="btn btn-yellow btn-sm">Notify Me</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-img-wrap">
+          <span class="product-tag">Core Range</span>
+          <!-- [IMG-SWAP] -->
+          <img src="https://images.unsplash.com/photo-1585846888147-3fe14c130048?w=700&q=80" alt="Freeze-dried rabbit bites" />
+        </div>
+        <div class="product-body">
+          <h3>Freeze-Dried Rabbit Bites</h3>
+          <p>Delicate, novel protein rich in B12 &mdash; perfect for picky eaters and puppies.</p>
+          <div class="product-foot">
+            <span class="product-price">$22.90 <span class="soon">· Launching Q3 2026</span></span>
+            <a href="#newsletter" class="btn btn-yellow btn-sm">Notify Me</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-img-wrap">
+          <span class="product-tag">Core Range</span>
+          <!-- [IMG-SWAP] -->
+          <img src="https://images.unsplash.com/photo-1568572933382-74d440642117?w=700&q=80" alt="Crocodile chews for dogs" />
+        </div>
+        <div class="product-body">
+          <h3>Crocodile Chews</h3>
+          <p>Exotic, low-fat and naturally tough &mdash; keeps dental gunk at bay between brushings.</p>
+          <div class="product-foot">
+            <span class="product-price">$28.90 <span class="soon">· Launching Q3 2026</span></span>
+            <a href="#newsletter" class="btn btn-yellow btn-sm">Notify Me</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-img-wrap">
+          <span class="product-tag seasonal">🎃 Limited Edition</span>
+          <!-- [IMG-SWAP] -->
+          <img src="https://images.unsplash.com/photo-1444212477490-ca407925329e?w=700&q=80" alt="Halloween pumpkin pup treats" />
+        </div>
+        <div class="product-body">
+          <h3>Halloween Pumpkin Pups</h3>
+          <p>Pumpkin, sweet potato and turkey &mdash; spooky shapes, zero tricks, all treats.</p>
+          <div class="product-foot">
+            <span class="product-price"><span class="soon">Oct 2026</span></span>
+            <a href="#newsletter" class="btn btn-yellow btn-sm">Notify Me</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-img-wrap">
+          <span class="product-tag seasonal">🥮 Limited Edition</span>
+          <!-- [IMG-SWAP] -->
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=700&q=80" alt="Mid-Autumn mooncake treats for dogs" />
+        </div>
+        <div class="product-body">
+          <h3>Mid-Autumn Mooncakes</h3>
+          <p>Pup-safe "mooncakes" &mdash; chicken and sweet potato, shaped with love. Human-tasting friendly!</p>
+          <div class="product-foot">
+            <span class="product-price"><span class="soon">Sept 2026</span></span>
+            <a href="#newsletter" class="btn btn-yellow btn-sm">Notify Me</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card reveal">
+        <div class="product-img-wrap">
+          <span class="product-tag seasonal">🧧 Limited Edition</span>
+          <!-- [IMG-SWAP] -->
+          <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=700&q=80" alt="Chinese New Year dog treats bundle" />
+        </div>
+        <div class="product-body">
+          <h3>CNY Lucky Bundle</h3>
+          <p>A prosperous box of three seasonal favourites &mdash; huat for your best boy (or girl).</p>
+          <div class="product-foot">
+            <span class="product-price"><span class="soon">Jan 2027</span></span>
+            <a href="#newsletter" class="btn btn-yellow btn-sm">Notify Me</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div style="text-align:center; margin-top:48px;">
+      <p style="color:var(--gray-700); margin-bottom:20px;">Available soon on our online store, Shopee, Lazada and TikTok Shop.</p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+        <a href="#" class="btn btn-outline btn-sm">🛒 Shopee</a>
+        <a href="#" class="btn btn-outline btn-sm">🎵 TikTok Shop</a>
+        <a href="#" class="btn btn-outline btn-sm">📱 Scan PayNow</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SERVICES / PHASE 2 APP
+     ═══════════════════════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-grid">
+      <div class="services-phone reveal">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="phone-header">
+              <div class="phone-greeting">Good morning, Eric 👋</div>
+              <div class="phone-title">Book Whiskey's grooming</div>
+            </div>
+            <div class="phone-content">
+              <div class="phone-card">
+                <div class="phone-card-icon">✂️</div>
+                <div class="phone-card-text">
+                  <strong>Sarah · Certified Groomer</strong>
+                  <span>4.9 ★ · 1.2km away</span>
+                </div>
+                <span class="phone-card-badge">Live</span>
+              </div>
+              <div class="phone-card">
+                <div class="phone-card-icon">🛁</div>
+                <div class="phone-card-text">
+                  <strong>Full spa &amp; bath</strong>
+                  <span>Today · 3:00 PM</span>
+                </div>
+              </div>
+              <div class="phone-card">
+                <div class="phone-card-icon">📹</div>
+                <div class="phone-card-text">
+                  <strong>Watch live stream</strong>
+                  <span>See every snip</span>
+                </div>
+              </div>
+              <div class="phone-card">
+                <div class="phone-card-icon">🦴</div>
+                <div class="phone-card-text">
+                  <strong>Add Kangaroo Jerky</strong>
+                  <span>$24.90 · tap to add</span>
+                </div>
+                <span class="phone-card-badge">+</span>
+              </div>
+              <div class="phone-card">
+                <div class="phone-card-icon">⭐</div>
+                <div class="phone-card-text">
+                  <strong>Rate last visit</strong>
+                  <span>Jenny · last Tue</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-content reveal">
+        <span class="badge">Phase 2 · The Woofifi App</span>
+        <h2>Grooming that comes to you.</h2>
+        <p>
+          No more pet taxis. No more scattered WhatsApps. Book certified groomers near you, watch the session live, and reorder Woofifi snacks &mdash; all from one app. Trust, built in.
+        </p>
+        <div class="services-features">
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <strong>Verified, insured groomers</strong>
+              <p>Every groomer is background-checked, certified and peer-reviewed.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <strong>Watch live, from anywhere</strong>
+              <p>Real-time video feed of your pup&rsquo;s grooming session &mdash; full peace of mind.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">✓</div>
+            <div class="feature-text">
+              <strong>One-tap everything</strong>
+              <p>Book grooming, shop snacks, reorder favourites &mdash; all in one place.</p>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="#newsletter" class="btn btn-primary">Join the Waitlist</a>
+          <a href="#how" class="btn btn-outline">How It Works</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     HOW IT WORKS
+     ═══════════════════════════════════════════════════ -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge">How It Works</span>
+      <h2>Three taps to happy tails.</h2>
+      <p>We kept it ridiculously simple. Because grooming day should feel like a spa day &mdash; for you too.</p>
+    </div>
+    <div class="how-grid">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3>Browse &amp; book</h3>
+        <p>Pick a verified groomer near you, choose your service, and lock in a time that fits your life.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h3>Relax at home</h3>
+        <p>Your groomer arrives on time, sets up quickly, and pampers your pup while you watch live.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h3>Tail wags, done</h3>
+        <p>Rate the experience, restock Woofifi snacks in-app, and earn loyalty rewards for next time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     TESTIMONIALS
+     ═══════════════════════════════════════════════════ -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge">Pet Parent Love</span>
+      <h2>Woofifi families, in their words.</h2>
+      <p>Real reviews from pet parents who have tasted (some literally) the Woofifi difference.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Finally a brand that treats ingredient lists like a feature, not a secret. Mochi goes bonkers for the kangaroo jerky &mdash; and I love that I can pronounce every single ingredient.</p>
+        <div class="testi-author">
+          <!-- [IMG-SWAP] -->
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80" alt="Amanda L." />
+          <div class="testi-info">
+            <strong>Amanda L.</strong>
+            <span>Tanjong Pagar · Mochi, Shiba Inu</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The Mid-Autumn mooncake treats were adorable AND safe for me to try. My in-laws thought I was nuts. Biggest hit of the weekend, 10/10.</p>
+        <div class="testi-author">
+          <!-- [IMG-SWAP] -->
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Jason T." />
+          <div class="testi-info">
+            <strong>Jason T.</strong>
+            <span>Bukit Timah · Bella, Golden Retriever</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I used to dread grooming day &mdash; Grab surcharges, waiting around, the whole thing. The Woofifi app beta has been a game changer. Watching the session live was the cherry on top.</p>
+        <div class="testi-author">
+          <!-- [IMG-SWAP] -->
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" alt="Priya R." />
+          <div class="testi-info">
+            <strong>Priya R.</strong>
+            <span>Holland V · Biscuit, Cavapoo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     INSTAGRAM GALLERY
+     ═══════════════════════════════════════════════════ -->
+<section class="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge">@woofifi on IG</span>
+      <h2>Meet the pack.</h2>
+      <p>Tag <strong>#WoofifiFam</strong> on Instagram &mdash; your pup might just end up right here.</p>
+    </div>
+    <div class="gallery-grid">
+      <!-- [IMG-SWAP] Replace these with real IG grabs / Whiskey photos -->
+      <a href="https://instagram.com/woofifi" class="gallery-item"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80" alt="Woofifi pack 1"></a>
+      <a href="https://instagram.com/woofifi" class="gallery-item"><img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&q=80" alt="Woofifi pack 2"></a>
+      <a href="https://instagram.com/woofifi" class="gallery-item"><img src="https://images.unsplash.com/photo-1594149929911-78975a43d4f5?w=400&q=80" alt="Woofifi pack 3"></a>
+      <a href="https://instagram.com/woofifi" class="gallery-item"><img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400&q=80" alt="Woofifi pack 4"></a>
+      <a href="https://instagram.com/woofifi" class="gallery-item"><img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&q=80" alt="Woofifi pack 5"></a>
+      <a href="https://instagram.com/woofifi" class="gallery-item"><img src="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=400&q=80" alt="Woofifi pack 6"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FAQ
+     ═══════════════════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="badge">FAQ</span>
+      <h2>Questions, answered.</h2>
+      <p>Couldn&rsquo;t find what you&rsquo;re looking for? Drop us a note below &mdash; we usually reply within a day.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">When can I actually buy Woofifi snacks?</summary>
+        <div class="faq-a">Our core range (Kangaroo Jerky, Rabbit Bites, Crocodile Chews) launches Q3 2026. Join the waitlist below to be first in line &mdash; early subscribers also get 15% off their first order.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Are your treats safe for puppies and senior dogs?</summary>
+        <div class="faq-a">Yes &mdash; our snacks contain no additives, no preservatives, and no artificial anything. Freeze-drying preserves nutrients without cooking them to death, making our treats gentle on young and older tummies alike. As always, consult your vet if your pup has specific dietary conditions.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Are the seasonal treats really safe for humans to taste?</summary>
+        <div class="faq-a">Select festive treats are formulated to be human-tasting friendly &mdash; meaning if you accidentally (or curiously) try one, nothing bad happens. They&rsquo;re still designed for dogs though, so please leave the full box to your pup. Look for the &ldquo;Human-friendly&rdquo; badge on qualifying products.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Where are your ingredients sourced?</summary>
+        <div class="faq-a">We source transparently. Specialty proteins like kangaroo and crocodile are imported from verified Australian suppliers. Chicken, sweet potato and other staples come from trusted regional partners. Every batch is traceable &mdash; ask us anytime.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How does the grooming app work?</summary>
+        <div class="faq-a">The Woofifi App (Phase 2, launching 2027) lets you book certified groomers who come to your home. You can watch the session live, rate the experience, and reorder Woofifi snacks &mdash; all in one place. Groomers are verified, insured, and peer-reviewed.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Do you deliver island-wide in Singapore?</summary>
+        <div class="faq-a">Yes &mdash; we&rsquo;ll offer island-wide delivery from our online store and via partner platforms (Shopee, TikTok Shop). Free delivery thresholds and express options will be announced at launch.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Are you regulated / AVS-compliant?</summary>
+        <div class="faq-a">Absolutely. We&rsquo;re working closely with Singapore&rsquo;s Animal &amp; Veterinary Service (AVS) to ensure full compliance with import permits, labelling, and all statutory requirements before our Phase 1 launch.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CTA BAND / NEWSLETTER
+     ═══════════════════════════════════════════════════ -->
+<section class="cta-band" id="newsletter" style="padding: 80px 0;">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="badge" style="background:var(--navy); color:var(--yellow);">Early Access</span>
+      <h2 style="margin-top:16px;">Be first in line.</h2>
+      <p>Sign up and get 15% off your first order + early access to limited-edition seasonal drops.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <input type="email" placeholder="you@wooflove.com" required aria-label="Email" />
+        <button type="submit">Count Me In</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CONTACT
+     ═══════════════════════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="badge">Get In Touch</span>
+        <h2>Say hi to the Woofifi pack.</h2>
+        <p>Questions about our snacks, wholesale enquiries, groomer partnerships, or just want to show off your pup? We read every message.</p>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div class="contact-meta">
+            <strong>EMAIL</strong>
+            <a href="mailto:orders@woofifi.com">orders@woofifi.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div class="contact-meta">
+            <strong>WHATSAPP / CALL</strong>
+            <a href="https://wa.me/6588687687">+65 8868 7687</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌏</div>
+          <div class="contact-meta">
+            <strong>BASED IN</strong>
+            <p>Singapore · Serving island-wide</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⏰</div>
+          <div class="contact-meta">
+            <strong>REPLY TIME</strong>
+            <p>Usually within 24 hours, Mon–Sat</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleContact(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name *</label>
+            <input id="fname" name="first_name" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input id="lname" name="last_name" class="form-input" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input id="email" type="email" name="email" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp</label>
+            <input id="phone" type="tel" name="phone" class="form-input" placeholder="+65 ..." />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="topic">I am writing about *</label>
+          <select id="topic" name="topic" class="form-select" required>
+            <option value="">Choose a topic...</option>
+            <option>Snack enquiry &amp; early access</option>
+            <option>Groomer partnership (Phase 2 app)</option>
+            <option>Wholesale / retail partnership</option>
+            <option>Press / media enquiry</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="petname">My pup&rsquo;s name (optional, but we love it)</label>
+          <input id="petname" name="pet_name" class="form-input" placeholder="Whiskey, Mochi, Biscuit..." />
+        </div>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us what's on your mind..."></textarea>
+        </div>
+        <input type="hidden" name="_replyto" value="orders@woofifi.com" />
+        <button type="submit" class="form-submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 175 C40 130, 15 80, 35 45 C55 25, 85 28, 100 50 C115 28, 145 25, 165 45 C185 80, 160 130, 100 175 Z" fill="none" stroke="#FCC156" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M125 70 Q138 60, 142 78 Q138 95, 128 90 Z" fill="#FCC156"/>
+            <path d="M95 110 Q100 118, 108 112 Q100 122, 92 118 Z" fill="#FCC156"/>
+            <path d="M60 85 Q65 75, 80 78 L95 80 Q110 82, 120 90 Q128 95, 128 105 Q128 115, 120 120 L105 125 Q95 128, 88 125 L75 120 Q65 115, 62 108 Q58 95, 60 85 Z" fill="none" stroke="#FCC156" stroke-width="6" stroke-linejoin="round"/>
+            <circle cx="88" cy="95" r="3" fill="#FCC156"/>
+            <ellipse cx="65" cy="92" rx="4" ry="3" fill="#FCC156"/>
+          </svg>
+          <span class="logo-text">Woofifi</span>
+        </a>
+        <p>Premium natural pet snacks and trusted pet services, made for the way Singapore lives today.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/woofifi" aria-label="Instagram" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://tiktok.com/@woofifi" aria-label="TikTok" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
+          </a>
+          <a href="#" aria-label="Xiaohongshu" class="social-btn" title="Xiaohongshu / Little Red Book">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </a>
+          <a href="mailto:orders@woofifi.com" aria-label="Email" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#products">Core Range</a></li>
+          <li><a href="#products">Seasonal Drops</a></li>
+          <li><a href="#newsletter">Early Access</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#services">The App</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Get Help</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Woofifi Pte Ltd · Made with 💛 in Singapore</div>
+      <div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="#contact">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════
+// SCRIPTS
+// ═══════════════════════════════════════════════════
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle?.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// Reveal on scroll (Intersection Observer)
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Form handlers — demo stubs. Replace with Formspree ID or real backend.
+function handleContact(e) {
+  // If Formspree is configured, let the form submit normally.
+  if (e.target.action.includes('YOUR_FORMSPREE_ID')) {
+    e.preventDefault();
+    alert('Thanks! This is a demo form.\n\nTo go live, replace YOUR_FORMSPREE_ID in the form action with your real Formspree endpoint.\nSet up a free account at https://formspree.io/ — all submissions will arrive at orders@woofifi.com.');
+  }
+}
+function handleNewsletter(e) {
+  e.preventDefault();
+  const email = e.target.querySelector('input').value;
+  alert('🎉 Welcome to the Woofifi pack, ' + email + '!\n\n(Demo — wire this up to Mailchimp, ConvertKit, or your preferred email service before launch.)');
+  e.target.reset();
+}
+</script>
+
+</body>
+</html>

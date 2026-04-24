@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Woofifi Journal — Stories, tips & pup love</title>
+<meta name="description" content="The Woofifi Journal: stories, tips, and pet care insights for Singapore dog parents." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 85 C20 65, 10 40, 25 25 C37 15, 50 25, 50 35 C50 25, 63 15, 75 25 C90 40, 80 65, 50 85 Z' fill='none' stroke='%23262354' stroke-width='6'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #262354; --yellow: #FCC156; --cream: #FFF9F0; --cream-warm: #FDF2DF;
+  --white: #fff; --gray-700: #4a4767; --gray-500: #8a87a3; --gray-100: #f0edf7;
+  --shadow-sm: 0 2px 8px rgba(38,35,84,0.06); --shadow-md: 0 8px 24px rgba(38,35,84,0.08);
+  --radius-md: 20px; --radius-lg: 32px; --radius-pill: 999px;
+  --max-width: 1100px;
+}
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: #1a1830; line-height: 1.7; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; color: var(--navy); line-height: 1.15; letter-spacing: -0.02em; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(255,249,240,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(38,35,84,0.08); }
+.nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; max-width: var(--max-width); margin: 0 auto; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-mark { width: 44px; height: 44px; }
+.logo-text { font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px; color: var(--yellow); }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-link { font-weight: 600; font-size: 15px; color: var(--navy); transition: color 0.3s; }
+.nav-link:hover { color: var(--yellow); }
+.btn-yellow { background: var(--yellow); color: var(--navy); padding: 10px 22px; border-radius: var(--radius-pill); font-weight: 700; font-size: 14px; transition: 0.3s; }
+.btn-yellow:hover { background: #ffcd73; box-shadow: 0 8px 20px rgba(252,193,86,0.4); }
+
+.page-head { padding: 80px 0 64px; text-align: center; background: var(--cream-warm); }
+.badge { display: inline-block; padding: 6px 14px; background: var(--white); color: var(--navy); border-radius: var(--radius-pill); font-size: 13px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 20px; }
+.page-head h1 { font-size: clamp(40px, 6vw, 64px); margin-bottom: 16px; }
+.page-head p { color: var(--gray-700); font-size: 18px; max-width: 600px; margin: 0 auto; }
+
+.posts { padding: 80px 0 120px; }
+.post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.post-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: 0.3s; }
+.post-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
+.post-img { aspect-ratio: 16/10; overflow: hidden; }
+.post-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.post-card:hover .post-img img { transform: scale(1.08); }
+.post-body { padding: 28px; }
+.post-meta { display: flex; gap: 12px; align-items: center; font-size: 13px; color: var(--gray-500); margin-bottom: 12px; }
+.post-cat { background: var(--yellow); color: var(--navy); padding: 4px 10px; border-radius: var(--radius-pill); font-weight: 700; font-size: 11px; text-transform: uppercase; }
+.post-card h2 { font-size: 22px; margin-bottom: 12px; line-height: 1.25; }
+.post-card p { color: var(--gray-700); font-size: 14px; margin-bottom: 20px; }
+.post-card a.readmore { color: var(--navy); font-weight: 700; font-size: 14px; border-bottom: 2px solid var(--yellow); padding-bottom: 2px; }
+
+/* Article modal-style expand */
+.article { display: none; padding: 80px 0 120px; }
+.article.active { display: block; }
+.article-inner { max-width: 720px; margin: 0 auto; }
+.article-back { display: inline-flex; align-items: center; gap: 8px; color: var(--navy); font-weight: 700; margin-bottom: 32px; font-size: 14px; }
+.article-back:hover { color: var(--yellow); }
+.article h1 { font-size: clamp(32px, 5vw, 48px); margin: 16px 0 20px; }
+.article-meta { color: var(--gray-500); margin-bottom: 32px; font-size: 14px; }
+.article-hero { border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 40px; aspect-ratio: 16/9; }
+.article-hero img { width: 100%; height: 100%; object-fit: cover; }
+.article-body p { font-size: 17px; color: var(--gray-700); margin-bottom: 20px; }
+.article-body h2 { font-size: 28px; margin: 40px 0 16px; }
+.article-body h3 { font-size: 22px; margin: 32px 0 12px; }
+.article-body ul { margin: 0 0 20px 20px; color: var(--gray-700); }
+.article-body li { margin-bottom: 8px; font-size: 16px; }
+.article-body blockquote { border-left: 4px solid var(--yellow); padding: 16px 24px; background: var(--cream-warm); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 24px 0; font-style: italic; color: var(--navy); }
+
+.footer { background: var(--navy); color: var(--cream); padding: 60px 0 28px; margin-top: 80px; }
+.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px; }
+.footer p { color: rgba(255,249,240,0.7); font-size: 14px; }
+.footer a { color: rgba(255,249,240,0.8); font-size: 14px; transition: 0.3s; }
+.footer a:hover { color: var(--yellow); }
+.footer-links { display: flex; gap: 24px; }
+
+@media (max-width: 860px) {
+  .post-grid { grid-template-columns: 1fr; }
+  .nav-links { gap: 16px; }
+  .nav-links a:not(.btn-yellow) { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 175 C40 130, 15 80, 35 45 C55 25, 85 28, 100 50 C115 28, 145 25, 165 45 C185 80, 160 130, 100 175 Z" fill="none" stroke="#262354" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M125 70 Q138 60, 142 78 Q138 95, 128 90 Z" fill="#FCC156"/>
+        <path d="M95 110 Q100 118, 108 112 Q100 122, 92 118 Z" fill="#FCC156"/>
+        <path d="M60 85 Q65 75, 80 78 L95 80 Q110 82, 120 90 Q128 95, 128 105 Q128 115, 120 120 L105 125 Q95 128, 88 125 L75 120 Q65 115, 62 108 Q58 95, 60 85 Z" fill="none" stroke="#262354" stroke-width="6" stroke-linejoin="round"/>
+        <circle cx="88" cy="95" r="3" fill="#262354"/>
+        <ellipse cx="65" cy="92" rx="4" ry="3" fill="#262354"/>
+      </svg>
+      <span class="logo-text">Woofifi</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html#about">About</a>
+      <a class="nav-link" href="index.html#products">Snacks</a>
+      <a class="nav-link" href="index.html#services">App</a>
+      <a class="nav-link" href="index.html#contact">Contact</a>
+      <a class="btn-yellow" href="index.html#newsletter">Get Early Access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BLOG LISTING -->
+<div id="listing">
+  <header class="page-head">
+    <div class="container">
+      <span class="badge">The Woofifi Journal</span>
+      <h1>Stories, tips &amp; pup love.</h1>
+      <p>Real talk on pet nutrition, at-home grooming, and everything in between. Written by people who love pets as much as you do.</p>
+    </div>
+  </header>
+
+  <main class="posts">
+    <div class="container">
+      <div class="post-grid">
+        <article class="post-card">
+          <div class="post-img"><img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=700&q=80" alt="Freeze-dried treats" /></div>
+          <div class="post-body">
+            <div class="post-meta"><span class="post-cat">Nutrition</span><span>5 min read</span></div>
+            <h2>Why Freeze-Dried Treats Are Safer (And Tastier) Than You Think</h2>
+            <p>The quiet revolution in pet nutrition &mdash; and why your pup's nose knows best.</p>
+            <a href="#" class="readmore" onclick="showArticle('a1'); return false;">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-img"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=700&q=80" alt="Dog grooming" /></div>
+          <div class="post-body">
+            <div class="post-meta"><span class="post-cat">Grooming</span><span>4 min read</span></div>
+            <h2>5 Signs Your Dog Is Overdue for a Grooming Session</h2>
+            <p>From the obvious to the easy-to-miss &mdash; a quick home check every pet parent should run monthly.</p>
+            <a href="#" class="readmore" onclick="showArticle('a2'); return false;">Read article →</a>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <div class="post-img"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=700&q=80" alt="Mid-Autumn mooncake treats" /></div>
+          <div class="post-body">
+            <div class="post-meta"><span class="post-cat">Seasonal</span><span>3 min read</span></div>
+            <h2>Celebrating Mid-Autumn: Safe Mooncake Treats Your Dog Will Love</h2>
+            <p>How we reimagined a Singapore favourite into something both you and your pup can enjoy together.</p>
+            <a href="#" class="readmore" onclick="showArticle('a3'); return false;">Read article →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ARTICLE 1 -->
+<article class="article" id="a1">
+  <div class="container article-inner">
+    <a href="#" class="article-back" onclick="hideArticle(); return false;">← Back to all articles</a>
+    <span class="badge">Nutrition</span>
+    <h1>Why Freeze-Dried Treats Are Safer (And Tastier) Than You Think</h1>
+    <div class="article-meta">Woofifi Team · 5 min read</div>
+    <div class="article-hero"><img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1200&q=80" alt="" /></div>
+    <div class="article-body">
+      <p>Walk down the treats aisle in any Singapore pet store and you&rsquo;ll see dozens of shiny bags. Most are baked, extruded, or heat-processed at temperatures high enough to strip away the very nutrients pet parents are paying for.</p>
+      <p>Freeze-drying is different. It&rsquo;s a slow, careful process that removes moisture at very low temperatures &mdash; preserving proteins, enzymes, vitamins and that irresistible real-meat smell that makes dogs go a little bit nuts.</p>
+      <h2>The science, minus the boring bits</h2>
+      <p>Freeze-drying works in three stages: freezing, vacuum, and gentle drying. Because the process stays below the temperatures that denature proteins, you end up with shelf-stable food that&rsquo;s nutritionally closest to raw &mdash; without the refrigeration headaches.</p>
+      <h2>Why this matters for your pup</h2>
+      <ul>
+        <li><strong>Higher nutrient retention</strong> &mdash; up to 97% of vitamins preserved, compared to ~40% for baked kibble.</li>
+        <li><strong>Hypoallergenic-friendly</strong> &mdash; no binders, fillers, or preservatives that trigger common sensitivities.</li>
+        <li><strong>Intense aroma &amp; flavour</strong> &mdash; for picky eaters and rescue pups rebuilding trust with food.</li>
+        <li><strong>Long shelf life</strong> &mdash; no refrigeration needed, which keeps things simple in Singapore&rsquo;s humid weather.</li>
+      </ul>
+      <blockquote>"The first time I gave Whiskey a freeze-dried piece of rabbit, he did three loops around the kitchen. I&rsquo;ve never seen him react to food like that." &mdash; Eric, Woofifi Founder</blockquote>
+      <h2>What to look for when you&rsquo;re shopping</h2>
+      <p>Not all freeze-dried treats are created equal. Read the ingredients panel. If you see more than the protein source and maybe one or two supporting ingredients, put it back. Woofifi&rsquo;s core range is exactly one ingredient: the meat itself. That&rsquo;s it. That&rsquo;s the secret.</p>
+      <p>Ready to give freeze-dried a try? <a href="index.html#newsletter" style="color: var(--yellow); font-weight: 700;">Join the waitlist</a> for 15% off your first order when we launch.</p>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 2 -->
+<article class="article" id="a2">
+  <div class="container article-inner">
+    <a href="#" class="article-back" onclick="hideArticle(); return false;">← Back to all articles</a>
+    <span class="badge">Grooming</span>
+    <h1>5 Signs Your Dog Is Overdue for a Grooming Session</h1>
+    <div class="article-meta">Woofifi Team · 4 min read</div>
+    <div class="article-hero"><img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=1200&q=80" alt="" /></div>
+    <div class="article-body">
+      <p>In Singapore&rsquo;s humid climate, regular grooming isn&rsquo;t just about looking good &mdash; it&rsquo;s about health. Here are five signs your pup is overdue, and what to do about each.</p>
+      <h3>1. The sniff test fails you</h3>
+      <p>A healthy dog shouldn&rsquo;t smell strongly. A noticeable "doggy" odour &mdash; especially if it lingers after a bath &mdash; often signals trapped moisture, skin fold issues, or ear infections. Time for a professional bath and inspection.</p>
+      <h3>2. Paw scratching has become background noise</h3>
+      <p>Constant foot licking or scratching often means overgrown fur between paw pads, which traps debris, causes slipping on tile floors, and can lead to fungal infections.</p>
+      <h3>3. You can&rsquo;t see their eyes</h3>
+      <p>Overgrown facial hair isn&rsquo;t just a cute-factor problem &mdash; it collects tears, rubs corneas, and creates chronic discomfort. A quick face trim every 3–4 weeks solves it.</p>
+      <h3>4. Nails clicking on the floor</h3>
+      <p>If you can hear them walk, nails are too long. Overgrown nails change a dog&rsquo;s posture, stress joints, and make day-to-day walking painful over time.</p>
+      <h3>5. They&rsquo;re avoiding pets on the back or belly</h3>
+      <p>This is often a sign of matted fur pulling on skin. Mats aren&rsquo;t just cosmetic &mdash; they cause real pain and can hide skin conditions underneath.</p>
+      <blockquote>The hardest part of grooming in Singapore isn&rsquo;t the grooming itself &mdash; it&rsquo;s getting there. Pet taxis, Grab surcharges, waiting rooms. That&rsquo;s exactly the problem the Woofifi app is built to solve.</blockquote>
+      <p>When we launch the Woofifi app, you&rsquo;ll be able to book certified groomers who come to you &mdash; and watch the session live. <a href="index.html#services" style="color: var(--yellow); font-weight: 700;">Learn more →</a></p>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 3 -->
+<article class="article" id="a3">
+  <div class="container article-inner">
+    <a href="#" class="article-back" onclick="hideArticle(); return false;">← Back to all articles</a>
+    <span class="badge">Seasonal</span>
+    <h1>Celebrating Mid-Autumn: Safe Mooncake Treats Your Dog Will Love</h1>
+    <div class="article-meta">Woofifi Team · 3 min read</div>
+    <div class="article-hero"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1200&q=80" alt="" /></div>
+    <div class="article-body">
+      <p>Every Mid-Autumn Festival, our family gathers, lanterns come out, and mooncakes are passed around. And every year, at least one dog in the room gives us The Look &mdash; the one that says, "why am I the only one not eating?"</p>
+      <p>Traditional mooncakes are a no-go for dogs. Lotus paste is too sweet, egg yolks are too rich, and most contain ingredients that range from unhelpful to downright unsafe. So we created a version made just for them.</p>
+      <h2>What&rsquo;s in a Woofifi Mooncake?</h2>
+      <ul>
+        <li><strong>Shredded chicken breast</strong> &mdash; lean, high-protein, universally loved.</li>
+        <li><strong>Sweet potato</strong> &mdash; naturally sweet, gentle on tummies, full of fibre.</li>
+        <li><strong>A dusting of freeze-dried liver</strong> &mdash; our secret weapon for that "I&rsquo;d do anything for this" reaction.</li>
+      </ul>
+      <p>No sugar. No lotus paste. No raisins. No chocolate. No mystery ingredients. Just three things, shaped into little mooncakes with a Woofifi heart stamp.</p>
+      <h2>Safe for humans too (yes, really)</h2>
+      <p>Here&rsquo;s the fun part: our Mid-Autumn treats are formulated to be safe for pet owners to taste. Don&rsquo;t get us wrong &mdash; they&rsquo;re made for your dog, not you. But if you&rsquo;re curious (or feeling left out of the lantern festivities), a nibble won&rsquo;t hurt.</p>
+      <blockquote>"I made my brother-in-law try one at a dinner last year. His face &mdash; priceless. Then he admitted it wasn&rsquo;t bad. Savoury, a bit bland. Exactly right for a dog." &mdash; Eric</blockquote>
+      <h2>Coming September 2026</h2>
+      <p>Our limited-edition Mid-Autumn Mooncakes drop in September 2026, just in time for the festival. Quantities are &mdash; as the name suggests &mdash; limited. <a href="index.html#newsletter" style="color: var(--yellow); font-weight: 700;">Join the waitlist</a> to get first access.</p>
+    </div>
+  </div>
+</article>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>© 2026 Woofifi Pte Ltd · Made with 💛 in Singapore</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function showArticle(id) {
+  document.getElementById('listing').style.display = 'none';
+  document.querySelectorAll('.article').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function hideArticle() {
+  document.querySelectorAll('.article').forEach(a => a.classList.remove('active'));
+  document.getElementById('listing').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
