@@ -186,16 +186,16 @@ h1, h2, h3, h4 {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0;
 }
-.logo-mark { width: 48px; height: 48px; }
-.logo-text {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 28px;
-  color: var(--yellow);
-  letter-spacing: -0.01em;
+.logo-img {
+  height: 110px;
+  width: auto;
+  display: block;
+  /* Crisp rendering on retina screens */
+  image-rendering: -webkit-optimize-contrast;
 }
+.logo-img-footer { height: 200px; }
 .nav-links {
   display: flex;
   gap: 32px;
@@ -856,7 +856,7 @@ section { padding: 100px 0; position: relative; }
    14. NEWSLETTER / CTA BAND
    ═══════════════════════════════════════════════════ */
 .cta-band {
-  background: var(--yellow);
+  background: var(--navy);
   padding: 80px 0;
 }
 .cta-inner {
@@ -864,8 +864,8 @@ section { padding: 100px 0; position: relative; }
   max-width: 680px;
   margin: 0 auto;
 }
-.cta-inner h2 { font-size: clamp(28px, 3.5vw, 44px); margin-bottom: 16px; }
-.cta-inner p { font-size: 17px; color: var(--navy); margin-bottom: 32px; }
+.cta-inner h2 { font-size: clamp(28px, 3.5vw, 44px); margin-bottom: 16px; color: var(--cream); }
+.cta-inner p { font-size: 17px; color: var(--cream); opacity: 0.85; margin-bottom: 32px; }
 .newsletter-form {
   display: flex;
   gap: 12px;
@@ -888,22 +888,23 @@ section { padding: 100px 0; position: relative; }
 }
 .newsletter-form button {
   padding: 14px 28px;
-  background: var(--navy);
-  color: var(--yellow);
+  background: var(--yellow);
+  color: var(--navy);
   border-radius: var(--radius-pill);
   font-weight: 700;
   font-size: 14px;
   transition: var(--transition);
 }
-.newsletter-form button:hover { background: var(--navy-light); }
+.newsletter-form button:hover { background: #FFD888; }
 
 /* ═══════════════════════════════════════════════════
    15. FOOTER
    ═══════════════════════════════════════════════════ */
 .footer {
-  background: var(--navy);
-  color: var(--cream);
-  padding: 80px 0 32px;
+  background: var(--cream); /* cream — matches brand palette, clean canvas for logo */
+  color: var(--navy);
+  padding: 96px 0 32px;
+  border-top: 2px solid rgba(38, 35, 84, 0.12);
 }
 .footer-grid {
   display: grid;
@@ -911,9 +912,8 @@ section { padding: 100px 0; position: relative; }
   gap: 48px;
   margin-bottom: 56px;
 }
-.footer-brand .logo-text { color: var(--yellow); }
 .footer-brand p {
-  color: rgba(255, 249, 240, 0.7);
+  color: rgba(38, 35, 84, 0.75);
   font-size: 15px;
   line-height: 1.7;
   margin: 20px 0;
@@ -923,36 +923,36 @@ section { padding: 100px 0; position: relative; }
 .social-btn {
   width: 42px;
   height: 42px;
-  background: rgba(255, 249, 240, 0.1);
+  background: rgba(38, 35, 84, 0.08);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--cream);
+  color: var(--navy);
   transition: var(--transition);
 }
-.social-btn:hover { background: var(--yellow); color: var(--navy); transform: translateY(-3px); }
-.footer-col h4 { color: var(--cream); font-size: 15px; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.social-btn:hover { background: var(--navy); color: var(--yellow); transform: translateY(-3px); }
+.footer-col h4 { color: var(--navy); font-size: 15px; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
 .footer-col ul { list-style: none; }
 .footer-col li { margin-bottom: 12px; }
 .footer-col a {
-  color: rgba(255, 249, 240, 0.7);
+  color: rgba(38, 35, 84, 0.75);
   font-size: 14px;
   transition: var(--transition);
 }
-.footer-col a:hover { color: var(--yellow); }
+.footer-col a:hover { color: var(--navy); }
 .footer-bottom {
   padding-top: 32px;
-  border-top: 1px solid rgba(255, 249, 240, 0.1);
+  border-top: 1px solid rgba(38, 35, 84, 0.15);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  color: rgba(255, 249, 240, 0.5);
+  color: rgba(38, 35, 84, 0.6);
   font-size: 13px;
 }
-.footer-bottom a { color: rgba(255, 249, 240, 0.7); }
-.footer-bottom a:hover { color: var(--yellow); }
+.footer-bottom a { color: rgba(38, 35, 84, 0.75); }
+.footer-bottom a:hover { color: var(--navy); }
 
 /* ═══════════════════════════════════════════════════
    16. ANIMATIONS
@@ -995,6 +995,8 @@ section { padding: 100px 0; position: relative; }
   .newsletter-form { flex-direction: column; background: transparent; box-shadow: none; padding: 0; }
   .newsletter-form input { background: var(--white); border-radius: var(--radius-pill); }
   .hero-trust { flex-direction: column; gap: 16px; }
+  .logo-img { height: 80px; }
+  .logo-img-footer { height: 150px; }
 }
 </style>
 </head>
@@ -1006,22 +1008,8 @@ section { padding: 100px 0; position: relative; }
 <nav class="nav">
   <div class="nav-inner">
     <a href="#home" class="logo" aria-label="Woofifi home">
-      <!-- Inline SVG logo (transparent, scalable) -->
-      <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <!-- Heart outline -->
-        <path d="M100 175 C40 130, 15 80, 35 45 C55 25, 85 28, 100 50 C115 28, 145 25, 165 45 C185 80, 160 130, 100 175 Z" fill="none" stroke="#262354" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Ear (yellow) -->
-        <path d="M125 70 Q138 60, 142 78 Q138 95, 128 90 Z" fill="#FCC156"/>
-        <!-- Inner ear / tongue (yellow) -->
-        <path d="M95 110 Q100 118, 108 112 Q100 122, 92 118 Z" fill="#FCC156"/>
-        <!-- Dog head silhouette -->
-        <path d="M60 85 Q65 75, 80 78 L95 80 Q110 82, 120 90 Q128 95, 128 105 Q128 115, 120 120 L105 125 Q95 128, 88 125 L75 120 Q65 115, 62 108 Q58 95, 60 85 Z" fill="none" stroke="#262354" stroke-width="6" stroke-linejoin="round"/>
-        <!-- Eye -->
-        <circle cx="88" cy="95" r="3" fill="#262354"/>
-        <!-- Nose -->
-        <ellipse cx="65" cy="92" rx="4" ry="3" fill="#262354"/>
-      </svg>
-      <span class="logo-text">Woofifi</span>
+      <!-- [LOGO] Eric's real logo (bold version with thicker strokes for better legibility). -->
+      <img class="logo-img" src="assets/Logo-Eric-bold.png" alt="Woofifi" />
     </a>
     <div class="nav-links" id="navLinks">
       <a class="nav-link" href="#about">About</a>
@@ -1512,7 +1500,7 @@ section { padding: 100px 0; position: relative; }
 <section class="cta-band" id="newsletter" style="padding: 80px 0;">
   <div class="container">
     <div class="cta-inner">
-      <span class="badge" style="background:var(--navy); color:var(--yellow);">Early Access</span>
+      <span class="badge" style="background:var(--yellow); color:var(--navy);">Early Access</span>
       <h2 style="margin-top:16px;">Be first in line.</h2>
       <p>Sign up and get 15% off your first order + early access to limited-edition seasonal drops.</p>
       <form class="newsletter-form" onsubmit="handleNewsletter(event)">
@@ -1618,15 +1606,8 @@ section { padding: 100px 0; position: relative; }
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#home" class="logo">
-          <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path d="M100 175 C40 130, 15 80, 35 45 C55 25, 85 28, 100 50 C115 28, 145 25, 165 45 C185 80, 160 130, 100 175 Z" fill="none" stroke="#FCC156" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M125 70 Q138 60, 142 78 Q138 95, 128 90 Z" fill="#FCC156"/>
-            <path d="M95 110 Q100 118, 108 112 Q100 122, 92 118 Z" fill="#FCC156"/>
-            <path d="M60 85 Q65 75, 80 78 L95 80 Q110 82, 120 90 Q128 95, 128 105 Q128 115, 120 120 L105 125 Q95 128, 88 125 L75 120 Q65 115, 62 108 Q58 95, 60 85 Z" fill="none" stroke="#FCC156" stroke-width="6" stroke-linejoin="round"/>
-            <circle cx="88" cy="95" r="3" fill="#FCC156"/>
-            <ellipse cx="65" cy="92" rx="4" ry="3" fill="#FCC156"/>
-          </svg>
-          <span class="logo-text">Woofifi</span>
+          <!-- [LOGO] Footer uses the same original logo as the header (navy outlines + yellow accents) on the warm-beige footer background. -->
+          <img class="logo-img logo-img-footer" src="assets/Logo-Eric-bold.png" alt="Woofifi" />
         </a>
         <p>Premium natural pet snacks and trusted pet services, made for the way Singapore lives today.</p>
         <div class="footer-socials">

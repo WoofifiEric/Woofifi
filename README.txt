@@ -5,14 +5,62 @@ Design & Build by your website consultant (Claude)
 
 📁 FILES INCLUDED
 ─────────────────────────────────────────────────
-  index.html      → Main single-page website (Home, About, Products,
-                    App/Services, How It Works, Testimonials, Gallery,
-                    FAQ, Newsletter, Contact)
-  blog.html       → Blog listing + 3 full articles (in one file,
-                    expands inline when reader clicks "Read article")
-  privacy.html    → Privacy Policy (Singapore PDPA-compliant template)
-  terms.html      → Terms of Service (Singapore law template)
-  README.txt      → This file
+  index.html             → Main single-page website
+  blog.html              → Blog listing + 3 full articles
+  privacy.html           → Privacy Policy (PDPA-compliant)
+  terms.html             → Terms of Service
+  README.txt             → This file
+  assets/logo.svg        → Backup logo (used if logo.png missing)
+  assets/logo-light.svg  → Backup light logo for dark backgrounds
+
+⚠️  IMPORTANT — ADD YOUR REAL LOGO FILES FIRST
+─────────────────────────────────────────────────
+  The website currently uses a backup SVG logo that's an
+  approximation of your real logo. To get the SHARP, EXACT
+  logo you sent me, you must save your real logo file into
+  the assets folder. Here's exactly how:
+
+  STEP 1 — Save your transparent logo as PNG
+    From wherever you have your original Woofifi logo
+    (Canva, designer file, original artwork), export it as:
+       • Format: PNG with transparent background
+       • Size:   600 × 720 pixels minimum (bigger = sharper)
+       • Filename: logo.png
+    Place it at: assets/logo.png
+
+  STEP 2 — Create a "light" version for the dark footer
+    The footer has a navy background, so you need a logo
+    where the heart and dog outlines are YELLOW (#FCC156)
+    instead of navy. Two options:
+
+    OPTION A (quick) — In any free image editor:
+       1. Open your original Woofifi logo
+       2. Use the "Replace Color" tool to swap navy
+          (#262354) with yellow (#FCC156)
+       3. Save as logo-light.png with transparent background
+    Place it at: assets/logo-light.png
+
+    OPTION B — Just use the same logo file:
+       Save your original logo also as: assets/logo-light.png
+       (It will work, just won't have the yellow on yellow accent)
+
+  STEP 3 — That's it
+    Refresh the website. Your sharp, real logo now appears.
+    No code changes needed — the HTML automatically uses your
+    PNG when present and falls back to the SVG only if missing.
+
+  WHY PNG INSTEAD OF SVG?
+    Your logo has hand-drawn details (the calligraphic heart
+    tail, the dog's expression) that are tedious to reproduce
+    perfectly in SVG code. A high-resolution PNG of your real
+    logo gives the cleanest, most accurate result.
+
+  WANT EVEN SHARPER? Use SVG of your original logo:
+    If your designer can export the logo as a real .svg vector
+    file (not my approximation), save it as:
+       assets/logo.svg  (overwrites the backup SVG)
+    SVG is infinite resolution — looks perfect on every screen,
+    every zoom level, forever.
 
 🎨 DESIGN SYSTEM
 ─────────────────────────────────────────────────

@@ -17,8 +17,8 @@ a:hover { color: var(--yellow); }
 h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; color: var(--navy); line-height: 1.2; letter-spacing: -0.02em; }
 .nav { padding: 20px 24px; background: rgba(255,249,240,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(38,35,84,0.08); position: sticky; top: 0; z-index: 10; }
 .nav-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; gap: 10px; }
-.logo-mark { width: 40px; height: 40px; }
-.logo-text { font-family: 'Fraunces', serif; font-weight: 700; font-size: 24px; color: var(--yellow); }
+.logo-img { height: 110px; width: auto; display: block; image-rendering: -webkit-optimize-contrast; }
+@media (max-width: 640px) { .logo-img { height: 80px; } }
 .nav-back { margin-left: auto; color: var(--navy); font-weight: 700; font-size: 14px; border: none; }
 .container { max-width: 760px; margin: 0 auto; padding: 64px 24px 96px; }
 .head { background: var(--cream-warm); margin: 0 -24px 48px; padding: 56px 24px; border-radius: 0; text-align: center; }
@@ -29,24 +29,17 @@ h3 { font-size: 18px; margin: 28px 0 8px; font-family: 'Plus Jakarta Sans', sans
 p, li { color: var(--gray-700); font-size: 16px; margin-bottom: 14px; }
 ul { margin: 0 0 16px 24px; }
 li { margin-bottom: 6px; }
-.footer { background: var(--navy); color: rgba(255,249,240,0.7); padding: 32px 24px; text-align: center; font-size: 14px; }
-.footer a { color: var(--yellow); border: none; }
+.footer { background: var(--cream); color: rgba(38,35,84,0.7); padding: 32px 24px; text-align: center; font-size: 14px; border-top: 2px solid rgba(38,35,84,0.12); }
+.footer a { color: var(--navy); border: none; font-weight: 600; }
+.footer a:hover { color: var(--navy); border-bottom: 2px solid var(--yellow); }
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" style="display:flex; align-items:center; gap:10px; border:none;">
-      <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100 175 C40 130, 15 80, 35 45 C55 25, 85 28, 100 50 C115 28, 145 25, 165 45 C185 80, 160 130, 100 175 Z" fill="none" stroke="#262354" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M125 70 Q138 60, 142 78 Q138 95, 128 90 Z" fill="#FCC156"/>
-        <path d="M95 110 Q100 118, 108 112 Q100 122, 92 118 Z" fill="#FCC156"/>
-        <path d="M60 85 Q65 75, 80 78 L95 80 Q110 82, 120 90 Q128 95, 128 105 Q128 115, 120 120 L105 125 Q95 128, 88 125 L75 120 Q65 115, 62 108 Q58 95, 60 85 Z" fill="none" stroke="#262354" stroke-width="6" stroke-linejoin="round"/>
-        <circle cx="88" cy="95" r="3" fill="#262354"/>
-        <ellipse cx="65" cy="92" rx="4" ry="3" fill="#262354"/>
-      </svg>
-      <span class="logo-text">Woofifi</span>
+    <a href="index.html" style="display:flex; align-items:center; gap:0; border:none;">
+      <img class="logo-img" src="assets/Logo-Eric-bold.png" alt="Woofifi" />
     </a>
     <a href="index.html" class="nav-back">← Back to Home</a>
   </div>

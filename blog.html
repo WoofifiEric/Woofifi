@@ -28,9 +28,8 @@ h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; color: v
 
 .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,249,240,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(38,35,84,0.08); }
 .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; max-width: var(--max-width); margin: 0 auto; }
-.logo { display: flex; align-items: center; gap: 10px; }
-.logo-mark { width: 44px; height: 44px; }
-.logo-text { font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px; color: var(--yellow); }
+.logo { display: flex; align-items: center; gap: 0; }
+.logo-img { height: 110px; width: auto; display: block; image-rendering: -webkit-optimize-contrast; }
 .nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-link { font-weight: 600; font-size: 15px; color: var(--navy); transition: color 0.3s; }
 .nav-link:hover { color: var(--yellow); }
@@ -73,17 +72,18 @@ h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; color: v
 .article-body li { margin-bottom: 8px; font-size: 16px; }
 .article-body blockquote { border-left: 4px solid var(--yellow); padding: 16px 24px; background: var(--cream-warm); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 24px 0; font-style: italic; color: var(--navy); }
 
-.footer { background: var(--navy); color: var(--cream); padding: 60px 0 28px; margin-top: 80px; }
+.footer { background: var(--cream); color: var(--navy); padding: 60px 0 28px; margin-top: 80px; border-top: 2px solid rgba(38,35,84,0.12); }
 .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px; }
-.footer p { color: rgba(255,249,240,0.7); font-size: 14px; }
-.footer a { color: rgba(255,249,240,0.8); font-size: 14px; transition: 0.3s; }
-.footer a:hover { color: var(--yellow); }
+.footer p { color: rgba(38,35,84,0.7); font-size: 14px; }
+.footer a { color: rgba(38,35,84,0.75); font-size: 14px; transition: 0.3s; }
+.footer a:hover { color: var(--navy); }
 .footer-links { display: flex; gap: 24px; }
 
 @media (max-width: 860px) {
   .post-grid { grid-template-columns: 1fr; }
   .nav-links { gap: 16px; }
   .nav-links a:not(.btn-yellow) { display: none; }
+  .logo-img { height: 80px; }
 }
 </style>
 </head>
@@ -92,15 +92,7 @@ h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; color: v
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="logo">
-      <svg class="logo-mark" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100 175 C40 130, 15 80, 35 45 C55 25, 85 28, 100 50 C115 28, 145 25, 165 45 C185 80, 160 130, 100 175 Z" fill="none" stroke="#262354" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M125 70 Q138 60, 142 78 Q138 95, 128 90 Z" fill="#FCC156"/>
-        <path d="M95 110 Q100 118, 108 112 Q100 122, 92 118 Z" fill="#FCC156"/>
-        <path d="M60 85 Q65 75, 80 78 L95 80 Q110 82, 120 90 Q128 95, 128 105 Q128 115, 120 120 L105 125 Q95 128, 88 125 L75 120 Q65 115, 62 108 Q58 95, 60 85 Z" fill="none" stroke="#262354" stroke-width="6" stroke-linejoin="round"/>
-        <circle cx="88" cy="95" r="3" fill="#262354"/>
-        <ellipse cx="65" cy="92" rx="4" ry="3" fill="#262354"/>
-      </svg>
-      <span class="logo-text">Woofifi</span>
+      <img class="logo-img" src="assets/Logo-Eric-bold.png" alt="Woofifi" />
     </a>
     <div class="nav-links">
       <a class="nav-link" href="index.html#about">About</a>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" fill="none">
+  <path d="M200 110 C 175 60, 90 50, 60 110 C 35 160, 80 240, 200 320 C 320 240, 365 160, 340 110 C 310 50, 225 60, 200 110 Z M 200 320 Q 198 340, 195 348"
+        stroke="#FCC156" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 110 195 Q 95 195, 92 205 Q 90 215, 100 220 L 130 220"
+        stroke="#FCC156" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 130 220 Q 145 175, 200 175 Q 240 175, 255 200"
+        stroke="#FCC156" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 255 200 Q 270 240, 250 270 Q 220 285, 200 280"
+        stroke="#FCC156" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 130 220 Q 130 245, 155 250 Q 175 252, 200 250"
+        stroke="#FCC156" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 165 210 Q 175 213, 185 210"
+        stroke="#FCC156" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M 230 180 Q 270 175, 275 215 Q 270 235, 250 230 Z" fill="#FCC156"/>
+  <path d="M 195 235 Q 215 240, 220 255 Q 210 262, 195 258 Z" fill="#FCC156"/>
+  <text x="200" y="430" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="92" font-style="italic" fill="#FCC156">Woofifi</text>
+</svg>
