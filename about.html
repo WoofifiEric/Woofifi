@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Story — Woofifi</title>
+<meta name="description" content="The Woofifi origin story: three friends, three dogs, and one suspicious ingredient list that started it all." />
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,700;1,9..144,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #262354; --navy-light: #3a3670;
+  --yellow: #FCC156; --yellow-soft: #FFE1A8;
+  --cream: #FFF9F0; --cream-warm: #FDF2DF;
+  --white: #fff;
+  --gray-900: #1a1830; --gray-700: #4a4767; --gray-500: #8a87a3; --gray-300: #d8d4e8; --gray-100: #f0edf7;
+  --shadow-sm: 0 2px 8px rgba(38,35,84,0.06);
+  --shadow-md: 0 8px 24px rgba(38,35,84,0.08);
+  --shadow-lg: 0 20px 50px rgba(38,35,84,0.12);
+  --radius-md: 20px; --radius-lg: 32px; --radius-pill: 999px;
+  --max-width: 1240px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--gray-900); line-height: 1.7; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; color: var(--navy); line-height: 1.15; letter-spacing: -0.02em; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+/* Brand wordmark — matches the logo lettering */
+.brand-word { color: var(--yellow); font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 800; }
+
+/* ═══════════════════════════════════════════════════
+   NAV — exact match with index.html
+   ═══════════════════════════════════════════════════ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 249, 240, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(38, 35, 84, 0.08);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.logo { display: flex; align-items: center; gap: 0; }
+.logo-img {
+  height: 110px;
+  width: auto;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+}
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-link {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy);
+  transition: var(--transition);
+  position: relative;
+}
+.nav-link:hover { color: var(--yellow); }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--yellow);
+  transition: var(--transition);
+}
+.nav-link:hover::after { width: 100%; }
+.nav-link.active::after { width: 100%; }
+.nav-cta { margin-left: 8px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; border-radius: var(--radius-pill); font-weight: 700; font-size: 15px; transition: var(--transition); }
+.btn-yellow { background: var(--yellow); color: var(--navy); }
+.btn-yellow:hover { background: #ffd888; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(252,193,86,0.35); }
+.btn-sm { padding: 10px 22px; font-size: 14px; }
+.menu-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--navy); background: none; border: none; cursor: pointer; }
+
+/* ═══════════════════════════════════════════════════
+   PAGE HEAD — sized to mirror index hero scale
+   ═══════════════════════════════════════════════════ */
+.page-head { padding: 80px 0 80px; background: var(--cream); position: relative; overflow: hidden; }
+.page-head::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(252,193,86,0.18), transparent 70%); border-radius: 50%; pointer-events: none; }
+.page-head::after { content: ''; position: absolute; bottom: -180px; left: -120px; width: 460px; height: 460px; background: radial-gradient(circle, rgba(252,193,86,0.10), transparent 70%); border-radius: 50%; pointer-events: none; }
+.page-head-inner { max-width: 820px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+.badge { display: inline-block; padding: 8px 18px; background: var(--white); color: var(--navy); border-radius: var(--radius-pill); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; box-shadow: var(--shadow-sm); margin-bottom: 24px; }
+.page-head h1 { font-size: clamp(40px, 5.5vw, 64px); margin-bottom: 24px; }
+.page-head h1 .accent { color: var(--yellow); font-style: italic; font-weight: 700; }
+.page-head .lead { font-size: 18px; color: var(--gray-700); max-width: 620px; margin: 0 auto; line-height: 1.7; }
+
+/* ═══════════════════════════════════════════════════
+   STORY CANVAS — one flowing narrative with pet doodles
+   ═══════════════════════════════════════════════════ */
+.story-canvas {
+  position: relative;
+  padding: 80px 0 120px;
+  background: var(--cream-warm);
+  overflow: hidden;
+}
+/* Soft paw-print texture */
+.story-canvas::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(38,35,84,0.05) 2px, transparent 3px),
+    radial-gradient(circle at 88% 32%, rgba(38,35,84,0.05) 2px, transparent 3px),
+    radial-gradient(circle at 22% 78%, rgba(38,35,84,0.04) 2px, transparent 3px),
+    radial-gradient(circle at 78% 88%, rgba(38,35,84,0.04) 2px, transparent 3px);
+  background-size: 480px 480px, 520px 520px, 540px 540px, 500px 500px;
+  pointer-events: none;
+}
+.story-canvas::after {
+  content: '';
+  position: absolute;
+  top: 80px;
+  right: -160px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(252,193,86,0.16), transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Decorative real pet photos — circular, shadowed, slightly dimmed for depth */
+.pet-photo {
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 0;
+  filter: contrast(1.04) brightness(0.94) saturate(0.88);
+  box-shadow: 0 28px 60px -10px rgba(38,35,84,0.35), 0 10px 24px rgba(38,35,84,0.22);
+  border: 5px solid rgba(255,249,240,0.55);
+  opacity: 0.92;
+  transition: transform 0.6s ease;
+}
+.pet-photo.dog-1     { top: 60px;  left: 2%;   width: 190px; height: 190px; transform: rotate(-6deg); object-position: 70% center; }
+.pet-photo.cat-1     { top: 11%;   right: 3%;  width: 150px; height: 150px; transform: rotate(8deg); object-position: center 25%; }
+.pet-photo.hamster-2 { top: 32%;   left: 2.5%; width: 150px; height: 150px; transform: rotate(-5deg); }
+.pet-photo.dog-2     { top: 42%;   right: 2.5%; width: 200px; height: 200px; transform: rotate(5deg); }
+.pet-photo.dog-3     { bottom: 16%; left: 2.5%; width: 180px; height: 180px; transform: rotate(-7deg); }
+.pet-photo.hamster-1 { bottom: 8%; right: 4%;  width: 140px; height: 140px; transform: rotate(-4deg); }
+
+/* Paw + heart accents stay as small SVG flourishes */
+.pet-doodle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.pet-doodle.paw-1 { top: 8%;  left: 18%;  width: 48px; opacity: 0.28; transform: rotate(-20deg); }
+.pet-doodle.paw-2 { top: 52%; left: 8%;   width: 38px; opacity: 0.24; transform: rotate(15deg); }
+.pet-doodle.paw-3 { bottom: 9%; right: 19%; width: 52px; opacity: 0.32; transform: rotate(-12deg); }
+.pet-doodle.heart-1 { bottom: 30%; right: 14%; width: 56px; opacity: 0.4; }
+
+@media (max-width: 960px) {
+  .pet-photo.dog-1, .pet-photo.dog-3 { display: none; }
+  .pet-photo.dog-2 { width: 140px; height: 140px; }
+  .pet-photo.cat-1 { width: 110px; height: 110px; }
+  .pet-photo.hamster-1, .pet-photo.hamster-2 { width: 100px; height: 100px; }
+  .pet-doodle.paw-2 { display: none; }
+}
+@media (max-width: 640px) {
+  .pet-photo { display: none; }
+  .pet-doodle.paw-1, .pet-doodle.paw-3 { width: 36px; opacity: 0.22; }
+  .pet-doodle.heart-1 { display: none; }
+}
+
+.story-card {
+  position: relative;
+  z-index: 2;
+  max-width: 740px;
+  margin: 0 auto;
+  background: var(--cream);
+  padding: 72px 64px;
+  border-radius: 32px;
+  box-shadow: 0 20px 60px rgba(38,35,84,0.08);
+}
+.story-card .story-badge {
+  display: inline-block;
+  color: var(--yellow);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.story-card h2 {
+  font-size: clamp(30px, 4vw, 42px);
+  margin-bottom: 28px;
+  line-height: 1.2;
+}
+.story-card h2 .accent { color: var(--yellow); font-style: italic; font-weight: 700; }
+.story-card p {
+  font-size: 17.5px;
+  color: var(--gray-700);
+  margin-bottom: 20px;
+  line-height: 1.85;
+}
+.story-card p strong { color: var(--navy); }
+.story-card .divider {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--yellow);
+  border-radius: 2px;
+  margin: 36px 0;
+}
+
+/* ═══════════════════════════════════════════════════
+   FOUNDERS
+   ═══════════════════════════════════════════════════ */
+.founders { padding: 96px 0; background: var(--cream); }
+.founders-head { text-align: center; max-width: 680px; margin: 0 auto 56px; }
+.founders-head .eyebrow { display: inline-block; color: var(--yellow); font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+.founders-head h2 { font-size: clamp(32px, 4.5vw, 48px); margin-bottom: 16px; }
+.founders-head p { color: var(--gray-700); font-size: 17px; line-height: 1.7; }
+.founder-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1080px; margin: 0 auto; }
+.founder-card { background: var(--cream-warm); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); }
+.founder-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.founder-photo { aspect-ratio: 4/5; background: linear-gradient(135deg, var(--yellow-soft), var(--cream-warm)); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.founder-photo img { width: 100%; height: 100%; object-fit: cover; }
+.founder-photo .placeholder { font-family: 'Fraunces', Georgia, serif; font-size: 64px; color: var(--navy); opacity: 0.18; font-weight: 800; }
+.founder-body { padding: 28px; }
+.founder-name { font-family: 'Fraunces', Georgia, serif; font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 6px; line-height: 1.2; }
+.founder-role { color: var(--yellow); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; }
+.founder-bio { color: var(--gray-700); font-size: 15px; line-height: 1.65; }
+.founder-pup { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 6px 12px; background: var(--cream); border-radius: var(--radius-pill); font-size: 13px; font-weight: 700; color: var(--navy); }
+.founder-pup::before { content: ''; width: 8px; height: 8px; background: var(--yellow); border-radius: 50%; }
+
+/* ═══════════════════════════════════════════════════
+   CLOSING
+   ═══════════════════════════════════════════════════ */
+.closing { padding: 96px 0; background: var(--navy); color: var(--cream); text-align: center; }
+.closing-inner { max-width: 720px; margin: 0 auto; }
+.closing h2 { color: var(--cream); font-size: clamp(32px, 4.5vw, 48px); margin-bottom: 20px; }
+.closing h2 .accent { color: var(--yellow); font-style: italic; }
+.closing p { font-size: 18px; color: rgba(255,249,240,0.85); margin-bottom: 36px; line-height: 1.7; }
+.closing-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: var(--yellow); color: var(--navy); }
+.btn-primary:hover { background: #ffd888; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(252,193,86,0.35); }
+.btn-outline { border: 2px solid var(--cream); color: var(--cream); }
+.btn-outline:hover { background: var(--cream); color: var(--navy); }
+
+/* ═══════════════════════════════════════════════════
+   CTA BAND / NEWSLETTER
+   ═══════════════════════════════════════════════════ */
+.cta-band { background: var(--navy); padding: 24px 0; }
+.cta-split { display: flex; align-items: center; justify-content: center; gap: 40px; max-width: 1192px; margin: 0 auto; }
+.cta-copy { flex: 0 1 auto; min-width: 0; text-align: left; }
+.cta-action { flex: 0 0 380px; min-width: 0; text-align: center; }
+.cta-line { font-family: inherit; font-size: 18px; font-weight: 500; line-height: 1.4; color: var(--cream); margin: 0; white-space: nowrap; }
+.cta-line .accent { color: var(--yellow); font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 700; }
+.newsletter-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; background: var(--white); padding: 8px; border-radius: var(--radius-pill); box-shadow: var(--shadow-md); }
+.newsletter-form input { flex: 1; border: none; padding: 14px 20px; background: transparent; font-family: inherit; font-size: 15px; color: var(--navy); outline: none; }
+.newsletter-form button { padding: 14px 28px; background: var(--yellow); color: var(--navy); border-radius: var(--radius-pill); font-weight: 700; font-size: 14px; transition: var(--transition); border: none; cursor: pointer; }
+.newsletter-form button:hover { background: #FFD888; }
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════ */
+.footer { background: var(--cream); color: var(--navy); padding: 96px 0 32px; border-top: 2px solid rgba(38, 35, 84, 0.12); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
+.footer-brand p { color: rgba(38, 35, 84, 0.75); font-size: 15px; line-height: 1.7; margin: 20px 0; max-width: 320px; }
+.footer-socials { display: flex; gap: 12px; }
+.social-btn { width: 42px; height: 42px; background: rgba(38, 35, 84, 0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--navy); transition: var(--transition); }
+.social-btn:hover { background: var(--navy); color: var(--yellow); transform: translateY(-3px); }
+.footer-col h4 { color: var(--navy); font-size: 15px; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col li { margin-bottom: 12px; }
+.footer-col a { color: rgba(38, 35, 84, 0.75); font-size: 14px; transition: var(--transition); }
+.footer-col a:hover { color: var(--navy); }
+.footer-bottom { padding-top: 32px; border-top: 1px solid rgba(38, 35, 84, 0.15); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: rgba(38, 35, 84, 0.6); font-size: 13px; }
+.footer-bottom a { color: rgba(38, 35, 84, 0.75); }
+.footer-bottom a:hover { color: var(--navy); }
+.logo-img-footer { height: 150px; }
+
+/* Mobile */
+@media (max-width: 1100px) and (min-width: 961px) {
+  .cta-split { flex-direction: column; gap: 18px; text-align: center; align-items: center; }
+  .cta-copy { text-align: center; }
+  .cta-action { flex: 0 0 auto; width: 100%; max-width: 480px; }
+  .cta-line { white-space: normal; }
+}
+@media (max-width: 960px) {
+  .founder-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .story-card { padding: 56px 36px; }
+  section.cta-band { padding: 24px 0; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .cta-split { flex-direction: column; gap: 20px; text-align: center; }
+  .cta-copy { text-align: center; }
+  .cta-action { flex: 1 1 auto; width: 100%; max-width: 480px; }
+  .cta-line { white-space: normal; }
+}
+@media (max-width: 640px) {
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid var(--gray-100); }
+  .nav-links.open { display: flex; }
+  .menu-toggle { display: flex; }
+  .nav-cta { display: none; }
+  .logo-img { height: 80px; }
+  .story-canvas { padding: 60px 0 80px; }
+  .story-card { padding: 44px 24px; border-radius: 24px; }
+  .story-card p { font-size: 16.5px; }
+  .closing-ctas { flex-direction: column; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .newsletter-form { flex-direction: column; background: transparent; box-shadow: none; padding: 0; }
+  .newsletter-form input { background: var(--white); border-radius: var(--radius-pill); }
+}
+</style>
+</head>
+<body>
+
+<!-- ═════════════════════════════════════════════════════
+     NAV — matches index.html exactly
+     ═════════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="Woofifi home">
+      <img class="logo-img" src="assets/Logo-Eric-bold.png" alt="Woofifi" />
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link active" href="about.html">Our Story</a>
+      <a class="nav-link" href="index.html#products">Snacks</a>
+      <a class="nav-link" href="index.html#testimonials">Reviews</a>
+      <a class="nav-link" href="blog.html">Blog</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+      <a class="btn btn-yellow btn-sm nav-cta" href="index.html#newsletter">Get Early Access</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ═════════════════════════════════════════════════════
+     PAGE HEADER — sized like index hero
+     ═════════════════════════════════════════════════════ -->
+<header class="page-head">
+  <div class="container">
+    <div class="page-head-inner">
+      <span class="badge">Our Story</span>
+      <h1>It started with curiosity.<br><span class="accent">It ended with Woofifi.</span></h1>
+      <p class="lead">That was the day <span class="brand-word">Woofifi</span> was born.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ═════════════════════════════════════════════════════
+     STORY CANVAS — one flowing narrative
+     ═════════════════════════════════════════════════════ -->
+<section class="story-canvas">
+
+  <!-- Real pet photos as decorative shadowed background elements (light/cream backdrops) -->
+  <!-- Welsh Corgi puppy top-left (matches Mid-Autumn blog hero — natural backdrop, centered subject) -->
+  <img class="pet-photo dog-1" src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500&q=80" alt="" aria-hidden="true" loading="lazy" />
+  <!-- Munchkin cat top-right (warm neutral backdrop, object-position tweak so cat is not cropped at head) -->
+  <img class="pet-photo cat-1" src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=400&q=80" alt="" aria-hidden="true" loading="lazy" />
+  <!-- Rabbit mid-left (spaced down from dog-1 for balance) -->
+  <img class="pet-photo hamster-2" src="https://images.unsplash.com/photo-1535241749838-299277b6305f?w=400&q=80" alt="" aria-hidden="true" loading="lazy" />
+  <!-- Cute golden retriever puppy mid-right -->
+  <img class="pet-photo dog-2" src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=500&q=80" alt="" aria-hidden="true" loading="lazy" />
+  <!-- Guinea pig bottom-left (light neutral backdrop) -->
+  <img class="pet-photo dog-3" src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=500&q=80" alt="" aria-hidden="true" loading="lazy" />
+  <!-- Hamster bottom-right -->
+  <img class="pet-photo hamster-1" src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=400&q=80" alt="" aria-hidden="true" loading="lazy" />
+
+  <!-- Small paw + heart accents -->
+  <svg class="pet-doodle paw-1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="#262354">
+      <ellipse cx="25" cy="32" rx="11" ry="9"/>
+      <ellipse cx="10" cy="18" rx="5" ry="6"/>
+      <ellipse cx="20" cy="10" rx="5" ry="6"/>
+      <ellipse cx="32" cy="10" rx="5" ry="6"/>
+      <ellipse cx="42" cy="18" rx="5" ry="6"/>
+    </g>
+  </svg>
+  <svg class="pet-doodle paw-2" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="#262354">
+      <ellipse cx="25" cy="32" rx="11" ry="9"/>
+      <ellipse cx="10" cy="18" rx="5" ry="6"/>
+      <ellipse cx="20" cy="10" rx="5" ry="6"/>
+      <ellipse cx="32" cy="10" rx="5" ry="6"/>
+      <ellipse cx="42" cy="18" rx="5" ry="6"/>
+    </g>
+  </svg>
+  <svg class="pet-doodle paw-3" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="#FCC156">
+      <ellipse cx="25" cy="32" rx="11" ry="9"/>
+      <ellipse cx="10" cy="18" rx="5" ry="6"/>
+      <ellipse cx="20" cy="10" rx="5" ry="6"/>
+      <ellipse cx="32" cy="10" rx="5" ry="6"/>
+      <ellipse cx="42" cy="18" rx="5" ry="6"/>
+    </g>
+  </svg>
+  <svg class="pet-doodle heart-1" viewBox="0 0 60 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M30 50 C8 36, 4 22, 14 14 C22 8, 30 14, 30 20 C30 14, 38 8, 46 14 C56 22, 52 36, 30 50 Z" fill="#FCC156"/>
+  </svg>
+
+  <div class="container">
+    <div class="story-card">
+      <span class="story-badge">How it started</span>
+      <h2>It started with a label that <span class="accent">broke our hearts</span> a little</h2>
+
+      <p>You know that moment. You flip a treat bag over and squint at the back. A list of ingredients none of us could read out loud without stumbling over half of them.</p>
+
+      <p>That hit harder than we expected. Every morning without fail they are beside us before our alarms go off. They give us their whole day, their whole heart, every single time. And in return, we were handing them a bag of question marks.</p>
+
+      <p>So why were we feeding it to the ones who love us most? Not pets. Babies. Family. The ones who steal the couch, photobomb every picture, and somehow always know when you&rsquo;re having a bad day.</p>
+
+      <span class="divider"></span>
+
+      <p>So we got a little obsessed. We wanted treats made from real, whole, natural ingredients. Nothing hidden. Nothing synthetic. The kind of thing you could read out loud without stumbling over a single word. No fancy machines. No shortcuts. No mystery processes. Just nutrient-packed snacks. Slow. Gentle. Done right. Every bite keeps all the good stuff your pet actually needs.</p>
+
+      <p>Simple idea. So we made it ourselves, in small batches, in our own kitchen, tested by the four-legged critics who started this whole thing.</p>
+
+      <span class="divider"></span>
+
+      <p>Then another thought hit us. We live in a multi-cultural city, the kind that finds an excuse to celebrate every other month. Reunion dinners that stretch past midnight when the lanterns go up for Lunar New Year. Mooncakes shared under a fat Mid-Autumn moon. Diyas, rangoli, and warm sweets through Deepavali. Christmas mornings buried in wrapping paper. Open houses and ketupat that travel the whole island for Hari Raya. But every single time, our fur babies sat on the sidelines. Watching us eat mooncakes. Watching us pass around the goodies. Tails wagging, eyes doing that hopeful thing they do, just wanting to be part of it.</p>
+
+      <p>So why shouldn&rsquo;t they celebrate too? That is exactly why <span class="brand-word">Woofifi</span> has a festival collection. Limited-edition treats made for the moments that matter most, so our fur babies get to join the celebration with us. Tail-wagging mooncakes when the lanterns come out. A bag for every season. A festival every fur baby can actually join. Because the way they see the world is simple. If we are happy, they are happy. If we are home, they are home. Every time we sit down to celebrate, they have already pulled up a spot at our feet, ready for their share. So we make sure they get one. Their own bowl. Their own bag. Their own little version of the joy we are passing around.</p>
+
+      <span class="divider"></span>
+
+      <p><span class="brand-word">Woofifi</span> is not really about treats. It is about treating family the way family deserves. That is why every bag is made from real, whole, natural ingredients. And it is why we built our festival collection. So the ones who love us most never have to sit on the sidelines while the rest of us celebrate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════
+     FOUNDERS
+     ═════════════════════════════════════════════════════ -->
+<section class="founders">
+  <div class="container">
+    <div class="founders-head">
+      <h2>Our pets gave us the purpose. <span style="color:var(--yellow); font-style:italic;">You give us the reason to keep going.</span></h2>
+      <p>None of us are here for the industry. We are here for the intention behind it.</p>
+    </div>
+    <div class="founder-grid">
+
+      <div class="founder-card">
+        <div class="founder-photo">
+          <!-- [IMG-SWAP] Replace with founder photo (4:5 portrait) -->
+          <span class="placeholder">E</span>
+        </div>
+        <div class="founder-body">
+          <div class="founder-name">Eric Peh</div>
+          <div class="founder-role">Co-Founder &amp; CEO</div>
+          <p class="founder-bio">The label-flipper. Will not stop reading ingredient lists, even at restaurants. Building Woofifi so Whiskey eats better than he does.</p>
+          <span class="founder-pup">Whiskey &middot; Cavapoo</span>
+        </div>
+      </div>
+
+      <div class="founder-card">
+        <div class="founder-photo">
+          <!-- [IMG-SWAP] Replace with founder photo (4:5 portrait) -->
+          <span class="placeholder">F</span>
+        </div>
+        <div class="founder-body">
+          <div class="founder-name">[Founder Name]</div>
+          <div class="founder-role">Co-Founder</div>
+          <p class="founder-bio">[Short bio. What they bring, what they care about, the moment they knew they were in. One or two sentences keeps it personal.]</p>
+          <span class="founder-pup">[Dog name] &middot; [Breed]</span>
+        </div>
+      </div>
+
+      <div class="founder-card">
+        <div class="founder-photo">
+          <!-- [IMG-SWAP] Replace with founder photo (4:5 portrait) -->
+          <span class="placeholder">F</span>
+        </div>
+        <div class="founder-body">
+          <div class="founder-name">[Founder Name]</div>
+          <div class="founder-role">Co-Founder</div>
+          <p class="founder-bio">[Short bio. What they bring, what they care about, the moment they knew they were in. One or two sentences keeps it personal.]</p>
+          <span class="founder-pup">[Dog name] &middot; [Breed]</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════
+     CLOSING
+     ═════════════════════════════════════════════════════ -->
+<section class="closing">
+  <div class="container closing-inner">
+    <h2>If your fur baby is your <span class="accent">family too</span>,<br>you&rsquo;re so in the right place.</h2>
+    <p>Welcome. We&rsquo;re glad you found us.</p>
+    <div class="closing-ctas">
+      <a class="btn btn-primary" href="index.html#products">Browse Our Snacks <span aria-hidden="true">&rarr;</span></a>
+      <a class="btn btn-outline" href="index.html">Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CTA BAND / NEWSLETTER
+     ═══════════════════════════════════════════════════ -->
+<section class="cta-band" id="newsletter">
+  <div class="container">
+    <div class="cta-split">
+      <div class="cta-copy">
+        <p class="cta-line">Be the first to know what is coming out of our kitchen next. <span class="accent">Join us</span> today</p>
+      </div>
+      <div class="cta-action">
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" placeholder="you@wooflove.com" required aria-label="Email" />
+          <button type="submit">Count Me In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html#home" class="logo">
+          <img class="logo-img logo-img-footer" src="assets/Logo-Eric-bold.png" alt="Woofifi" />
+        </a>
+        <p>Premium natural pet snacks and trusted pet services, made for the way Singapore lives today.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/woofifi" aria-label="Instagram" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://tiktok.com/@woofifi" aria-label="TikTok" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
+          </a>
+          <a href="#" aria-label="Xiaohongshu" class="social-btn" title="Xiaohongshu / Little Red Book">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </a>
+          <a href="mailto:orders@woofifi.com" aria-label="Email" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="index.html#products">Core Range</a></li>
+          <li><a href="index.html#products">Seasonal Drops</a></li>
+          <li><a href="#newsletter">Early Access</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="contact.html">Get Help</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Woofifi Pte Ltd &middot; Made with 💛 in Singapore</div>
+      <div><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menuToggle')?.addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const email = e.target.querySelector('input').value;
+    alert('🎉 Welcome to the Woofifi pack, ' + email + '!\n\n(Demo — wire this up to Mailchimp, ConvertKit, or your preferred email service before launch.)');
+    e.target.reset();
+  }
+</script>
+
+</body>
+</html>
