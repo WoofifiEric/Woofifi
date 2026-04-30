@@ -238,41 +238,29 @@ h1, h2, h3, h4 {
    ═══════════════════════════════════════════════════ */
 .hero {
   position: relative;
-  padding: 80px 0 120px;
   overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--yellow-soft) 0%, transparent 70%);
-  opacity: 0.6;
-  z-index: 0;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -150px;
-  left: -150px;
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(38, 35, 84, 0.08) 0%, transparent 70%);
-  z-index: 0;
+  background:
+    linear-gradient(rgba(255, 249, 240, 0.38), rgba(255, 249, 240, 0.38)),
+    url('assets/woofifi-background-banner.png') center / cover no-repeat;
+  background-color: var(--cream);
+  aspect-ratio: 1584 / 672;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
 }
 .hero-grid {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
-  align-items: center;
+  display: block;
+  width: 100%;
+}
+.hero-content {
+  max-width: 720px;
 }
 .hero h1 {
-  font-size: clamp(40px, 5.5vw, 64px);
-  margin-bottom: 24px;
+  font-size: clamp(44px, 5.8vw, 68px);
+  margin-bottom: 14px;
+  line-height: 1.2;
 }
 .hero h1 .accent {
   color: var(--yellow);
@@ -296,52 +284,47 @@ h1, h2, h3, h4 {
   color: var(--gray-700);
   margin-bottom: 36px;
   max-width: 520px;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 .hero-ctas {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 48px;
+  margin-bottom: 44px;
 }
+.hero-cta { letter-spacing: 0.06em; padding-left: 28px; padding-right: 28px; }
 .hero-trust {
   display: flex;
-  gap: 32px;
   flex-wrap: wrap;
+  gap: 20px 24px;
+  align-items: center;
 }
 .trust-item {
   display: flex;
-  gap: 14px;
+  gap: 10px;
   align-items: center;
   transition: transform 0.3s ease;
+  white-space: nowrap;
 }
-.trust-item:hover { transform: translateY(-3px); }
+.trust-item:hover { transform: translateY(-2px); }
 .trust-icon {
-  width: 56px;
-  height: 56px;
-  background: var(--white);
-  border: 1.5px solid rgba(38, 35, 84, 0.10);
-  border-radius: 18px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(38, 35, 84, 0.08);
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 8px 18px rgba(38, 35, 84, 0.10);
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(38, 35, 84, 0.08);
 }
-.trust-icon::after {
-  content: '';
-  position: absolute;
-  top: -10px; right: -10px;
-  width: 22px; height: 22px;
-  background: var(--yellow);
-  border-radius: 50%;
-  opacity: 0.45;
-}
-.trust-icon svg { width: 32px; height: 32px; position: relative; z-index: 1; }
-.trust-text strong { display: block; color: var(--navy); font-size: 15px; font-weight: 700; }
-.trust-text span { font-size: 13px; color: var(--gray-500); font-style: italic; }
+.trust-icon svg { width: 24px; height: 24px; }
+.trust-text { display: flex; flex-direction: column; line-height: 1.25; }
+.trust-title { color: var(--navy); font-weight: 700; font-size: 14px; letter-spacing: 0.01em; }
+.trust-sub { color: var(--gray-500); font-size: 12.5px; font-style: italic; margin-top: 2px; }
 
 .hero-visual {
   position: relative;
@@ -1044,7 +1027,8 @@ section { padding: 100px 0; position: relative; }
 @media (max-width: 960px) {
   section { padding: 72px 0; }
   section.cta-band { padding: 24px 0; }
-  .hero { padding: 56px 0 80px; }
+  .hero { aspect-ratio: auto; min-height: 0; padding: 56px 0 72px; }
+  .hero-content { max-width: 100%; }
   .hero-grid, .about-grid, .services-grid, .contact-grid {
     grid-template-columns: 1fr;
     gap: 48px;
@@ -1116,17 +1100,16 @@ section { padding: 100px 0; position: relative; }
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
-        <h1 style="margin-top:20px;">Small treat <span class="accent">Big love</span><br>Pure ingredients</h1>
+        <h1 style="margin-top:0;">Small treat Big love<br>Pure ingredients</h1>
         <p class="hero-tagline">
-          The love is unconditional, and deserve the purest love in every bite. <span class="brand-word">Woofifi</span><span class="accent">&rsquo;s 100% natural treats</span> are handmade in Singapore. If you can&rsquo;t pronounce it, it&rsquo;s not in here.
+          The love is unconditional, and deserve the purest love in every bite. Woofifi&rsquo;s 100% natural treats are handmade in Singapore. If you can&rsquo;t pronounce it, it&rsquo;s not in here.
         </p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="#products">Explore Our Snacks <span style="font-size:18px;">&rarr;</span></a>
+          <a class="btn btn-primary hero-cta" href="#products">Explore Our Snacks <span style="font-size:18px;">&rarr;</span></a>
         </div>
         <div class="hero-trust">
           <div class="trust-item">
             <div class="trust-icon">
-              <!-- Cute leaf with vein, navy outline + soft yellow fill -->
               <svg viewBox="0 0 48 48" fill="none" stroke="#262354" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M10 38 C 8 22, 22 8, 40 10 C 42 28, 28 42, 10 38 Z" fill="#FCC156" fill-opacity="0.45"/>
                 <path d="M10 38 L 34 14"/>
@@ -1136,13 +1119,12 @@ section { padding: 100px 0; position: relative; }
               </svg>
             </div>
             <div class="trust-text">
-              <strong>Clean Ingredients</strong>
-              <span>Real food. 100% natural</span>
+              <span class="trust-title">Clean Ingredients</span>
+              <span class="trust-sub">Real food. 100% natural</span>
             </div>
           </div>
           <div class="trust-item">
             <div class="trust-icon">
-              <!-- Cute gift with bow -->
               <svg viewBox="0 0 48 48" fill="none" stroke="#262354" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect x="7" y="20" width="34" height="22" rx="3" fill="#FCC156" fill-opacity="0.35"/>
                 <line x1="24" y1="20" x2="24" y2="42"/>
@@ -1152,13 +1134,12 @@ section { padding: 100px 0; position: relative; }
               </svg>
             </div>
             <div class="trust-text">
-              <strong>Festival Collection</strong>
-              <span>Every occasion, Pure celebration</span>
+              <span class="trust-title">Festival Collection</span>
+              <span class="trust-sub">Every occasion, Pure celebration</span>
             </div>
           </div>
           <div class="trust-item">
             <div class="trust-icon">
-              <!-- Cute heart with paw print -->
               <svg viewBox="0 0 48 48" fill="none" stroke="#262354" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M24 41 C 8 30, 4 18, 12 12 C 18 8, 24 13, 24 19 C 24 13, 30 8, 36 12 C 44 18, 40 30, 24 41 Z" fill="#FCC156" fill-opacity="0.35"/>
                 <ellipse cx="24" cy="29" rx="4.6" ry="3.8" fill="#262354" stroke="none"/>
@@ -1168,20 +1149,9 @@ section { padding: 100px 0; position: relative; }
               </svg>
             </div>
             <div class="trust-text">
-              <strong>Proudly Singapore</strong>
-              <span>Local love, Global quality</span>
+              <span class="trust-title">Proudly Singapore</span>
+              <span class="trust-sub">Local love, Global quality</span>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <!-- [IMG-SWAP] Hero photo — replace with Whiskey the Cavapoo or a Woofifi IG hero shot -->
-        <img class="hero-photo" src="https://images.unsplash.com/photo-1591160690555-5debfba289f0?w=800&q=80" alt="Happy Cavapoo dog smiling" />
-        <div class="hero-card hero-card-2">
-          <div class="hero-card-emoji">⭐</div>
-          <div>
-            <strong>Loved by Whiskey</strong>
-            <span>Our Cavapoo taste-tester</span>
           </div>
         </div>
       </div>
