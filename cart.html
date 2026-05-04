@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact — Woofifi</title>
-<meta name="description" content="Say hi to the Woofifi pack. Drop us a note, ping us on WhatsApp, or send a question about our snacks." />
+<title>Cart — Woofifi</title>
+<meta name="description" content="Review your Woofifi cart and proceed to checkout." />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
@@ -17,16 +17,16 @@
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --navy: #262354; --navy-light: #3a3670;
-  --yellow: #FCC156; --yellow-soft: #FFE1A8; --yellow-bg: #FFF1D6;
+  --yellow: #FCC156; --yellow-soft: #FFE1A8;
   --cream: #FFF9F0; --cream-warm: #FDF2DF;
   --white: #fff;
-  --gray-900: #1a1830; --gray-700: #4a4767; --gray-500: #8a87a3; --gray-300: #d8d4e8; --gray-100: #f0edf7;
+  --gray-100: #f0edf7; --gray-500: #8a87a3; --gray-700: #4a4767; --gray-900: #1a1830;
   --shadow-sm: 0 2px 8px rgba(38,35,84,0.06);
   --shadow-md: 0 8px 24px rgba(38,35,84,0.08);
-  --shadow-lg: 0 20px 50px rgba(38,35,84,0.12);
+  --shadow-lg: 0 20px 48px rgba(38,35,84,0.12);
   --radius-sm: 12px; --radius-md: 20px; --radius-lg: 32px; --radius-pill: 999px;
-  --max-width: 1240px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-width: 1240px;
 }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--gray-900); line-height: 1.7; }
@@ -34,110 +34,88 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; color: var(--navy); line-height: 1.15; letter-spacing: -0.02em; }
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-.brand-word { color: var(--yellow); font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 800; }
-
-/* NAV — exact match with index.html */
+/* NAV */
 .nav { position: fixed;
-  top: 0; left: 0; right: 0; z-index: 100; background: rgba(255, 249, 240, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(38, 35, 84, 0.08); }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: var(--max-width); margin: 0 auto; }
-.logo { display: flex; align-items: center; gap: 0; }
+  top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,249,240,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(38, 35, 84, 0.08); }
+.nav-inner { display: flex; align-items: center; justify-content: flex-start; padding: 16px 24px; max-width: var(--max-width); margin: 0 auto; gap: 24px; }
+.nav-inner .logo { margin-right: auto; display: flex; align-items: center; }
 /* Spacer so document content starts below the fixed nav. Height matches the
    full (un-scrolled) nav so layout never shifts when the nav slims. */
 body { padding-top: 142px; }
 /* Scrolled state — slim the nav so it takes less vertical space when user scrolls */
 .nav-icon-btn { transition: var(--transition); }
 .logo-img { height: 110px; width: auto; display: block; image-rendering: -webkit-optimize-contrast; }
-.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-link { font-weight: 600; font-size: 15px; color: var(--navy); transition: var(--transition); position: relative; }
 .nav-link:hover { color: var(--yellow); }
 .nav-link::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--yellow); transition: var(--transition); }
-.nav-link:hover::after { width: 100%; }
-.nav-link.active::after { width: 100%; }
-.nav-cta { margin-left: 8px; }
-.nav-icons { display: flex; align-items: center; gap: 6px; margin-left: 16px; }
-.nav-icon-btn { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; color: var(--navy); background: transparent; border: none; border-radius: 50%; position: relative; cursor: pointer; transition: var(--transition); text-decoration: none; }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-icons { display: flex; align-items: center; gap: 6px; }
+.nav-icon-btn { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; color: var(--navy); background: transparent; border: none; border-radius: 50%; position: relative; cursor: pointer; transition: var(--transition); }
 .nav-icon-btn:hover { background: var(--navy); color: var(--yellow); }
-.nav-icon-cart .cart-count { position: absolute; top: 2px; right: 2px; width: 16px; height: 16px; background: var(--yellow); color: var(--navy); border-radius: 50%; font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; pointer-events: none; }
 .nav-icon-cart:hover .cart-count { background: var(--cream); color: var(--navy); }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 32px; border-radius: var(--radius-pill); font-weight: 700; font-size: 15px; transition: var(--transition); white-space: nowrap; border: none; cursor: pointer; }
-.btn-yellow { background: var(--yellow); color: var(--navy); }
-.btn-yellow:hover { background: #ffcd73; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(252, 193, 86, 0.4); color: var(--navy); }
-.btn-sm { padding: 10px 20px; font-size: 14px; }
+.nav-icon-cart .cart-count { position: absolute; top: 2px; right: 2px; width: 16px; height: 16px; background: var(--yellow); color: var(--navy); border-radius: 50%; font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; pointer-events: none; }
 .menu-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--navy); background: none; border: none; cursor: pointer; }
 
 /* PAGE HEAD */
-.page-head { padding: 36px 0 32px; background: var(--cream); position: relative; overflow: hidden; }
-.page-head::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(252,193,86,0.18), transparent 70%); border-radius: 50%; pointer-events: none; }
-.page-head::after { content: ''; position: absolute; bottom: -180px; left: -120px; width: 460px; height: 460px; background: radial-gradient(circle, rgba(252,193,86,0.10), transparent 70%); border-radius: 50%; pointer-events: none; }
-.page-head-inner { max-width: 820px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
-.badge { display: inline-block; padding: 8px 18px; background: var(--white); color: var(--navy); border-radius: var(--radius-pill); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; box-shadow: var(--shadow-sm); margin-bottom: 24px; }
-.page-head h1 { font-size: clamp(40px, 5.5vw, 64px); margin-bottom: 14px; }
-.page-head h1 .accent { color: var(--yellow); font-style: italic; font-weight: 700; }
-.page-head .lead { font-size: 18px; color: var(--gray-700); max-width: 620px; margin: 0 auto; line-height: 1.55; }
+.cart-page { padding: 36px 0 72px; background: var(--cream); }
+.cart-page-head { text-align: center; margin-bottom: 32px; }
+.cart-page-head h1 { font-size: clamp(36px, 4.6vw, 52px); margin-bottom: 8px; }
+.cart-page-head h1 .accent { color: var(--yellow); font-style: italic; }
+.cart-page-head p { color: var(--gray-700); font-size: 16px; }
 
-/* FAQ */
-.faq { padding: 56px 0 64px; background: var(--cream); }
-.faq-head { text-align: center; max-width: 720px; margin: 0 auto 36px; }
-.faq-head h2 { font-size: clamp(28px, 3.6vw, 40px); margin-bottom: 10px; }
-.faq-head h2 .accent { color: var(--yellow); font-style: italic; font-weight: 700; }
-.faq-head p { color: var(--gray-700); font-size: 16px; line-height: 1.6; }
-.faq-list { max-width: 820px; margin: 0 auto; }
-.faq-item { background: var(--white); border-radius: var(--radius-md); margin-bottom: 12px; overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); }
-.faq-item:hover { box-shadow: 0 14px 34px rgba(252, 193, 86, 0.50), 0 4px 12px rgba(252, 193, 86, 0.30); transform: translateY(-2px); }
-.faq-item[open] { box-shadow: 0 14px 34px rgba(252, 193, 86, 0.50), 0 4px 12px rgba(252, 193, 86, 0.30); }
-.faq-q { padding: 22px 26px; font-weight: 700; color: var(--navy); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; list-style: none; user-select: none; }
-.faq-q::-webkit-details-marker { display: none; }
-.faq-q::after { content: '+'; font-family: 'Fraunces', serif; font-size: 28px; color: var(--yellow); transition: var(--transition); font-weight: 400; }
-.faq-item[open] .faq-q::after { transform: rotate(45deg); }
-.faq-a { padding: 0 26px 22px; color: var(--gray-700); font-size: 15px; line-height: 1.7; }
+/* LAYOUT */
+.cart-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 36px; align-items: start; max-width: 1100px; margin: 0 auto; }
+.cart-list { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 8px 28px; }
+.cart-list-row { display: grid; grid-template-columns: 96px 1fr auto auto auto; gap: 18px; align-items: center; padding: 22px 0; border-bottom: 1px solid rgba(38,35,84,0.08); }
+.cart-list-row:last-child { border-bottom: none; }
+.cart-list-row img { width: 96px; height: 96px; object-fit: cover; border-radius: var(--radius-sm); }
+.cart-list-name strong { display: block; color: var(--navy); font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.cart-list-name span { color: var(--gray-500); font-size: 13px; }
+.cart-qty-control { display: inline-flex; align-items: center; background: var(--cream-warm); border: 1.5px solid rgba(252, 193, 86, 0.35); border-radius: 999px; overflow: hidden; }
+.cart-qty-btn { width: 32px; height: 32px; background: transparent; border: none; color: var(--navy); font-weight: 800; font-size: 16px; cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; }
+.cart-qty-btn:hover { background: var(--yellow); }
+.cart-qty-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.cart-qty-num { min-width: 28px; text-align: center; color: var(--navy); font-weight: 700; font-size: 14px; }
+.cart-list-price { color: var(--navy); font-weight: 700; font-size: 16px; min-width: 80px; text-align: right; }
+.cart-list-remove { background: transparent; border: none; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--gray-500); cursor: pointer; transition: var(--transition); }
+.cart-list-remove svg { width: 18px; height: 18px; }
+.cart-list-remove:hover { background: rgba(220, 53, 69, 0.10); color: #dc3545; }
 
-/* CONTACT */
-.contact { padding: 60px 0 100px; background: var(--cream-warm); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: center; }
-.contact-info h2 { font-size: clamp(28px, 3.4vw, 38px); margin-bottom: 20px; }
-.contact-info > p { color: var(--gray-700); font-size: 17px; margin-bottom: 28px; line-height: 1.7; }
-.contact-item { display: flex; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid rgba(38, 35, 84, 0.08); }
-.contact-item:last-child { border: none; }
-.contact-icon { width: 48px; height: 48px; background: rgba(38, 35, 84, 0.08); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--navy); transition: var(--transition); }
-.contact-icon svg { width: 22px; height: 22px; }
-.contact-item:hover .contact-icon { background: var(--navy); color: var(--yellow); transform: translateY(-2px); }
-.contact-socials { display: flex; gap: 14px; margin-top: 28px; }
-.contact-social { width: 48px; height: 48px; background: rgba(38, 35, 84, 0.08); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--navy); transition: var(--transition); flex-shrink: 0; }
-.contact-social svg { width: 22px; height: 22px; }
-.contact-social img { width: 24px; height: 24px; object-fit: contain; }
-.social-btn .xhs-mark { display: inline-block; width: 22px; height: 22px; background-image: url(assets/xhs-blue.svg); background-size: contain; background-position: center; background-repeat: no-repeat; }
-.social-btn:hover .xhs-mark { background-image: url(assets/xhs-yellow.svg); }
-.contact-social .xhs-mark { display: inline-block; width: 24px; height: 24px; background-image: url(assets/xhs-blue.svg); background-size: contain; background-position: center; background-repeat: no-repeat; }
-.contact-social:hover .xhs-mark { background-image: url(assets/xhs-yellow.svg); }
-.contact-social:hover { background: var(--navy); color: var(--yellow); transform: translateY(-3px); }
-.contact-meta strong { display: block; color: var(--navy); font-size: 14px; margin-bottom: 4px; }
-.contact-meta a, .contact-meta p { color: var(--gray-700); font-size: 16px; transition: var(--transition); }
-.contact-meta a:hover { color: var(--yellow); }
+/* SUMMARY */
+.cart-summary { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 28px; position: sticky; top: 100px; }
+.cart-summary h3 { font-size: 22px; margin-bottom: 18px; color: var(--navy); }
+.cart-summary-row { display: flex; justify-content: space-between; padding: 10px 0; font-size: 15px; color: var(--gray-700); }
+.cart-summary-row.total { padding-top: 16px; margin-top: 8px; border-top: 1px solid rgba(38,35,84,0.10); font-size: 18px; color: var(--navy); font-weight: 700; }
+.cart-summary-row.total strong { color: var(--navy); font-size: 20px; }
+.cart-checkout-btn { display: block; width: 100%; margin-top: 18px; padding: 16px; background: var(--yellow); color: var(--navy); border-radius: var(--radius-pill); font-weight: 700; font-size: 15px; text-align: center; transition: var(--transition); border: none; cursor: pointer; }
+.cart-checkout-btn:hover { background: #ffcd73; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(252, 193, 86, 0.4); }
+.cart-continue { display: block; text-align: center; margin-top: 12px; color: var(--navy); font-size: 14px; font-weight: 600; }
+.cart-continue:hover { color: var(--yellow); }
 
-.contact-form { background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: 0.02em; }
-.form-input, .form-select, .form-textarea { width: 100%; padding: 14px 16px; border: 2px solid var(--gray-100); border-radius: var(--radius-sm); background: var(--cream); font-family: inherit; font-size: 15px; color: var(--navy); transition: var(--transition); }
-.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--yellow); background: var(--white); }
-.form-textarea { min-height: 120px; resize: vertical; }
-.form-submit { width: 100%; padding: 18px; background: var(--navy); color: var(--yellow); border-radius: var(--radius-pill); font-weight: 700; font-size: 15px; transition: var(--transition); margin-top: 8px; }
-.form-submit:hover { background: var(--navy-light); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+/* EMPTY STATE */
+.cart-empty-page { text-align: center; padding: 56px 24px; max-width: 600px; margin: 0 auto; background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.cart-empty-art { width: 240px; height: 240px; margin: 0 auto 18px; border-radius: 50%; overflow: hidden; box-shadow: 0 14px 32px rgba(38,35,84,0.10); }
+.cart-empty-art svg { width: 100%; height: 100%; }
+.cart-empty-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cart-empty-page h2 { font-size: 28px; margin-bottom: 10px; }
+.cart-empty-page p { color: var(--gray-700); margin-bottom: 22px; }
+.cart-empty-page .btn-explore { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--yellow); color: var(--navy); font-weight: 700; font-size: 15px; border-radius: var(--radius-pill); transition: var(--transition); }
+.cart-empty-page .btn-explore:hover { background: #ffcd73; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(252, 193, 86, 0.4); }
 
-/* CTA BAND / NEWSLETTER */
+/* CTA BAND */
 .cta-band { background: var(--navy); padding: 24px 0; }
 .cta-split { display: flex; align-items: center; justify-content: space-between; gap: 40px; max-width: 1192px; margin: 0 auto; }
 .cta-copy { flex: 0 1 auto; min-width: 0; text-align: left; }
 .cta-action { flex: 0 0 380px; min-width: 0; text-align: right; }
 .cta-action .newsletter-form { margin: 0 0 0 auto; }
-.cta-line { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; font-weight: 500; line-height: 1.4; color: var(--cream); margin: 0; white-space: nowrap; letter-spacing: 0.005em; }
-.cta-line .accent { color: var(--yellow); font-family: 'Plus Jakarta Sans', sans-serif; font-style: normal; font-weight: 700; }
-.newsletter-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; background: var(--white); padding: 8px; border-radius: var(--radius-pill); box-shadow: var(--shadow-md); }
+.cta-line { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; font-weight: 500; line-height: 1.4; color: var(--cream); margin: 0; white-space: nowrap; }
+.cta-line .accent { color: var(--yellow); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+.newsletter-form { display: flex; gap: 12px; max-width: 480px; background: var(--white); padding: 8px; border-radius: var(--radius-pill); box-shadow: var(--shadow-md); }
 .newsletter-form input { flex: 1; border: none; padding: 14px 20px; background: transparent; font-family: inherit; font-size: 15px; color: var(--navy); outline: none; }
 .newsletter-form button { padding: 14px 28px; background: var(--yellow); color: var(--navy); border-radius: var(--radius-pill); font-weight: 700; font-size: 14px; transition: var(--transition); border: none; cursor: pointer; }
-.newsletter-form button:hover { background: #FFD888; }
 
 /* FOOTER */
 .footer { background: var(--cream); color: var(--navy); padding: 56px 0 22px; border-top: 2px solid rgba(38, 35, 84, 0.12); }
@@ -145,6 +123,9 @@ body { padding-top: 142px; }
 .footer-brand p { color: rgba(38, 35, 84, 0.75); font-size: 14px; line-height: 1.6; margin: 14px 0; max-width: 320px; }
 .footer-socials { display: flex; gap: 12px; }
 .social-btn { width: 42px; height: 42px; background: rgba(38, 35, 84, 0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--navy); transition: var(--transition); }
+.social-btn img { width: 22px; height: 22px; object-fit: contain; }
+.social-btn .xhs-mark { display: inline-block; width: 22px; height: 22px; background-image: url(assets/xhs-blue.svg); background-size: contain; background-position: center; background-repeat: no-repeat; }
+.social-btn:hover .xhs-mark { background-image: url(assets/xhs-yellow.svg); }
 .social-btn:hover { background: var(--navy); color: var(--yellow); transform: translateY(-3px); }
 .footer-col h4 { color: var(--navy); font-size: 14px; margin-bottom: 14px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
 .footer-col ul { list-style: none; padding: 0; margin: 0; }
@@ -153,38 +134,25 @@ body { padding-top: 142px; }
 .footer-col a:hover { color: var(--navy); }
 .footer-bottom { padding-top: 20px; border-top: 1px solid rgba(38, 35, 84, 0.15); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; color: rgba(38, 35, 84, 0.6); font-size: 12.5px; }
 .footer-bottom a { color: rgba(38, 35, 84, 0.75); }
-.footer-bottom a:hover { color: var(--navy); }
 .logo-img-footer { height: 170px; }
-.social-btn img { width: 22px; height: 22px; object-fit: contain; }
 
-/* Mobile */
-@media (max-width: 1100px) and (min-width: 961px) {
-  .cta-split { flex-direction: column; gap: 18px; text-align: center; align-items: center; }
-  .cta-copy { text-align: center; }
-  .cta-action { flex: 0 0 auto; width: 100%; max-width: 480px; }
-  .cta-line { white-space: normal; }
-}
 @media (max-width: 960px) {
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  section.cta-band { padding: 24px 0; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .cta-split { flex-direction: column; gap: 20px; text-align: center; }
-  .cta-copy { text-align: center; }
-  .cta-action { flex: 1 1 auto; width: 100%; max-width: 480px; }
-  .cta-line { white-space: normal; }
+  .cart-layout { grid-template-columns: 1fr; }
+  .cta-split { flex-direction: column; gap: 20px; }
+  .cta-line { white-space: normal; text-align: center; }
+  .cta-action { width: 100%; text-align: center; }
+  .cta-action .newsletter-form { margin: 0 auto; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .nav-links { display: none; }
 }
 @media (max-width: 640px) {
-  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid var(--gray-100); }
-  .nav-links.open { display: flex; }
+  .cart-list-row { grid-template-columns: 80px 1fr auto; gap: 14px; }
+  .cart-list-row img { width: 80px; height: 80px; }
+  .cart-list-row .cart-qty-control,
+  .cart-list-row .cart-list-price { grid-column: 2 / span 2; justify-self: start; }
   .menu-toggle { display: flex; }
-  .nav-cta { display: none; }
   .logo-img { height: 80px; }
-  .contact { padding: 40px 0 72px; }
-  .contact-form { padding: 28px 20px; }
-  .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
-  .newsletter-form { flex-direction: column; background: transparent; box-shadow: none; padding: 0; }
-  .newsletter-form input { background: var(--white); border-radius: var(--radius-pill); }
 }
 
 
@@ -700,176 +668,67 @@ body { padding-top: 142px; }
   </div>
 </template>
 
-<!-- PAGE HEAD -->
-<header class="page-head">
+<!-- CART PAGE -->
+<section class="cart-page">
   <div class="container">
-    <div class="page-head-inner">
-      <h1 style="white-space: nowrap;">We&rsquo;d <span class="accent">love</span> to hear from you</h1>
-      <p class="lead">Drop us a message anytime!</p>
+    <div class="cart-page-head">
+      <h1>Your <span class="accent">Cart</span></h1>
+      <p>Review your treats &mdash; you can adjust quantities or remove items before checkout.</p>
     </div>
-  </div>
-</header>
 
-<!-- FAQ — merged from FAQs.html -->
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="faq-head">
-      <h2>Questions, <span class="accent">answered</span></h2>
-      <p>Couldn&rsquo;t find what you&rsquo;re looking for? Drop us a note below &mdash; we usually reply within a day.</p>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-q">When can I actually buy Woofifi snacks?</summary>
-        <div class="faq-a">Our core range (Kangaroo Jerky, Rabbit Bites, Crocodile Chews) launches Q3 2026. Join the waitlist below to be first in line &mdash; early subscribers also get 15% off their first order.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Are your treats safe for puppies and senior dogs?</summary>
-        <div class="faq-a">Yes &mdash; our snacks contain no additives, no preservatives, and no artificial anything. Freeze-drying preserves nutrients without cooking them to death, making our treats gentle on young and older tummies alike. As always, consult your vet if your pup has specific dietary conditions.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Are the seasonal treats really safe for humans to taste?</summary>
-        <div class="faq-a">Select festive treats are formulated to be human-tasting friendly &mdash; meaning if you accidentally (or curiously) try one, nothing bad happens. They&rsquo;re still designed for dogs though, so please leave the full box to your pup. Look for the &ldquo;Human-friendly&rdquo; badge on qualifying products.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Where are your ingredients sourced?</summary>
-        <div class="faq-a">We source transparently. Specialty proteins like kangaroo and crocodile are imported from verified Australian suppliers. Chicken, sweet potato and other staples come from trusted regional partners. Every batch is traceable &mdash; ask us anytime.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">How does the grooming app work?</summary>
-        <div class="faq-a">The Woofifi App (Phase 2, launching 2027) lets you book certified groomers who come to your home. You can watch the session live, rate the experience, and reorder Woofifi snacks &mdash; all in one place. Groomers are verified, insured, and peer-reviewed.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Do you deliver island-wide in Singapore?</summary>
-        <div class="faq-a">Yes &mdash; we&rsquo;ll offer island-wide delivery from our online store and via partner platforms (Shopee, TikTok Shop). Free delivery thresholds and express options will be announced at launch.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Are you regulated / AVS-compliant?</summary>
-        <div class="faq-a">Absolutely. We&rsquo;re working closely with Singapore&rsquo;s Animal &amp; Veterinary Service (AVS) to ensure full compliance with import permits, labelling, and all statutory requirements before our Phase 1 launch.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h2>Whatever it is,<br>We genuinely want to hear it.</h2>
-        <p>Whether it&rsquo;s an ingredient question, a delivery hiccup, or just a chance to introduce your pet to ours, we&rsquo;re here.</p>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <div id="cartContainer">
+      <div class="cart-layout">
+        <div class="cart-list" id="cartList">
+          <div class="cart-list-row" data-price="24.00" data-qty="1">
+            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=240&q=80" alt="Kangaroo Jerky" />
+            <div class="cart-list-name"><strong>Kangaroo Jerky</strong><span>Freeze-dried &middot; 100g</span></div>
+            <div class="cart-qty-control">
+              <button class="cart-qty-btn cart-qty-minus" type="button" aria-label="Decrease">&minus;</button>
+              <span class="cart-qty-num">1</span>
+              <button class="cart-qty-btn cart-qty-plus" type="button" aria-label="Increase">+</button>
+            </div>
+            <span class="cart-list-price">S$24.00</span>
+            <button class="cart-list-remove" type="button" aria-label="Remove">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+            </button>
           </div>
-          <div class="contact-meta">
-            <strong>Email</strong>
-            <a href="mailto:contact@woofifi.com">contact@woofifi.com</a>
+          <div class="cart-list-row" data-price="24.00" data-qty="1">
+            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=240&q=80" alt="Rabbit Bites" />
+            <div class="cart-list-name"><strong>Rabbit Bites</strong><span>Freeze-dried &middot; 80g</span></div>
+            <div class="cart-qty-control">
+              <button class="cart-qty-btn cart-qty-minus" type="button" aria-label="Decrease">&minus;</button>
+              <span class="cart-qty-num">1</span>
+              <button class="cart-qty-btn cart-qty-plus" type="button" aria-label="Increase">+</button>
+            </div>
+            <span class="cart-list-price">S$24.00</span>
+            <button class="cart-list-remove" type="button" aria-label="Remove">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+            </button>
           </div>
         </div>
 
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
-          </div>
-          <div class="contact-meta">
-            <strong>WhatsApp</strong>
-            <a href="https://wa.me/6588687687" target="_blank" rel="noopener">+65 8868 7687</a>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div class="contact-meta">
-            <strong>Based in</strong>
-            <p>Singapore &middot; Island-wide delivery</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="contact-meta">
-            <strong>Reply time</strong>
-            <p>Within 24 hours, usually faster</p>
-          </div>
-        </div>
-
-        <div class="contact-socials">
-          <a href="https://www.instagram.com/woofifi_sg/" aria-label="Instagram" class="contact-social" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@woofifi_sg?is_from_webapp=1&sender_device=pc" aria-label="TikTok" class="contact-social" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
-          </a>
-          <a href="https://www.xiaohongshu.com/" aria-label="Xiaohongshu" class="contact-social" title="Xiaohongshu / Little Red Book" target="_blank" rel="noopener">
-            <span class="xhs-mark" aria-hidden="true"></span>
-          </a>
-        </div>
+        <aside class="cart-summary">
+          <h3>Order Summary</h3>
+          <div class="cart-summary-row"><span>Subtotal</span><span id="cartSubtotal">S$48.00</span></div>
+          <div class="cart-summary-row"><span>Shipping</span><span>Calculated at checkout</span></div>
+          <div class="cart-summary-row total"><span>Total</span><strong id="cartTotal">S$48.00</strong></div>
+          <a class="cart-checkout-btn" href="checkout.html">Proceed to Checkout</a>
+          <a class="cart-continue" href="snacks.html">&larr; Continue shopping</a>
+        </aside>
       </div>
-
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleContact(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First name</label>
-            <input class="form-input" type="text" id="firstName" name="firstName" required />
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last name</label>
-            <input class="form-input" type="text" id="lastName" name="lastName" required />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input class="form-input" type="email" id="email" name="email" required />
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone (optional)</label>
-          <input class="form-input" type="tel" id="phone" name="phone" placeholder="+65" />
-        </div>
-
-        <div class="form-group">
-          <label for="topic">What can we help with?</label>
-          <select class="form-select" id="topic" name="topic" required>
-            <option value="">Choose one</option>
-            <option value="order">Order or delivery</option>
-            <option value="product">A product question</option>
-            <option value="ingredients">Ingredients or allergies</option>
-            <option value="wholesale">Wholesale or partnerships</option>
-            <option value="other">Something else</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="petName">Your pet&rsquo;s name (optional)</label>
-          <input class="form-input" type="text" id="petName" name="petName" placeholder="So we know who we&rsquo;re talking about" />
-        </div>
-
-        <div class="form-group">
-          <label for="message">Your message</label>
-          <textarea class="form-textarea" id="message" name="message" required></textarea>
-        </div>
-
-        <button class="form-submit" type="submit">Send Message</button>
-      </form>
     </div>
+
+    
   </div>
 </section>
 
-<!-- CTA BAND / NEWSLETTER -->
+<!-- CTA BAND -->
 <section class="cta-band" id="newsletter">
   <div class="container">
     <div class="cta-split">
-      <div class="cta-copy">
-        <p class="cta-line">Be the first to know what is coming out of our kitchen next. <span class="accent">Join us</span> today</p>
-      </div>
+      <div class="cta-copy"><p class="cta-line">Be the first to know what is coming out of our kitchen next. <span class="accent">Join us</span> today</p></div>
       <div class="cta-action">
-        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('🎉 Welcome to the Woofifi pack!')">
           <input type="email" placeholder="you@wooflove.com" required aria-label="Email" />
           <button type="submit">Subscribe</button>
         </form>
@@ -1143,23 +1002,68 @@ const WoofifiCart = (function() {
   // React to cart changes from cart.html in another tab/window
   window.addEventListener('storage', (e) => { if (e.key === 'woofifi_cart_v1') render(); });
 })();
+  (function() {
+    const list = document.getElementById('cartList');
+    const tpl = document.getElementById('cartEmptyTpl');
+    const container = document.getElementById('cartContainer');
+    const fmt = (n) => 'S$' + n.toFixed(2);
 
-
-  function handleContact(e) {
-    if (e.target.action.includes('YOUR_FORMSPREE_ID')) {
-      e.preventDefault();
-      alert('Thanks! This is a demo form — set up Formspree (free) at formspree.io and replace YOUR_FORMSPREE_ID in the form action to start receiving real messages.');
+    function render() {
+      const items = WoofifiCart.load();
+      if (!items.length) {
+        container.innerHTML = '';
+        container.appendChild(tpl.content.cloneNode(true));
+        const cnt = document.getElementById('cartCount');
+        if (cnt) cnt.textContent = '0';
+        return;
+      }
+      list.innerHTML = '';
+      let subtotal = 0, count = 0;
+      items.forEach((it, idx) => {
+        subtotal += it.price * it.qty;
+        count += it.qty;
+        const row = document.createElement('div');
+        row.className = 'cart-list-row';
+        row.innerHTML = `
+          <img src="${it.img}" alt="${it.name}" />
+          <div class="cart-list-name"><strong>${it.name}</strong><span>${it.desc || ''}</span></div>
+          <div class="cart-qty-control">
+            <button class="cart-qty-btn cart-qty-minus" type="button" aria-label="Decrease">&minus;</button>
+            <span class="cart-qty-num">${it.qty}</span>
+            <button class="cart-qty-btn cart-qty-plus" type="button" aria-label="Increase">+</button>
+          </div>
+          <span class="cart-list-price">${fmt(it.price * it.qty)}</span>
+          <button class="cart-list-remove" type="button" aria-label="Remove">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+          </button>
+        `;
+        list.appendChild(row);
+        const minus = row.querySelector('.cart-qty-minus');
+        const plus = row.querySelector('.cart-qty-plus');
+        const remove = row.querySelector('.cart-list-remove');
+        minus.disabled = it.qty <= 1;
+        minus.addEventListener('click', () => update(idx, items[idx].qty - 1));
+        plus.addEventListener('click',  () => update(idx, items[idx].qty + 1));
+        remove.addEventListener('click', () => { items.splice(idx, 1); WoofifiCart.save(items); render(); });
+      });
+      document.getElementById('cartSubtotal').textContent = fmt(subtotal);
+      document.getElementById('cartTotal').textContent = fmt(subtotal);
+      const cnt = document.getElementById('cartCount');
+      if (cnt) cnt.textContent = String(count);
     }
-  }
 
-  function handleNewsletter(e) {
-    e.preventDefault();
-    const email = e.target.querySelector('input').value;
-    alert('🎉 Welcome to the Woofifi pack, ' + email + '!\n\n(Demo — wire this up to Mailchimp, ConvertKit, or your preferred email service before launch.)');
-    e.target.reset();
-  }
+    function update(idx, qty) {
+      const items = WoofifiCart.load();
+      if (!items[idx]) return;
+      items[idx].qty = Math.max(1, qty);
+      WoofifiCart.save(items);
+      render();
+    }
+
+    render();
+    window.addEventListener('storage', (e) => { if (e.key === 'woofifi_cart_v1') render(); });
+  })();
 
   </script>
-
 </body>
 </html>

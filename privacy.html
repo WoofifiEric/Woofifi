@@ -18,9 +18,15 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); c
 a { color: var(--navy); text-decoration: none; border-bottom: 2px solid var(--yellow); }
 a:hover { color: var(--yellow); }
 h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; color: var(--navy); line-height: 1.2; letter-spacing: -0.02em; }
-.nav { position: sticky; top: 0; z-index: 100; background: rgba(255,249,240,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(38, 35, 84, 0.08); }
+.nav { position: fixed;
+  top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,249,240,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(38, 35, 84, 0.08); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: var(--max-width); margin: 0 auto; }
 .logo { display: flex; align-items: center; gap: 0; border: none; }
+/* Spacer so document content starts below the fixed nav. Height matches the
+   full (un-scrolled) nav so layout never shifts when the nav slims. */
+body { padding-top: 142px; }
+/* Scrolled state — slim the nav so it takes less vertical space when user scrolls */
+.nav-icon-btn { transition: var(--transition); }
 .logo-img { height: 110px; width: auto; display: block; image-rendering: -webkit-optimize-contrast; }
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-link { font-weight: 600; font-size: 15px; color: var(--navy); border: none; transition: var(--transition); position: relative; }
@@ -48,34 +54,38 @@ li { margin-bottom: 6px; }
 /* CTA BAND / NEWSLETTER */
 .cta-band { background: var(--navy); padding: 24px 0; }
 .cta-band .container { max-width: 1240px; padding: 0 24px; margin: 0 auto; }
-.cta-split { display: flex; align-items: center; justify-content: center; gap: 40px; max-width: 1192px; margin: 0 auto; }
+.cta-split { display: flex; align-items: center; justify-content: space-between; gap: 40px; max-width: 1192px; margin: 0 auto; }
 .cta-copy { flex: 0 1 auto; min-width: 0; text-align: left; }
-.cta-action { flex: 0 0 380px; min-width: 0; text-align: center; }
-.cta-line { font-family: inherit; font-size: 18px; font-weight: 500; line-height: 1.4; color: var(--cream); margin: 0; white-space: nowrap; }
-.cta-line .accent { color: var(--yellow); font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 700; }
+.cta-action { flex: 0 0 380px; min-width: 0; text-align: right; }
+.cta-action .newsletter-form { margin: 0 0 0 auto; }
+.cta-line { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; font-weight: 500; line-height: 1.4; color: var(--cream); margin: 0; white-space: nowrap; letter-spacing: 0.005em; }
+.cta-line .accent { color: var(--yellow); font-family: 'Plus Jakarta Sans', sans-serif; font-style: normal; font-weight: 700; }
 .newsletter-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; background: var(--white); padding: 8px; border-radius: var(--radius-pill); box-shadow: var(--shadow-md); }
 .newsletter-form input { flex: 1; border: none; padding: 14px 20px; background: transparent; font-family: inherit; font-size: 15px; color: var(--navy); outline: none; }
 .newsletter-form button { padding: 14px 28px; background: var(--yellow); color: var(--navy); border-radius: var(--radius-pill); font-weight: 700; font-size: 14px; transition: var(--transition); border: none; cursor: pointer; }
 .newsletter-form button:hover { background: #FFD888; }
 
 /* FOOTER */
-.footer { background: var(--cream); color: var(--navy); padding: 96px 0 32px; border-top: 2px solid rgba(38, 35, 84, 0.12); }
+.footer { background: var(--cream); color: var(--navy); padding: 56px 0 22px; border-top: 2px solid rgba(38, 35, 84, 0.12); }
 .footer .container { max-width: 1240px; padding: 0 24px; margin: 0 auto; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 56px; }
-.footer-brand p { color: rgba(38, 35, 84, 0.75); font-size: 15px; line-height: 1.7; margin: 20px 0; max-width: 320px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 32px; }
+.footer-brand p { color: rgba(38, 35, 84, 0.75); font-size: 14px; line-height: 1.6; margin: 14px 0; max-width: 320px; }
 .footer-brand a.logo { border: none; }
 .footer-socials { display: flex; gap: 12px; }
 .social-btn { width: 42px; height: 42px; background: rgba(38, 35, 84, 0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--navy); transition: var(--transition); border: none; }
 .social-btn:hover { background: var(--navy); color: var(--yellow); transform: translateY(-3px); }
-.footer-col h4 { color: var(--navy); font-size: 15px; margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.footer-col h4 { color: var(--navy); font-size: 14px; margin-bottom: 14px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
 .footer-col ul { list-style: none; padding: 0; margin: 0; }
-.footer-col li { margin-bottom: 12px; }
+.footer-col li { margin-bottom: 9px; }
 .footer-col a { color: rgba(38, 35, 84, 0.75); font-size: 14px; transition: var(--transition); border: none; }
 .footer-col a:hover { color: var(--navy); }
-.footer-bottom { padding-top: 32px; border-top: 1px solid rgba(38, 35, 84, 0.15); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: rgba(38, 35, 84, 0.6); font-size: 13px; }
+.footer-bottom { padding-top: 20px; border-top: 1px solid rgba(38, 35, 84, 0.15); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; color: rgba(38, 35, 84, 0.6); font-size: 12.5px; }
 .footer-bottom a { color: rgba(38, 35, 84, 0.75); border: none; }
 .footer-bottom a:hover { color: var(--navy); }
-.logo-img-footer { height: 150px; }
+.logo-img-footer { height: 170px; }
+.social-btn img { width: 22px; height: 22px; object-fit: contain; }
+.social-btn .xhs-mark { display: inline-block; width: 22px; height: 22px; background-image: url(assets/xhs-blue.svg); background-size: contain; background-position: center; background-repeat: no-repeat; }
+.social-btn:hover .xhs-mark { background-image: url(assets/xhs-yellow.svg); }
 
 @media (max-width: 1100px) and (min-width: 961px) {
   .cta-split { flex-direction: column; gap: 18px; text-align: center; align-items: center; }
@@ -96,26 +106,518 @@ li { margin-bottom: 6px; }
   .newsletter-form { flex-direction: column; background: transparent; box-shadow: none; padding: 0; }
   .newsletter-form input { background: var(--white); border-radius: var(--radius-pill); }
 }
+
+
+/* ═══════════════════════════════════════════════════
+   STANDARDIZED HEADER + FOOTER (mirrored from index.html)
+   These rules live LAST in <style> so they override any
+   page-specific older nav/footer rules by source order.
+   ═══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════
+   3. NAVIGATION
+   ═══════════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  /* Background opacity + shadow strengthen smoothly as the nav slims, driven by --nav-progress (0 = full, 1 = slim). */
+  background: rgba(255, 249, 240, calc(0.85 + 0.11 * var(--nav-progress, 0)));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(38, 35, 84, 0.08);
+  box-shadow: 0 4px 16px rgba(38, 35, 84, calc(0.06 * var(--nav-progress, 0)));
+}
+/* Spacer so document content starts below the fixed nav. Height matches the
+   full (un-scrolled) nav so layout never shifts when the nav slims. */
+body { padding-top: 142px; }
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Padding shrinks 16px → 6px in lock-step with scroll so the nav's bottom edge tracks the hero's top edge. */
+  padding: calc(16px - 10px * var(--nav-progress, 0)) 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 24px;
+}
+.nav-inner .logo { margin-right: auto; transition: transform 0.3s ease; }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.logo-img {
+  /* Logo height shrinks 110px → 56px continuously with scroll (no CSS transition — driven by scroll position itself). */
+  height: calc(110px - 54px * var(--nav-progress, 0));
+  width: auto;
+  display: block;
+  /* Crisp rendering on retina screens */
+  image-rendering: -webkit-optimize-contrast;
+}
+.logo-img-footer { height: 170px; }
+.social-btn img { width: 22px; height: 22px; object-fit: contain; }
+.social-btn .xhs-mark { display: inline-block; width: 22px; height: 22px; background-image: url(assets/xhs-blue.svg); background-size: contain; background-position: center; background-repeat: no-repeat; }
+.social-btn:hover .xhs-mark { background-image: url(assets/xhs-yellow.svg); }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-link {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy);
+  transition: var(--transition);
+  position: relative;
+}
+.nav-link:hover { color: var(--yellow); }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--yellow);
+  transition: var(--transition);
+}
+.nav-link:hover::after { width: 100%; }
+.nav-cta { margin-left: 8px; }
+.nav-icons { display: flex; align-items: center; gap: 6px; margin-left: 16px; }
+.nav-icon-btn {
+  /* Icon button shrinks 40 → 36 with scroll. Transition restricted to color/background so width/height tracks scroll instantly. */
+  width: calc(40px - 4px * var(--nav-progress, 0));
+  height: calc(40px - 4px * var(--nav-progress, 0));
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--navy); background: transparent; border: none;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-icon-btn:hover { background: var(--navy); color: var(--yellow); }
+.nav-icon-cart:hover .cart-count { background: var(--cream); color: var(--navy); }
+.nav-icon-cart .cart-count {
+  position: absolute; top: 2px; right: 2px;
+  width: 16px; height: 16px;
+  background: var(--yellow); color: var(--navy);
+  border-radius: 50%;
+  font-size: 10px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.nav-icon-cart .cart-count[data-count="0"] { display: none; }
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+}
+
+.nav, .nav-inner, .logo-img, .nav-icon-btn { will-change: transform, padding, height; }
+
+/* ═══════════════════════════════════════════════════
+   SEARCH MODAL
+   ═══════════════════════════════════════════════════ */
+.search-modal {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(38, 35, 84, 0.82);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  display: none;
+  align-items: flex-start; justify-content: center;
+  padding: 18vh 24px;
+}
+.search-modal.is-open { display: flex; }
+.search-modal-inner {
+  width: 100%; max-width: 720px;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 28px 28px 22px;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.25);
+  animation: searchPop 0.25s ease-out;
+}
+@keyframes searchPop { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+.search-modal-close {
+  position: absolute; top: 24px; right: 28px;
+  background: rgba(255,249,240,0.18); color: var(--cream);
+  width: 44px; height: 44px; border: none; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+}
+.search-modal-close svg { width: 20px; height: 20px; display: block; }
+.search-modal-close:hover { background: var(--navy); color: var(--yellow); transform: rotate(90deg); }
+.search-form {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px;
+  border: 2px solid var(--navy); border-radius: var(--radius-pill);
+  background: var(--white);
+}
+.search-form-icon { color: var(--navy); flex-shrink: 0; }
+.search-form input {
+  flex: 1; border: none; outline: none;
+  background: transparent; font-family: inherit;
+  font-size: 17px; color: var(--navy);
+}
+.search-results { margin-top: 14px; max-height: none; overflow: visible; }
+.search-result {
+  display: block; padding: 14px 16px; border-radius: var(--radius-md);
+  background: var(--white); border: 1px solid rgba(38,35,84,0.06);
+  margin-bottom: 8px; transition: var(--transition);
+  text-decoration: none;
+}
+.search-result:hover { background: var(--cream-warm); transform: translateX(4px); box-shadow: 0 10px 24px rgba(252, 193, 86, 0.40), 0 3px 8px rgba(252, 193, 86, 0.25); border-color: rgba(252, 193, 86, 0.50); }
+.search-result strong { display: block; color: var(--navy); font-size: 15px; margin-bottom: 4px; }
+.search-result span { color: var(--gray-700); font-size: 13px; line-height: 1.5; }
+.search-empty { text-align: center; padding: 24px; color: var(--gray-500); font-size: 14px; }
+
+
+/* ═══════════════════════════════════════════════════
+   CART SIDEBAR
+   ═══════════════════════════════════════════════════ */
+.cart-backdrop {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(38, 35, 84, 0.55);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s;
+}
+.cart-backdrop.is-open { opacity: 1; pointer-events: auto; }
+.cart-sidebar {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 100%; max-width: 420px;
+  background: var(--cream);
+  z-index: 1000;
+  display: flex; flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: -8px 0 32px rgba(38,35,84,0.20);
+}
+.cart-sidebar.is-open { transform: translateX(0); }
+.cart-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 24px;
+  border-bottom: 1px solid rgba(38,35,84,0.10);
+}
+.cart-head h3 {
+  margin: 0; font-family: 'Fraunces', Georgia, serif;
+  color: var(--navy); font-size: 22px; letter-spacing: -0.01em;
+}
+.cart-close {
+  background: rgba(38,35,84,0.06); border: none;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy);
+  cursor: pointer; transition: var(--transition);
+  padding: 0;
+}
+.cart-close svg { width: 18px; height: 18px; display: block; }
+.cart-close:hover { background: var(--navy); color: var(--yellow); transform: rotate(90deg); }
+.cart-body { flex: 1; overflow-y: auto; padding: 16px 24px; }
+.cart-item {
+  display: flex; gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(38,35,84,0.08);
+  align-items: center;
+}
+.cart-item:last-child { border-bottom: none; }
+.cart-item img {
+  width: 72px; height: 72px;
+  object-fit: cover; border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+.cart-item-info { flex: 1; min-width: 0; }
+.cart-item-info strong {
+  display: block; color: var(--navy); font-size: 15px;
+  margin-bottom: 6px;
+}
+.cart-item-meta {
+  display: flex; gap: 12px; align-items: center; justify-content: space-between;
+  font-size: 13px; color: var(--gray-700);
+}
+.cart-price { color: var(--navy); font-weight: 700; font-size: 14px; }
+.cart-qty-control {
+  display: inline-flex; align-items: center;
+  background: var(--cream-warm);
+  border: 1.5px solid rgba(252, 193, 86, 0.35);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.cart-qty-btn {
+  width: 26px; height: 26px;
+  background: transparent; border: none;
+  color: var(--navy); font-weight: 800; font-size: 14px;
+  cursor: pointer; transition: var(--transition);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.cart-qty-btn:hover { background: var(--yellow); color: var(--navy); }
+.cart-qty-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.cart-qty-num {
+  min-width: 22px; text-align: center;
+  color: var(--navy); font-weight: 700; font-size: 13px;
+  user-select: none;
+}
+.cart-remove {
+  background: transparent; border: none;
+  width: 30px; height: 30px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--gray-500); cursor: pointer; transition: var(--transition);
+  padding: 0;
+}
+.cart-remove svg { width: 16px; height: 16px; }
+.cart-remove:hover { background: rgba(220, 53, 69, 0.10); color: #dc3545; }
+.cart-empty {
+  text-align: center; padding: 40px 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+}
+.cart-empty-art {
+  width: 220px; height: 220px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; overflow: hidden;
+  box-shadow: 0 12px 28px rgba(38,35,84,0.10);
+}
+.cart-empty-art svg { width: 100%; height: 100%; }
+.cart-empty-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cart-empty h4 {
+  font-family: 'Fraunces', Georgia, serif;
+  color: var(--navy); font-size: 22px; margin: 0;
+  font-weight: 700;
+}
+.cart-empty p {
+  color: var(--gray-700); font-size: 14px; line-height: 1.5;
+  margin: 0;
+}
+.cart-empty .btn-explore {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 26px; background: var(--yellow); color: var(--navy);
+  font-weight: 700; font-size: 14px; border-radius: var(--radius-pill);
+  transition: var(--transition); text-decoration: none;
+  margin-top: 4px;
+}
+.cart-empty .btn-explore:hover { background: #ffcd73; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(252, 193, 86, 0.4); }
+.cart-foot {
+  padding: 18px 24px 22px;
+  border-top: 1px solid rgba(38,35,84,0.10);
+  background: var(--white);
+}
+.cart-subtotal {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 6px; font-size: 15px; color: var(--gray-700);
+}
+.cart-subtotal strong { color: var(--navy); font-size: 18px; }
+.cart-shipping-note { font-size: 12.5px; color: var(--gray-500); margin: 0 0 14px; text-align: left; font-style: italic; }
+.cart-actions { display: flex; gap: 10px; }
+.btn-cart-secondary, .btn-cart-primary {
+  flex: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 13px 16px; border-radius: var(--radius-pill);
+  font-weight: 700; font-size: 14px; letter-spacing: 0.02em;
+  transition: var(--transition);
+  text-align: center;
+}
+.btn-cart-secondary { border: 2px solid var(--navy); color: var(--navy); background: var(--white); }
+.btn-cart-secondary:hover { background: var(--navy); color: var(--cream); }
+.btn-cart-primary { background: var(--yellow); color: var(--navy); }
+.btn-cart-primary:hover { background: #ffcd73; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(252, 193, 86, 0.4); }
+
+
+/* ═══════════════════════════════════════════════════
+   15. FOOTER
+   ═══════════════════════════════════════════════════ */
+.footer {
+  background: var(--cream);
+  color: var(--navy);
+  padding: 56px 0 22px;
+  border-top: 2px solid rgba(38, 35, 84, 0.12);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 36px;
+  margin-bottom: 32px;
+}
+.footer-brand p {
+  color: rgba(38, 35, 84, 0.75);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 14px 0;
+  max-width: 320px;
+}
+.footer-socials { display: flex; gap: 12px; }
+.social-btn {
+  width: 42px;
+  height: 42px;
+  background: rgba(38, 35, 84, 0.08);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  transition: var(--transition);
+}
+.social-btn:hover { background: var(--navy); color: var(--yellow); transform: translateY(-3px); }
+.footer-col h4 { color: var(--navy); font-size: 14px; margin-bottom: 14px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 9px; }
+.footer-col a {
+  color: rgba(38, 35, 84, 0.75);
+  font-size: 14px;
+  transition: var(--transition);
+}
+.footer-col a:hover { color: var(--navy); }
+.footer-bottom {
+  padding-top: 20px;
+  border-top: 1px solid rgba(38, 35, 84, 0.15);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: rgba(38, 35, 84, 0.6);
+  font-size: 12.5px;
+}
+.footer-bottom a { color: rgba(38, 35, 84, 0.75); }
+.footer-bottom a:hover { color: var(--navy); }
+
+
+@media (max-width: 960px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 640px) {
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 24px; gap: 16px; border-bottom: 1px solid var(--gray-100); }
+  .nav-links.open { display: flex; }
+  .menu-toggle { display: flex; }
+  .nav-cta { display: none; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .logo-img { height: calc(80px - 24px * var(--nav-progress, 0)); }
+  .logo-img-footer { height: 150px; }
+}
 </style>
 </head>
 <body>
 
+<!-- ═══════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════ -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="logo" aria-label="Woofifi home">
       <img class="logo-img" src="assets/Logo-Eric-bold.png" alt="Woofifi" />
     </a>
-    <div class="nav-links">
-      <a class="nav-link" href="index.html">Home</a>
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="snacks.html">Our Snacks</a>
+      <a class="nav-link" href="reviews.html">Our Testimonials</a>
       <a class="nav-link" href="about.html">Our Story</a>
-      <a class="nav-link" href="index.html#products">Snacks</a>
-      <a class="nav-link" href="index.html#testimonials">Reviews</a>
-      <a class="nav-link" href="blog.html">Blog</a>
-      <a class="nav-link" href="contact.html">Contact</a>
-      <a class="btn btn-yellow btn-sm nav-cta" href="index.html#newsletter">Get Early Access</a>
+      <a class="nav-link" href="blog.html">Our Blog</a>
+      <a class="nav-link" href="contact.html">Hello Woofifi</a>
     </div>
+    <div class="nav-icons">
+      <button class="nav-icon-btn" id="searchToggle" aria-label="Search Woofifi" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <a class="nav-icon-btn" href="account.html" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <button class="nav-icon-btn nav-icon-cart" id="cartToggle" aria-label="Cart" type="button">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count" id="cartCount">2</span>
+      </button>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" type="button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
 </nav>
+
+<!-- ═══════════════════════════════════════════════════
+     SEARCH MODAL — searches Woofifi pages only
+     ═══════════════════════════════════════════════════ -->
+<div class="search-modal" id="searchModal" aria-hidden="true">
+  <button class="search-modal-close" id="searchClose" aria-label="Close search" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+  </button>
+  <div class="search-modal-inner">
+    <form class="search-form" onsubmit="handleSearch(event)" role="search">
+      <svg class="search-form-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="search" id="searchInput" placeholder="Search Woofifi..." autocomplete="off" aria-label="Search query" />
+    </form>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     CART SIDEBAR
+     ═══════════════════════════════════════════════════ -->
+<div class="cart-backdrop" id="cartBackdrop"></div>
+<aside class="cart-sidebar" id="cartSidebar" aria-hidden="true" aria-label="Shopping cart">
+  <header class="cart-head">
+    <h3>Cart</h3>
+    <button class="cart-close" id="cartClose" aria-label="Close cart" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </header>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-item" data-price="24.00" data-qty="1">
+      <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=160&q=80" alt="Kangaroo Jerky" />
+      <div class="cart-item-info">
+        <strong>Kangaroo Jerky</strong>
+        <div class="cart-item-meta">
+          <span class="cart-qty-control">
+            <button class="cart-qty-btn cart-qty-minus" type="button" aria-label="Decrease quantity">&minus;</button>
+            <span class="cart-qty-num">1</span>
+            <button class="cart-qty-btn cart-qty-plus" type="button" aria-label="Increase quantity">+</button>
+          </span>
+          <span class="cart-price">S$24.00</span>
+        </div>
+      </div>
+      <button class="cart-remove" aria-label="Remove" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+      </button>
+    </div>
+    <div class="cart-item" data-price="24.00" data-qty="1">
+      <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=160&q=80" alt="Rabbit Bites" />
+      <div class="cart-item-info">
+        <strong>Rabbit Bites</strong>
+        <div class="cart-item-meta">
+          <span class="cart-qty-control">
+            <button class="cart-qty-btn cart-qty-minus" type="button" aria-label="Decrease quantity">&minus;</button>
+            <span class="cart-qty-num">1</span>
+            <button class="cart-qty-btn cart-qty-plus" type="button" aria-label="Increase quantity">+</button>
+          </span>
+          <span class="cart-price">S$24.00</span>
+        </div>
+      </div>
+      <button class="cart-remove" aria-label="Remove" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+      </button>
+    </div>
+  </div>
+  <footer class="cart-foot">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <strong id="cartSubtotal">S$48.00</strong>
+    </div>
+    <p class="cart-shipping-note">Shipping calculated at checkout</p>
+    <div class="cart-actions">
+      <a class="btn-cart-secondary" href="cart.html">View Cart</a>
+      <a class="btn-cart-primary" href="checkout.html">Checkout</a>
+    </div>
+  </footer>
+</aside>
+
+<!-- Empty cart template (used when cart is cleared) -->
+<template id="cartEmptyTpl">
+  <div class="cart-empty">
+    <div class="cart-empty-art" aria-hidden="true">
+      <img src="assets/cart-dog.png" alt="" />
+    </div>
+    <h4>Your cart is empty</h4>
+    <p>Can you please throw a treat in there?</p>
+    <a class="btn-explore" href="snacks.html">Explore Our Snacks &rarr;</a>
+  </div>
+</template>
 
 <div class="container">
   <div class="head">
@@ -159,7 +661,7 @@ li { margin-bottom: 6px; }
     <li><strong>What we collect</strong> &mdash; the email address you submit, the date and source of signup (e.g. homepage form, blog footer), and basic engagement data such as opens and clicks if our email tool reports it</li>
     <li><strong>What we send</strong> &mdash; product launches, seasonal and festival drops, restock alerts, occasional promotions, and stories from our kitchen. We do not send daily mail and we do not share your email with other brands</li>
     <li><strong>Email service providers</strong> &mdash; subscriber lists are stored and delivered through reputable third-party email platforms (such as Mailchimp, ConvertKit or similar) which act as our data processors and are bound by their own privacy and security obligations</li>
-    <li><strong>How to withdraw consent</strong> &mdash; every email includes an unsubscribe link, or you can email <a href="mailto:orders@woofifi.com">orders@woofifi.com</a> at any time to be removed. Unsubscribing from marketing does not affect transactional messages tied to an active order</li>
+    <li><strong>How to withdraw consent</strong> &mdash; every email includes an unsubscribe link, or you can email <a href="mailto:contact@woofifi.com">contact@woofifi.com</a> at any time to be removed. Unsubscribing from marketing does not affect transactional messages tied to an active order</li>
     <li><strong>Retention</strong> &mdash; we keep your subscription record for as long as you remain subscribed plus a short period after unsubscribe to suppress future sends, after which the record is purged in line with section 6 below</li>
     <li><strong>Eligibility</strong> &mdash; by subscribing you confirm you are at least 18 years old (or the age of majority where you live) and that the email address belongs to you</li>
   </ul>
@@ -182,7 +684,7 @@ li { margin-bottom: 6px; }
     <li>Withdraw consent to specific uses (e.g. marketing)</li>
     <li>Request deletion, subject to legal retention obligations</li>
   </ul>
-  <p>To exercise any of these rights, email us at <a href="mailto:orders@woofifi.com">orders@woofifi.com</a>.</p>
+  <p>To exercise any of these rights, email us at <a href="mailto:contact@woofifi.com">contact@woofifi.com</a>.</p>
 
   <h2>9. Children&rsquo;s Privacy</h2>
   <p>Woofifi is not intended for children under 13. We do not knowingly collect data from minors. If you believe a child has provided us with personal data, contact us and we will delete it.</p>
@@ -194,7 +696,7 @@ li { margin-bottom: 6px; }
   <p>For any privacy-related enquiries, please contact our Data Protection Officer at:</p>
   <p>
     <strong>Woofifi Pte Ltd</strong><br>
-    Email: <a href="mailto:orders@woofifi.com">orders@woofifi.com</a><br>
+    Email: <a href="mailto:contact@woofifi.com">contact@woofifi.com</a><br>
     Phone: <a href="tel:+6588687687">+65 8868 7687</a>
   </p>
 </div>
@@ -209,78 +711,287 @@ li { margin-bottom: 6px; }
       <div class="cta-action">
         <form class="newsletter-form" onsubmit="handleNewsletter(event)">
           <input type="email" placeholder="you@wooflove.com" required aria-label="Email" />
-          <button type="submit">Count Me In</button>
+          <button type="submit">Subscribe</button>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html#home" class="logo">
+        <a href="#home" class="logo">
+          <!-- [LOGO] Footer uses the same original logo as the header (navy outlines + yellow accents) on the warm-beige footer background. -->
           <img class="logo-img logo-img-footer" src="assets/Logo-Eric-bold.png" alt="Woofifi" />
         </a>
-        <p>Premium natural pet snacks and trusted pet services, made for the way Singapore lives today.</p>
+        <p>Woofifi&rsquo;s 100% natural treats are handmade in Singapore.</p>
         <div class="footer-socials">
-          <a href="https://instagram.com/woofifi" aria-label="Instagram" class="social-btn">
+          <a href="https://www.instagram.com/woofifi_sg/" aria-label="Instagram" class="social-btn" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
-          <a href="https://tiktok.com/@woofifi" aria-label="TikTok" class="social-btn">
+          <a href="https://www.tiktok.com/@woofifi_sg?is_from_webapp=1&sender_device=pc" aria-label="TikTok" class="social-btn" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
           </a>
-          <a href="#" aria-label="Xiaohongshu" class="social-btn" title="Xiaohongshu / Little Red Book">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <a href="https://www.xiaohongshu.com/" aria-label="Xiaohongshu" class="social-btn" title="Xiaohongshu / Little Red Book" target="_blank" rel="noopener">
+            <span class="xhs-mark" aria-hidden="true"></span>
           </a>
-          <a href="mailto:orders@woofifi.com" aria-label="Email" class="social-btn">
+          <a href="https://wa.me/" aria-label="WhatsApp" class="social-btn" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+          </a>
+          <a href="mailto:contact@woofifi.com" aria-label="Email" class="social-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </a>
         </div>
       </div>
       <div class="footer-col">
-        <h4>Shop</h4>
+        <h4>Snacks</h4>
         <ul>
-          <li><a href="index.html#products">Core Range</a></li>
-          <li><a href="index.html#products">Seasonal Drops</a></li>
+          <li><a href="snacks.html">Core Range</a></li>
+          <li><a href="snacks.html">Seasonal Drops</a></li>
           <li><a href="#newsletter">Early Access</a></li>
           <li><a href="#">Gift Cards</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>About</h4>
         <ul>
-          <li><a href="about.html">Our Story</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">Why We Started</a></li>
+          <li><a href="about.html#founders">Who We Are</a></li>
+          <li><a href="reviews.html">What They Said</a></li>
+          <li><a href="blog.html">What We Share</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Support</h4>
         <ul>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="contact.html">Get Help</a></li>
+          <li><a href="contact.html#faq">FAQs</a></li>
+          <li><a href="contact.html">Contact us</a></li>
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>&copy; 2026 Woofifi Pte Ltd &middot; Made with 💛 in Singapore</div>
-      <div><a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="contact.html">Contact</a></div>
+      <div>© 2026 Woofifi Pte Ltd · Made with 💛 in Singapore</div>
+      <div><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-  function handleNewsletter(e) {
+  // Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle?.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+// Header — drive nav size CONTINUOUSLY with scroll position so the nav's
+// bottom edge tracks exactly where the hero banner's top edge will appear in
+// the viewport. Eliminates the brief blank gap that used to flash on the
+// scroll-back-to-top because the binary "is-scrolled" class waited for a
+// threshold to flip before expanding the nav.
+//
+// Math: hero starts at body padding-top (142px). When scrollY = X, hero top in
+// viewport = 142 - X. Slim nav ≈ 70px, full nav ≈ 142px → diff = 72px.
+// Tying progress to scrollY/72 means nav-bottom = 142 - 72 * progress = hero-top
+// for every X in [0, 72] — perfect tracking, zero gap.
+(function() {
+  const navEl = document.querySelector('.nav');
+  if (!navEl) return;
+  const RANGE = 72;
+  const root = document.documentElement;
+  let ticking = false;
+  function updateNav() {
+    const sy = window.scrollY;
+    const progress = Math.min(1, Math.max(0, sy / RANGE));
+    root.style.setProperty('--nav-progress', progress.toFixed(3));
+    // Class kept in sync for any logic that still keys off it.
+    if (progress >= 1) navEl.classList.add('is-scrolled');
+    else navEl.classList.remove('is-scrolled');
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateNav); ticking = true; }
+  }, { passive: true });
+  updateNav();
+})();
+
+// Search modal — open / close + simple in-page search
+(function() {
+  const modal = document.getElementById('searchModal');
+  const openBtn = document.getElementById('searchToggle');
+  const closeBtn = document.getElementById('searchClose');
+  const input = document.getElementById('searchInput');
+  const results = document.getElementById('searchResults');
+  if (!modal) return;
+
+  // Searchable index — pages within the Woofifi site only.
+  const pages = [
+    { title: 'Our Snacks', url: 'snacks.html', body: 'kangaroo jerky rabbit bites crocodile chews chicken sweet potato natural treats freeze-dried' },
+    { title: 'Our Story — Why We Started', url: 'about.html', body: 'eric peh korine chan kyra wang founders woofifi singapore handmade kitchen story team' },
+    { title: 'Our Testimonials — What They Said', url: 'reviews.html', body: 'reviews testimonials pet parents alle milo miso poodle love letters families' },
+    { title: 'FAQs — Hello Woofifi', url: 'contact.html#faq', body: 'questions answers shipping launch ingredients puppies senior dogs grooming app delivery avs' },
+    { title: 'Hello Woofifi — Contact', url: 'contact.html', body: 'contact email phone whatsapp orders messages instagram tiktok singapore' },
+    { title: 'Blog — Stories, tips & pup love', url: 'blog.html', body: 'blog journal nutrition grooming seasonal mid-autumn freeze-dried mooncake' },
+    { title: 'Privacy Policy', url: 'privacy.html', body: 'privacy data pdpa cookies retention rights' },
+    { title: 'Terms of Service', url: 'terms.html', body: 'terms service agreement payment delivery returns liability' },
+  ];
+
+  function open() {
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    setTimeout(() => input?.focus(), 40);
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  openBtn?.addEventListener('click', open);
+  closeBtn?.addEventListener('click', close);
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+
+  function render(query) {
+    const q = (query || '').trim().toLowerCase();
+    if (!q) { results.innerHTML = ''; return; }
+    const hits = pages.filter(p =>
+      p.title.toLowerCase().includes(q) || p.body.toLowerCase().includes(q)
+    );
+    if (!hits.length) {
+      results.innerHTML = '<div class="search-empty">No matches on Woofifi pages. Try another word.</div>';
+      return;
+    }
+    results.innerHTML = hits.map(h =>
+      `<a class="search-result" href="${h.url}"><strong>${h.title}</strong><span>Visit page &rarr;</span></a>`
+    ).join('');
+  }
+
+  input?.addEventListener('input', (e) => render(e.target.value));
+  window.handleSearch = function(e) {
+    e.preventDefault();
+    render(input.value);
+  };
+})();
+
+// Shared cart state — synced via localStorage between sidebar and cart.html
+const WoofifiCart = (function() {
+  const KEY = 'woofifi_cart_v1';
+  const DEFAULT_ITEMS = [
+    { id: 'kangaroo-jerky', name: 'Kangaroo Jerky', desc: 'Freeze-dried · 100g', price: 24.00, qty: 1, img: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=240&q=80' },
+    { id: 'rabbit-bites',   name: 'Rabbit Bites',   desc: 'Freeze-dried · 80g',  price: 24.00, qty: 1, img: 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=240&q=80' }
+  ];
+  function load() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (raw) return JSON.parse(raw);
+    } catch(e) {}
+    save(DEFAULT_ITEMS);
+    return DEFAULT_ITEMS.slice();
+  }
+  function save(items) {
+    try { localStorage.setItem(KEY, JSON.stringify(items)); } catch(e) {}
+  }
+  return { load, save };
+})();
+
+// Cart sidebar — slide-in panel with qty / remove / empty state
+(function() {
+  const sidebar = document.getElementById('cartSidebar');
+  const backdrop = document.getElementById('cartBackdrop');
+  const openBtn = document.getElementById('cartToggle');
+  const closeBtn = document.getElementById('cartClose');
+  const body = document.getElementById('cartBody');
+  const tpl = document.getElementById('cartEmptyTpl');
+  if (!sidebar) return;
+
+  function fmt(n) { return 'S$' + n.toFixed(2); }
+
+  function open() { sidebar.classList.add('is-open'); backdrop.classList.add('is-open'); sidebar.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; render(); }
+  function close() { sidebar.classList.remove('is-open'); backdrop.classList.remove('is-open'); sidebar.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  openBtn?.addEventListener('click', open);
+  closeBtn?.addEventListener('click', close);
+  backdrop?.addEventListener('click', close);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && sidebar.classList.contains('is-open')) close(); });
+
+  function render() {
+    const items = WoofifiCart.load();
+    body.innerHTML = '';
+    if (!items.length) {
+      body.appendChild(tpl.content.cloneNode(true));
+      document.querySelector('.cart-foot')?.style.setProperty('display', 'none');
+      const cnt = document.getElementById('cartCount');
+      if (cnt) cnt.textContent = '0';
+      return;
+    }
+    document.querySelector('.cart-foot')?.style.setProperty('display', '');
+    let subtotal = 0, count = 0;
+    items.forEach((it, idx) => {
+      subtotal += it.price * it.qty;
+      count += it.qty;
+      const div = document.createElement('div');
+      div.className = 'cart-item';
+      div.dataset.idx = idx;
+      div.innerHTML = `
+        <img src="${it.img}" alt="${it.name}" />
+        <div class="cart-item-info">
+          <strong>${it.name}</strong>
+          <div class="cart-item-meta">
+            <span class="cart-qty-control">
+              <button class="cart-qty-btn cart-qty-minus" type="button">&minus;</button>
+              <span class="cart-qty-num">${it.qty}</span>
+              <button class="cart-qty-btn cart-qty-plus" type="button">+</button>
+            </span>
+            <span class="cart-price">${fmt(it.price * it.qty)}</span>
+          </div>
+        </div>
+        <button class="cart-remove" type="button" aria-label="Remove">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+        </button>
+      `;
+      body.appendChild(div);
+      const minus = div.querySelector('.cart-qty-minus');
+      const plus = div.querySelector('.cart-qty-plus');
+      const remove = div.querySelector('.cart-remove');
+      minus.disabled = it.qty <= 1;
+      minus.addEventListener('click', () => { update(idx, items[idx].qty - 1); });
+      plus.addEventListener('click',  () => { update(idx, items[idx].qty + 1); });
+      remove.addEventListener('click', () => { items.splice(idx, 1); WoofifiCart.save(items); render(); });
+    });
+    document.getElementById('cartSubtotal').textContent = fmt(subtotal);
+    const cnt = document.getElementById('cartCount');
+    if (cnt) cnt.textContent = String(count);
+  }
+
+  function update(idx, qty) {
+    const items = WoofifiCart.load();
+    if (!items[idx]) return;
+    items[idx].qty = Math.max(1, qty);
+    WoofifiCart.save(items);
+    render();
+  }
+
+  // Initial render so the badge count reflects stored cart on page load
+  render();
+
+  // React to cart changes from cart.html in another tab/window
+  window.addEventListener('storage', (e) => { if (e.key === 'woofifi_cart_v1') render(); });
+})();
+
+
+function handleNewsletter(e) {
     e.preventDefault();
     const email = e.target.querySelector('input').value;
     alert('🎉 Welcome to the Woofifi pack, ' + email + '!\n\n(Demo — wire this up to Mailchimp, ConvertKit, or your preferred email service before launch.)');
     e.target.reset();
   }
-</script>
+
+  </script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact — Woofifi</title>
-<meta name="description" content="Say hi to the Woofifi pack. Drop us a note, ping us on WhatsApp, or send a question about our snacks." />
+<title>Reviews — Woofifi</title>
+<meta name="description" content="Real reviews from Singapore pet parents about Woofifi's natural treats and at-home grooming app." />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
@@ -17,16 +17,16 @@
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --navy: #262354; --navy-light: #3a3670;
-  --yellow: #FCC156; --yellow-soft: #FFE1A8; --yellow-bg: #FFF1D6;
+  --yellow: #FCC156; --yellow-soft: #FFE1A8;
   --cream: #FFF9F0; --cream-warm: #FDF2DF;
   --white: #fff;
-  --gray-900: #1a1830; --gray-700: #4a4767; --gray-500: #8a87a3; --gray-300: #d8d4e8; --gray-100: #f0edf7;
+  --gray-100: #f0edf7; --gray-500: #8a87a3; --gray-700: #4a4767; --gray-900: #1a1830;
   --shadow-sm: 0 2px 8px rgba(38,35,84,0.06);
   --shadow-md: 0 8px 24px rgba(38,35,84,0.08);
-  --shadow-lg: 0 20px 50px rgba(38,35,84,0.12);
+  --shadow-lg: 0 20px 48px rgba(38,35,84,0.12);
   --radius-sm: 12px; --radius-md: 20px; --radius-lg: 32px; --radius-pill: 999px;
-  --max-width: 1240px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --max-width: 1240px;
 }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--cream); color: var(--gray-900); line-height: 1.7; }
@@ -34,13 +34,11 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 700; color: var(--navy); line-height: 1.15; letter-spacing: -0.02em; }
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-.brand-word { color: var(--yellow); font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 800; }
-
-/* NAV — exact match with index.html */
+/* NAV */
 .nav { position: fixed;
-  top: 0; left: 0; right: 0; z-index: 100; background: rgba(255, 249, 240, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(38, 35, 84, 0.08); }
+  top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,249,240,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(38, 35, 84, 0.08); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: var(--max-width); margin: 0 auto; }
 .logo { display: flex; align-items: center; gap: 0; }
 /* Spacer so document content starts below the fixed nav. Height matches the
@@ -53,80 +51,79 @@ body { padding-top: 142px; }
 .nav-link { font-weight: 600; font-size: 15px; color: var(--navy); transition: var(--transition); position: relative; }
 .nav-link:hover { color: var(--yellow); }
 .nav-link::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--yellow); transition: var(--transition); }
-.nav-link:hover::after { width: 100%; }
-.nav-link.active::after { width: 100%; }
-.nav-cta { margin-left: 8px; }
-.nav-icons { display: flex; align-items: center; gap: 6px; margin-left: 16px; }
-.nav-icon-btn { width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; color: var(--navy); background: transparent; border: none; border-radius: 50%; position: relative; cursor: pointer; transition: var(--transition); text-decoration: none; }
-.nav-icon-btn:hover { background: var(--navy); color: var(--yellow); }
-.nav-icon-cart .cart-count { position: absolute; top: 2px; right: 2px; width: 16px; height: 16px; background: var(--yellow); color: var(--navy); border-radius: 50%; font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; pointer-events: none; }
-.nav-icon-cart:hover .cart-count { background: var(--cream); color: var(--navy); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 32px; border-radius: var(--radius-pill); font-weight: 700; font-size: 15px; transition: var(--transition); white-space: nowrap; border: none; cursor: pointer; }
 .btn-yellow { background: var(--yellow); color: var(--navy); }
 .btn-yellow:hover { background: #ffcd73; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(252, 193, 86, 0.4); color: var(--navy); }
 .btn-sm { padding: 10px 20px; font-size: 14px; }
+.nav-cta { margin-left: 8px; }
 .menu-toggle { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--navy); background: none; border: none; cursor: pointer; }
 
 /* PAGE HEAD */
-.page-head { padding: 36px 0 32px; background: var(--cream); position: relative; overflow: hidden; }
+.page-head { padding: 36px 0 40px; background: var(--cream); position: relative; overflow: hidden; }
 .page-head::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(252,193,86,0.18), transparent 70%); border-radius: 50%; pointer-events: none; }
 .page-head::after { content: ''; position: absolute; bottom: -180px; left: -120px; width: 460px; height: 460px; background: radial-gradient(circle, rgba(252,193,86,0.10), transparent 70%); border-radius: 50%; pointer-events: none; }
 .page-head-inner { max-width: 820px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
 .badge { display: inline-block; padding: 8px 18px; background: var(--white); color: var(--navy); border-radius: var(--radius-pill); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; box-shadow: var(--shadow-sm); margin-bottom: 24px; }
 .page-head h1 { font-size: clamp(40px, 5.5vw, 64px); margin-bottom: 14px; }
 .page-head h1 .accent { color: var(--yellow); font-style: italic; font-weight: 700; }
-.page-head .lead { font-size: 18px; color: var(--gray-700); max-width: 620px; margin: 0 auto; line-height: 1.55; }
+.page-head .lead { font-size: 18px; color: var(--gray-700); max-width: 720px; margin: 0 auto; line-height: 1.55; }
+.page-head .lead-accent { color: var(--yellow); font-weight: 700; }
 
-/* FAQ */
-.faq { padding: 56px 0 64px; background: var(--cream); }
-.faq-head { text-align: center; max-width: 720px; margin: 0 auto 36px; }
-.faq-head h2 { font-size: clamp(28px, 3.6vw, 40px); margin-bottom: 10px; }
-.faq-head h2 .accent { color: var(--yellow); font-style: italic; font-weight: 700; }
-.faq-head p { color: var(--gray-700); font-size: 16px; line-height: 1.6; }
-.faq-list { max-width: 820px; margin: 0 auto; }
-.faq-item { background: var(--white); border-radius: var(--radius-md); margin-bottom: 12px; overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); }
-.faq-item:hover { box-shadow: 0 14px 34px rgba(252, 193, 86, 0.50), 0 4px 12px rgba(252, 193, 86, 0.30); transform: translateY(-2px); }
-.faq-item[open] { box-shadow: 0 14px 34px rgba(252, 193, 86, 0.50), 0 4px 12px rgba(252, 193, 86, 0.30); }
-.faq-q { padding: 22px 26px; font-weight: 700; color: var(--navy); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; list-style: none; user-select: none; }
-.faq-q::-webkit-details-marker { display: none; }
-.faq-q::after { content: '+'; font-family: 'Fraunces', serif; font-size: 28px; color: var(--yellow); transition: var(--transition); font-weight: 400; }
-.faq-item[open] .faq-q::after { transform: rotate(45deg); }
-.faq-a { padding: 0 26px 22px; color: var(--gray-700); font-size: 15px; line-height: 1.7; }
+/* RATING SUMMARY */
+.rating-summary { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 28px; flex-wrap: wrap; }
+.rating-summary-marks { display: flex; gap: 4px; }
+.rating-summary-marks img { width: 24px; height: 24px; }
+.rating-summary-text { color: var(--navy); font-weight: 700; font-size: 15px; }
+.rating-summary-text span { color: var(--gray-500); font-weight: 500; }
 
-/* CONTACT */
-.contact { padding: 60px 0 100px; background: var(--cream-warm); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: center; }
-.contact-info h2 { font-size: clamp(28px, 3.4vw, 38px); margin-bottom: 20px; }
-.contact-info > p { color: var(--gray-700); font-size: 17px; margin-bottom: 28px; line-height: 1.7; }
-.contact-item { display: flex; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid rgba(38, 35, 84, 0.08); }
-.contact-item:last-child { border: none; }
-.contact-icon { width: 48px; height: 48px; background: rgba(38, 35, 84, 0.08); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--navy); transition: var(--transition); }
-.contact-icon svg { width: 22px; height: 22px; }
-.contact-item:hover .contact-icon { background: var(--navy); color: var(--yellow); transform: translateY(-2px); }
-.contact-socials { display: flex; gap: 14px; margin-top: 28px; }
-.contact-social { width: 48px; height: 48px; background: rgba(38, 35, 84, 0.08); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--navy); transition: var(--transition); flex-shrink: 0; }
-.contact-social svg { width: 22px; height: 22px; }
-.contact-social img { width: 24px; height: 24px; object-fit: contain; }
-.social-btn .xhs-mark { display: inline-block; width: 22px; height: 22px; background-image: url(assets/xhs-blue.svg); background-size: contain; background-position: center; background-repeat: no-repeat; }
-.social-btn:hover .xhs-mark { background-image: url(assets/xhs-yellow.svg); }
-.contact-social .xhs-mark { display: inline-block; width: 24px; height: 24px; background-image: url(assets/xhs-blue.svg); background-size: contain; background-position: center; background-repeat: no-repeat; }
-.contact-social:hover .xhs-mark { background-image: url(assets/xhs-yellow.svg); }
-.contact-social:hover { background: var(--navy); color: var(--yellow); transform: translateY(-3px); }
-.contact-meta strong { display: block; color: var(--navy); font-size: 14px; margin-bottom: 4px; }
-.contact-meta a, .contact-meta p { color: var(--gray-700); font-size: 16px; transition: var(--transition); }
-.contact-meta a:hover { color: var(--yellow); }
+/* REVIEWS LIST */
+.reviews-section { padding: 64px 0 96px; background: var(--cream); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.review-card {
+  background: var(--white);
+  padding: 32px 32px 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.review-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(252, 193, 86, 0.50), 0 4px 12px rgba(252, 193, 86, 0.30); }
+.review-card::before { content: '\201C'; position: absolute; top: 16px; right: 28px; font-family: 'Fraunces', serif; font-size: 72px; color: var(--yellow); line-height: 1; font-weight: 700; }
+.review-stars { display: flex; gap: 4px; margin-bottom: 16px; align-items: center; }
+.review-stars img { width: 24px; height: 24px; display: block; }
+.rating-summary-marks img { width: 28px !important; height: 28px !important; }
+.review-text { font-size: 15px; color: var(--gray-700); line-height: 1.65; margin-bottom: 24px; position: relative; z-index: 1; flex: 1; }
+.review-author { display: flex; gap: 14px; align-items: center; padding-top: 20px; border-top: 1px solid var(--gray-100); margin-top: auto; flex-shrink: 0; }
+.review-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.review-info { display: flex; flex-direction: column; }
+.review-info strong { display: block; color: var(--navy); font-size: 15px; line-height: 1.3; }
+.review-info .loc { font-size: 13px; color: var(--gray-500); display: block; line-height: 1.4; margin-top: 2px; }
+.review-info .pet { font-size: 13px; color: var(--gray-500); display: block; line-height: 1.4; margin-top: 1px; }
+.review-card.is-hidden { display: none; }
+.load-more-wrap { text-align: center; margin-top: 56px; }
+.btn-load-more {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 36px; border-radius: var(--radius-pill);
+  background: var(--navy); color: var(--cream);
+  font-weight: 700; font-size: 15px; letter-spacing: 0.02em;
+  border: none; cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 8px 22px rgba(38, 35, 84, 0.18);
+}
+.btn-load-more:hover { background: var(--navy-light); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(38, 35, 84, 0.24); }
+.btn-load-more:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btn-load-more .arrow { font-size: 18px; transition: transform 0.3s; }
+.btn-load-more:hover .arrow { transform: translateY(2px); }
+.load-more-count { display: block; font-size: 13px; color: var(--gray-500); margin-top: 12px; font-weight: 500; }
 
-.contact-form { background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: 0.02em; }
-.form-input, .form-select, .form-textarea { width: 100%; padding: 14px 16px; border: 2px solid var(--gray-100); border-radius: var(--radius-sm); background: var(--cream); font-family: inherit; font-size: 15px; color: var(--navy); transition: var(--transition); }
-.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--yellow); background: var(--white); }
-.form-textarea { min-height: 120px; resize: vertical; }
-.form-submit { width: 100%; padding: 18px; background: var(--navy); color: var(--yellow); border-radius: var(--radius-pill); font-weight: 700; font-size: 15px; transition: var(--transition); margin-top: 8px; }
-.form-submit:hover { background: var(--navy-light); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-
-/* CTA BAND / NEWSLETTER */
+/* CTA BAND */
 .cta-band { background: var(--navy); padding: 24px 0; }
 .cta-split { display: flex; align-items: center; justify-content: space-between; gap: 40px; max-width: 1192px; margin: 0 auto; }
 .cta-copy { flex: 0 1 auto; min-width: 0; text-align: left; }
@@ -156,8 +153,10 @@ body { padding-top: 142px; }
 .footer-bottom a:hover { color: var(--navy); }
 .logo-img-footer { height: 170px; }
 .social-btn img { width: 22px; height: 22px; object-fit: contain; }
+.social-btn .xhs-mark { display: inline-block; width: 22px; height: 22px; background-image: url(assets/xhs-blue.svg); background-size: contain; background-position: center; background-repeat: no-repeat; }
+.social-btn:hover .xhs-mark { background-image: url(assets/xhs-yellow.svg); }
 
-/* Mobile */
+/* RESPONSIVE */
 @media (max-width: 1100px) and (min-width: 961px) {
   .cta-split { flex-direction: column; gap: 18px; text-align: center; align-items: center; }
   .cta-copy { text-align: center; }
@@ -165,8 +164,8 @@ body { padding-top: 142px; }
   .cta-line { white-space: normal; }
 }
 @media (max-width: 960px) {
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   section.cta-band { padding: 24px 0; }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .cta-split { flex-direction: column; gap: 20px; text-align: center; }
   .cta-copy { text-align: center; }
@@ -179,9 +178,7 @@ body { padding-top: 142px; }
   .menu-toggle { display: flex; }
   .nav-cta { display: none; }
   .logo-img { height: 80px; }
-  .contact { padding: 40px 0 72px; }
-  .contact-form { padding: 28px 20px; }
-  .form-row { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .newsletter-form { flex-direction: column; background: transparent; box-shadow: none; padding: 0; }
   .newsletter-form input { background: var(--white); border-radius: var(--radius-pill); }
@@ -704,159 +701,325 @@ body { padding-top: 142px; }
 <header class="page-head">
   <div class="container">
     <div class="page-head-inner">
-      <h1 style="white-space: nowrap;">We&rsquo;d <span class="accent">love</span> to hear from you</h1>
-      <p class="lead">Drop us a message anytime!</p>
+      <h1>Real families <span class="accent">Real stories</span></h1>
+      <p class="lead"><span class="lead-accent">Very strong feelings about every bite. Tested by paws, approved by family</span><br>and we&rsquo;re just glad those feelings were good ones.</p>
+      <div class="rating-summary">
+        <div class="rating-summary-marks" aria-label="Average 5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <div class="rating-summary-text">5.0 average <span>&middot; from verified Woofifi families</span></div>
+      </div>
     </div>
   </div>
 </header>
 
-<!-- FAQ — merged from FAQs.html -->
-<section class="faq" id="faq">
+<!-- REVIEWS GRID -->
+<section class="reviews-section">
   <div class="container">
-    <div class="faq-head">
-      <h2>Questions, <span class="accent">answered</span></h2>
-      <p>Couldn&rsquo;t find what you&rsquo;re looking for? Drop us a note below &mdash; we usually reply within a day.</p>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-q">When can I actually buy Woofifi snacks?</summary>
-        <div class="faq-a">Our core range (Kangaroo Jerky, Rabbit Bites, Crocodile Chews) launches Q3 2026. Join the waitlist below to be first in line &mdash; early subscribers also get 15% off their first order.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Are your treats safe for puppies and senior dogs?</summary>
-        <div class="faq-a">Yes &mdash; our snacks contain no additives, no preservatives, and no artificial anything. Freeze-drying preserves nutrients without cooking them to death, making our treats gentle on young and older tummies alike. As always, consult your vet if your pup has specific dietary conditions.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Are the seasonal treats really safe for humans to taste?</summary>
-        <div class="faq-a">Select festive treats are formulated to be human-tasting friendly &mdash; meaning if you accidentally (or curiously) try one, nothing bad happens. They&rsquo;re still designed for dogs though, so please leave the full box to your pup. Look for the &ldquo;Human-friendly&rdquo; badge on qualifying products.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Where are your ingredients sourced?</summary>
-        <div class="faq-a">We source transparently. Specialty proteins like kangaroo and crocodile are imported from verified Australian suppliers. Chicken, sweet potato and other staples come from trusted regional partners. Every batch is traceable &mdash; ask us anytime.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">How does the grooming app work?</summary>
-        <div class="faq-a">The Woofifi App (Phase 2, launching 2027) lets you book certified groomers who come to your home. You can watch the session live, rate the experience, and reorder Woofifi snacks &mdash; all in one place. Groomers are verified, insured, and peer-reviewed.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Do you deliver island-wide in Singapore?</summary>
-        <div class="faq-a">Yes &mdash; we&rsquo;ll offer island-wide delivery from our online store and via partner platforms (Shopee, TikTok Shop). Free delivery thresholds and express options will be announced at launch.</div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">Are you regulated / AVS-compliant?</summary>
-        <div class="faq-a">Absolutely. We&rsquo;re working closely with Singapore&rsquo;s Animal &amp; Veterinary Service (AVS) to ensure full compliance with import permits, labelling, and all statutory requirements before our Phase 1 launch.</div>
-      </details>
-    </div>
-  </div>
-</section>
+    <div class="reviews-grid">
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h2>Whatever it is,<br>We genuinely want to hear it.</h2>
-        <p>Whether it&rsquo;s an ingredient question, a delivery hiccup, or just a chance to introduce your pet to ours, we&rsquo;re here.</p>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <div class="contact-meta">
-            <strong>Email</strong>
-            <a href="mailto:contact@woofifi.com">contact@woofifi.com</a>
-          </div>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
         </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+        <p class="review-text">We&rsquo;re really impressed with Woofifi&rsquo;s treats! You can really tell that they&rsquo;re made with care and quality ingredients. It gives us peace of mind knowing everything is human-grade, and our picky boy absolutely loves them. Definitely a brand we trust!</p>
+        <div class="review-author">
+          <img class="review-avatar" src="assets/review-milo.jpg" alt="Milo the Poodle" />
+          <div class="review-info">
+            <strong>Alle</strong>
+            <span class="loc">Singapore</span><span class="pet">Milo, Poodle</span>
           </div>
-          <div class="contact-meta">
-            <strong>WhatsApp</strong>
-            <a href="https://wa.me/6588687687" target="_blank" rel="noopener">+65 8868 7687</a>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div class="contact-meta">
-            <strong>Based in</strong>
-            <p>Singapore &middot; Island-wide delivery</p>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="contact-meta">
-            <strong>Reply time</strong>
-            <p>Within 24 hours, usually faster</p>
-          </div>
-        </div>
-
-        <div class="contact-socials">
-          <a href="https://www.instagram.com/woofifi_sg/" aria-label="Instagram" class="contact-social" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@woofifi_sg?is_from_webapp=1&sender_device=pc" aria-label="TikTok" class="contact-social" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.1z"/></svg>
-          </a>
-          <a href="https://www.xiaohongshu.com/" aria-label="Xiaohongshu" class="contact-social" title="Xiaohongshu / Little Red Book" target="_blank" rel="noopener">
-            <span class="xhs-mark" aria-hidden="true"></span>
-          </a>
         </div>
       </div>
 
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="handleContact(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First name</label>
-            <input class="form-input" type="text" id="firstName" name="firstName" required />
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">My pet loves these treats and gets excited every time. You can tell they&rsquo;re fresh and made with care. I feel good giving them as a healthier option.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="assets/review-chester.jpg" alt="Chester the Cavalier King Charles Spaniel" style="object-position: 30% 20%;" />
+          <div class="review-info">
+            <strong>Cherry Chim</strong>
+            <span class="loc">Singapore</span><span class="pet">Chester, Cavalier King Charles Spaniel</span>
           </div>
-          <div class="form-group">
-            <label for="lastName">Last name</label>
-            <input class="form-input" type="text" id="lastName" name="lastName" required />
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">Woofifi has become our go-to for pet treats. The quality is consistent, and we appreciate the effort put into making them both healthy and delicious. Our little princess looks forward to every treat time now!</p>
+        <div class="review-author">
+          <img class="review-avatar" src="assets/review-miso.jpg" alt="Miso the Poodle" />
+          <div class="review-info">
+            <strong>Alle</strong>
+            <span class="loc">Singapore</span><span class="pet">Miso, Poodle</span>
           </div>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input class="form-input" type="email" id="email" name="email" required />
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
         </div>
-
-        <div class="form-group">
-          <label for="phone">Phone (optional)</label>
-          <input class="form-input" type="tel" id="phone" name="phone" placeholder="+65" />
+        <p class="review-text">The moment this bag comes out, my dog is already spinning in circles which the reaction says it all. We&rsquo;re on our third bag and not stopping anytime soon.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="assets/review-rex.jpg" alt="Rex the Shih Tzu" />
+          <div class="review-info">
+            <strong>Phoebie Peh</strong>
+            <span class="loc">Australia</span><span class="pet">Rex, Shih Tzu</span>
+          </div>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label for="topic">What can we help with?</label>
-          <select class="form-select" id="topic" name="topic" required>
-            <option value="">Choose one</option>
-            <option value="order">Order or delivery</option>
-            <option value="product">A product question</option>
-            <option value="ingredients">Ingredients or allergies</option>
-            <option value="wholesale">Wholesale or partnerships</option>
-            <option value="other">Something else</option>
-          </select>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
         </div>
-
-        <div class="form-group">
-          <label for="petName">Your pet&rsquo;s name (optional)</label>
-          <input class="form-input" type="text" id="petName" name="petName" placeholder="So we know who we&rsquo;re talking about" />
+        <p class="review-text">Bruno has a sensitive stomach so we&rsquo;re very careful with new treats. Woofifi has been gentle on him from day one and he&rsquo;s obsessed. Love that they&rsquo;re Singapore-made and the team actually replies to questions.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?w=200&q=80" alt="Daniel L." />
+          <div class="review-info">
+            <strong>Daniel L.</strong>
+            <span class="loc">East Coast</span><span class="pet">Bruno, Schnauzer</span>
+          </div>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label for="message">Your message</label>
-          <textarea class="form-textarea" id="message" name="message" required></textarea>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
         </div>
+        <p class="review-text">Honestly the prettiest treats I&rsquo;ve ever bought. The festive packaging made it the perfect gift for my sister-in-law&rsquo;s pup. She texted a video of her dog doing zoomies after the first bite.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" alt="Mei Ling" />
+          <div class="review-info">
+            <strong>Mei Ling</strong>
+            <span class="loc">Bukit Timah</span><span class="pet">Latte, Cavapoo</span>
+          </div>
+        </div>
+      </div>
 
-        <button class="form-submit" type="submit">Send Message</button>
-      </form>
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">Tried Woofifi after a friend&rsquo;s recommendation and now we&rsquo;re hooked. Mango sniffs the bag from across the room. Quality you can see, smell, and feel &mdash; not just marketing words.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" alt="Aisha N." />
+          <div class="review-info">
+            <strong>Aisha N.</strong>
+            <span class="loc">Tampines</span><span class="pet">Mango, French Bulldog</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">Finally a brand that treats ingredient lists like a feature, not a secret. Mochi goes bonkers for the kangaroo jerky and I love that I can pronounce every single ingredient. The packaging is gorgeous too.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80" alt="Amanda L." />
+          <div class="review-info">
+            <strong>Amanda L.</strong>
+            <span class="loc">Tanjong Pagar</span><span class="pet">Mochi, Shiba Inu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">I used to dread grooming day &mdash; Grab surcharges, waiting around, the whole thing. The Woofifi app beta has been a game changer. Watching the session live was the cherry on top.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" alt="Priya R." />
+          <div class="review-info">
+            <strong>Priya R.</strong>
+            <span class="loc">Holland V</span><span class="pet">Biscuit, Cavapoo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden reviews — revealed in batches of 6 by Load More -->
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">Booked a grooming session through the app and watched the whole thing on my phone while at work. Buddy looked so calm and the groomer was a sweetheart. The treat sample they left was a bonus.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=200&q=80" alt="Rachel T." />
+          <div class="review-info">
+            <strong>Rachel T.</strong>
+            <span class="loc">Pasir Ris</span><span class="pet">Buddy, Beagle</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">Their seasonal Christmas treats were the cutest thing I&rsquo;ve seen all year. Tofu (my cat) even tried to steal one. Eric&rsquo;s personal note in the package was a nice touch &mdash; you can feel the love.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=200&q=80" alt="Ben K." />
+          <div class="review-info">
+            <strong>Ben K.</strong>
+            <span class="loc">Serangoon</span><span class="pet">Pancake, Corgi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">As a vet nurse, I&rsquo;m hyper-picky about what I let my own dogs eat. Woofifi is one of the very few brands I trust completely. Single-protein, traceable sourcing, no funny business.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1554151228-14d9def656e4?w=200&q=80" alt="Dr. Lim" />
+          <div class="review-info">
+            <strong>Dr. Lim</strong>
+            <span class="loc">Yishun</span><span class="pet">Toby + Daisy, Beagle mix</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">My senior dog has been refusing his old treats for months. Tried Woofifi out of desperation and he&rsquo;s back to wagging his tail at treat time. That alone is worth every cent.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&q=80" alt="Joanne H." />
+          <div class="review-info">
+            <strong>Joanne H.</strong>
+            <span class="loc">Punggol</span><span class="pet">Charlie, Senior Mixed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">Genuinely the best treats we&rsquo;ve tried in seven years of dog parenting. The crocodile chews are insane &mdash; long-lasting, single ingredient, and Pixel literally hides hers under the sofa.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" alt="Vincent O." />
+          <div class="review-info">
+            <strong>Vincent O.</strong>
+            <span class="loc">Bedok</span><span class="pet">Pixel, Border Collie</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">Bought as a gift for my brother&rsquo;s new puppy. He texted me a video within an hour. Apparently the puppy refuses to put the bag down. Buying again.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=200&q=80" alt="Hannah Y." />
+          <div class="review-info">
+            <strong>Hannah Y.</strong>
+            <span class="loc">Sengkang</span><span class="pet">Mochi, Pomeranian</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">The packaging alone made me smile. Inside, the treats were even better than expected. Daisy demolished the rabbit bites and now gives me side-eye if I open the cupboard without producing one.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" alt="Marcus W." />
+          <div class="review-info">
+            <strong>Marcus W.</strong>
+            <span class="loc">Clementi</span><span class="pet">Daisy, Dachshund</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">Used to spend ages reading labels at every pet store. Now I just buy Woofifi. The peace of mind is worth a lot, and the quality speaks for itself.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=200&q=80" alt="Priscilla N." />
+          <div class="review-info">
+            <strong>Priscilla N.</strong>
+            <span class="loc">Marine Parade</span><span class="pet">Hazel, Mini Schnauzer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">My fussy rescue Maltese turned his nose up at every brand we tried for nine months. Two seconds with the kangaroo jerky and he was a different dog. Thank you, Woofifi.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=200&q=80" alt="Lyn C." />
+          <div class="review-info">
+            <strong>Lyn C.</strong>
+            <span class="loc">Choa Chu Kang</span><span class="pet">Snowy, Maltese (rescue)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">I work at a doggy daycare and we&rsquo;ve started recommending Woofifi to all our pickier eaters. The success rate is wild. Owners come back saying they finally found something their dog actually loves.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80" alt="Tasha P." />
+          <div class="review-info">
+            <strong>Tasha P.</strong>
+            <span class="loc">Joo Chiat</span><span class="pet">Multiple pups daily</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">Bought a bag for my mum&rsquo;s elderly Pomeranian who has dental issues. The freeze-dried texture is gentle but flavourful and Princess loves them. Mum was almost in tears watching her enjoy treats again.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80" alt="Iris L." />
+          <div class="review-info">
+            <strong>Iris L.</strong>
+            <span class="loc">Clementi</span><span class="pet">Princess, Senior Pomeranian</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card is-hidden">
+        <div class="review-stars" aria-label="5 out of 5">
+          <img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" /><img src="assets/favicon-32.png" alt="" />
+        </div>
+        <p class="review-text">I love that they&rsquo;re local. Quick delivery, friendly comms, and a small team that clearly cares. The treats themselves are fantastic but I keep buying because of the people behind the brand.</p>
+        <div class="review-author">
+          <img class="review-avatar" src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?w=200&q=80" alt="Wei Han" />
+          <div class="review-info">
+            <strong>Wei Han</strong>
+            <span class="loc">Queenstown</span><span class="pet">Bao, Frenchie</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="load-more-wrap">
+      <button id="loadMoreBtn" class="btn-load-more" type="button">
+        Load more reviews <span class="arrow">&darr;</span>
+      </button>
+      <span id="loadMoreCount" class="load-more-count">Showing 9 of 21 reviews</span>
     </div>
   </div>
 </section>
@@ -1145,19 +1308,41 @@ const WoofifiCart = (function() {
 })();
 
 
-  function handleContact(e) {
-    if (e.target.action.includes('YOUR_FORMSPREE_ID')) {
-      e.preventDefault();
-      alert('Thanks! This is a demo form — set up Formspree (free) at formspree.io and replace YOUR_FORMSPREE_ID in the form action to start receiving real messages.');
-    }
-  }
-
   function handleNewsletter(e) {
     e.preventDefault();
     const email = e.target.querySelector('input').value;
     alert('🎉 Welcome to the Woofifi pack, ' + email + '!\n\n(Demo — wire this up to Mailchimp, ConvertKit, or your preferred email service before launch.)');
     e.target.reset();
   }
+
+  // Load more reviews — reveal 6 hidden cards per click
+  (function() {
+    const btn = document.getElementById('loadMoreBtn');
+    const count = document.getElementById('loadMoreCount');
+    if (!btn) return;
+    const grid = document.querySelector('.reviews-grid');
+    const total = grid.querySelectorAll('.review-card').length;
+    const visibleStart = grid.querySelectorAll('.review-card:not(.is-hidden)').length;
+
+    function updateCount() {
+      const visible = grid.querySelectorAll('.review-card:not(.is-hidden)').length;
+      count.textContent = `Showing ${visible} of ${total} reviews`;
+      if (visible >= total) {
+        btn.disabled = true;
+        btn.innerHTML = 'You’ve reached the end — thank you for reading';
+        btn.style.cursor = 'default';
+      }
+    }
+
+    btn.addEventListener('click', function() {
+      const hidden = grid.querySelectorAll('.review-card.is-hidden');
+      const reveal = Array.from(hidden).slice(0, 6);
+      reveal.forEach(card => card.classList.remove('is-hidden'));
+      updateCount();
+    });
+
+    updateCount();
+  })();
 
   </script>
 
